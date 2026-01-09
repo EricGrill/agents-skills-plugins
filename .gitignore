@@ -1,0 +1,7 @@
+# Local Claude Code configuration (not for sharing)
+.claude/
+CLAUDE.md
+
+# Common excludes
+.DS_Store
+*.log
