@@ -1,7 +1,13 @@
 <p align="center">
-  <h1 align="center">Agent Skills Plugins</h1>
+  <h1 align="center">Claude Code Plugin Marketplace</h1>
   <p align="center">
-    <strong>A curated marketplace of Claude Code plugins, agents, and skills</strong>
+    <strong>Open-source plugins, agents, and skills for Claude Code CLI</strong>
+  </p>
+  <p align="center">
+    <a href="https://github.com/EricGrill/agents-skills-plugins/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
+    <img src="https://img.shields.io/badge/plugins-41-green.svg" alt="41 Plugins">
+    <img src="https://img.shields.io/badge/agents-70+-purple.svg" alt="70+ Agents">
+    <img src="https://img.shields.io/badge/skills-110+-orange.svg" alt="110+ Skills">
   </p>
   <p align="center">
     <a href="#-quick-start">Quick Start</a> |
@@ -11,19 +17,38 @@
   </p>
 </p>
 
+## What is this?
+
+A community-maintained collection of plugins that extend Claude Code with specialized capabilities. Each plugin adds agents, skills, or commands that help with specific development tasks—from TDD and debugging to document generation and DevOps automation.
+
+**This marketplace aggregates plugins from multiple authors** so you can discover, install, and manage them from one place.
+
 ---
 
 ## Quick Start
 
+Get started in two commands:
+
 ```bash
-# Add the marketplace
+# Add the marketplace to Claude Code
 /plugin marketplace add EricGrill/agents-skills-plugins
 
-# Install any plugin
+# Install any plugin from the catalog
 /plugin install <plugin-name>@agents-skills-plugins
 ```
 
 **New to Claude Code plugins?** Start with **superpowers** - it includes essential skills for TDD, debugging, and code review that work with any project.
+
+---
+
+## Why Use a Plugin Marketplace?
+
+| Benefit | Description |
+|---------|-------------|
+| **One-command install** | No manual setup. Install plugins directly within Claude Code |
+| **Curated collection** | Plugins are reviewed and organized by use case |
+| **Auto-sync** | The marketplace updates weekly from upstream sources |
+| **Community-driven** | Contributions welcome from any plugin author |
 
 ---
 
@@ -805,14 +830,15 @@ One-click transformation of LinkedIn/X posts into detailed research reports.
 
 ---
 
-## Stats
+## Marketplace Stats
 
 | Metric | Count |
 |--------|-------|
-| Total Plugins | 41 |
-| Total Agents | 70+ |
-| Total Skills | 110+ |
-| Total Commands | 40+ |
+| Plugins | 41 |
+| Agents | 70+ |
+| Skills | 110+ |
+| Commands | 40+ |
+| Contributors | 10+ |
 
 ---
 
@@ -834,9 +860,27 @@ All plugins are MIT licensed.
 
 ## Contributing
 
-Want to add a plugin to the marketplace? Open an issue or PR!
+Want to add your plugin to the marketplace?
 
-The marketplace auto-syncs weekly from upstream sources to stay current.
+1. **Fork this repository**
+2. **Add your plugin** to the `plugins/` directory
+3. **Update `marketplace.json`** with your plugin metadata
+4. **Open a PR** with a brief description
+
+The marketplace auto-syncs weekly from upstream sources to pull in updates.
+
+### Plugin Requirements
+
+- Must be compatible with Claude Code's plugin format
+- Include a `plugin.json` manifest
+- MIT or compatible open-source license preferred
+
+---
+
+## Related Resources
+
+- [Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code) - Official docs for Claude Code CLI
+- [Plugin Development Guide](https://docs.anthropic.com/en/docs/claude-code/plugins) - How to build your own plugins
 
 ---
 
