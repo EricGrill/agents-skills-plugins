@@ -5,206 +5,172 @@
     {
       "name": "nano-banana",
       "description": "Image generation using Google's Gemini API",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/nano-banana"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/nano-banana"
     },
     {
       "name": "superpowers",
       "description": "Core skills library: TDD, debugging, collaboration patterns (forked from obra/superpowers)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/superpowers"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/superpowers"
     },
     {
       "name": "agent-orchestration",
       "description": "Context management and multi-agent orchestration with performance optimization tools (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/agent-orchestration"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/agent-orchestration"
     },
     {
       "name": "blockchain-web3",
       "description": "Blockchain development with Solidity security, DeFi protocols, NFT standards, and Web3 testing (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/blockchain-web3"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/blockchain-web3"
     },
     {
       "name": "business-analytics",
       "description": "Business analysis with data storytelling and KPI dashboard design (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/business-analytics"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/business-analytics"
     },
     {
       "name": "code-documentation",
       "description": "Code documentation with automated doc generation, code explanation, and tutorial engineering (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/code-documentation"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/code-documentation"
     },
     {
       "name": "comprehensive-review",
       "description": "Comprehensive code review with architecture, security, and PR enhancement (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/comprehensive-review"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/comprehensive-review"
     },
     {
       "name": "seo-analysis-monitoring",
       "description": "SEO analysis with authority building, cannibalization detection, and content refresh (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/seo-analysis-monitoring"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/seo-analysis-monitoring"
     },
     {
       "name": "seo-content-creation",
       "description": "SEO content creation with auditing, planning, and optimized writing (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/seo-content-creation"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/seo-content-creation"
     },
     {
       "name": "seo-technical-optimization",
       "description": "Technical SEO with keyword strategy, meta optimization, snippets, and site structure (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/seo-technical-optimization"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/seo-technical-optimization"
     },
     {
       "name": "team-collaboration",
       "description": "Team collaboration with DX optimization, issue tracking, and standup notes (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/team-collaboration"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/team-collaboration"
     },
     {
       "name": "unit-testing",
       "description": "Unit testing with debugging and test automation (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/unit-testing"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/unit-testing"
     },
     {
       "name": "python-development",
       "description": "Python development with Django, FastAPI, async patterns, and uv package management (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/python-development"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/python-development"
     },
     {
       "name": "llm-application-dev",
       "description": "LLM application development with RAG, embeddings, LangChain, and prompt engineering (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/llm-application-dev"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/llm-application-dev"
     },
     {
       "name": "javascript-typescript",
       "description": "JavaScript and TypeScript development with modern patterns and Node.js backend (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/javascript-typescript"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/javascript-typescript"
     },
     {
       "name": "git-pr-workflows",
       "description": "Git and PR workflows with code review, onboarding, and PR enhancement (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/git-pr-workflows"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/git-pr-workflows"
     },
     {
       "name": "game-development",
       "description": "Game development with Unity, Godot, and Minecraft Bukkit plugin development (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/game-development"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/game-development"
     },
     {
       "name": "full-stack-orchestration",
       "description": "Full-stack orchestration with deployment, performance, security, and test automation (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/full-stack-orchestration"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/full-stack-orchestration"
     },
     {
       "name": "content-marketing",
       "description": "Content marketing with content strategy and search specialist agents (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/content-marketing"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/content-marketing"
     },
     {
       "name": "context-management",
       "description": "Context management with save and restore capabilities (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/context-management"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/context-management"
     },
     {
       "name": "customer-sales-automation",
       "description": "Customer support and sales automation agents (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/customer-sales-automation"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/customer-sales-automation"
     },
     {
       "name": "database-design",
       "description": "Database architecture and SQL optimization with PostgreSQL expertise (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/database-design"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/database-design"
     },
     {
       "name": "data-validation-suite",
       "description": "Data validation and backend security coding (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/data-validation-suite"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/data-validation-suite"
     },
     {
       "name": "deployment-strategies",
       "description": "Deployment engineering with Terraform and infrastructure as code (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/deployment-strategies"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/deployment-strategies"
     },
     {
       "name": "developer-essentials",
       "description": "Essential developer skills for monorepos, debugging, testing, and build optimization (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/developer-essentials"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/developer-essentials"
     },
     {
       "name": "documentation-generation",
       "description": "Documentation generation with API docs, architecture diagrams, and tutorials (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/documentation-generation"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/documentation-generation"
     },
     {
       "name": "frontend-mobile-development",
       "description": "Frontend and mobile development with React, Next.js, React Native, and Tailwind (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/frontend-mobile-development"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/frontend-mobile-development"
     },
     {
       "name": "frontend-mobile-security",
       "description": "Frontend and mobile security with XSS scanning and secure coding practices (from wshobson/agents)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/frontend-mobile-security"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/frontend-mobile-security"
     },
     {
       "name": "awesome-claude-skills",
       "description": "27 practical Claude Skills for documents (docx, pdf, pptx, xlsx), creative media, development, business, and productivity (from ComposioHQ)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/awesome-claude-skills"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/awesome-claude-skills"
     },
     {
       "name": "ios-simulator-skill",
       "description": "iOS Simulator automation with 21 scripts for building, testing, and semantic navigation (from conorluddy)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/ios-simulator-skill"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/ios-simulator-skill"
     },
     {
       "name": "multi-agent-patterns",
       "description": "Multi-agent architecture patterns: supervisor, swarm, hierarchical designs for context isolation (from muratcankoylan)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/multi-agent-patterns"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/multi-agent-patterns"
     },
     {
       "name": "beautiful-prose",
       "description": "Hard-edged writing style skill for timeless, forceful prose without AI tics (from SHADOWPR0)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/beautiful-prose"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/beautiful-prose"
     },
     {
       "name": "ralph-wiggum-marketer",
       "description": "Autonomous AI copywriter for SaaS content marketing using the Ralph Wiggum pattern (from muratcankoylan)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/ralph-wiggum-marketer"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/ralph-wiggum-marketer"
     },
     {
       "name": "ai-investigator",
       "description": "Enterprise AI case study analyzer with Claude and Firecrawl for discovery and report generation (from muratcankoylan)",
-      "repository": "EricGrill/agents-skills-plugins",
-      "path": "plugins/ai-investigator"
+      "source": "github:EricGrill/agents-skills-plugins/plugins/ai-investigator"
     }
   ]
 }
