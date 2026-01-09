@@ -1,0 +1,235 @@
+{
+  "case_2": {
+    "company": {
+      "name": "ASAPP",
+      "industry": "Customer Service Technology",
+      "size_category": "Large Enterprise"
+    },
+    "technologies": [
+      "Claude AI",
+      "Amazon Bedrock",
+      "AWS PrivateLink",
+      "GenerativeAgent"
+    ],
+    "success_factors": {
+      "established_company": true,
+      "business_focus": true,
+      "enterprise_scale": true,
+      "clear_outcomes": true
+    },
+    "business_impact": {}
+  },
+  "case_6": {
+    "company": {
+      "name": "MagicSchool",
+      "industry": "Education Technology",
+      "size_category": "Large Enterprise"
+    },
+    "technologies": [
+      "Claude AI",
+      "Anthropic LLM"
+    ],
+    "success_factors": {
+      "established_company": true,
+      "business_focus": true,
+      "enterprise_scale": true,
+      "clear_outcomes": true
+    },
+    "business_impact": {}
+  },
+  "case_7": {
+    "company": {
+      "name": "9GAG",
+      "industry": "Media and Entertainment",
+      "size_category": "Large Enterprise"
+    },
+    "technologies": [
+      "Computer Vision",
+      "Content Moderation AI",
+      "Pre-trained Moderation Models"
+    ],
+    "success_factors": {
+      "established_company": true,
+      "business_focus": true,
+      "enterprise_scale": true,
+      "clear_outcomes": true
+    },
+    "business_impact": {}
+  },
+  "case_0": {
+    "company": {
+      "name": "Healthify",
+      "industry": "Healthcare Technology",
+      "size_category": "Large Enterprise"
+    },
+    "technologies": [
+      "GPT-4 Vision",
+      "GPT-3.5",
+      "GPT-4 Turbo",
+      "OpenAI Embeddings",
+      "LSTMs",
+      "CNNs",
+      "NLU Systems"
+    ],
+    "success_factors": {
+      "established_company": true,
+      "business_focus": true,
+      "enterprise_scale": true,
+      "clear_outcomes": true
+    },
+    "business_impact": {}
+  },
+  "case_1": {
+    "company": {
+      "name": "Armanino LLP",
+      "industry": "Accounting and Professional Services",
+      "size_category": "Large Enterprise"
+    },
+    "technologies": [
+      "Claude AI",
+      "Amazon Bedrock",
+      "AWS"
+    ],
+    "success_factors": {
+      "established_company": true,
+      "business_focus": true,
+      "enterprise_scale": true,
+      "clear_outcomes": true
+    },
+    "business_impact": {}
+  },
+  "case_10": {
+    "company": {
+      "name": "European Parliament",
+      "industry": "Government",
+      "size_category": "Large Enterprise"
+    },
+    "technologies": [
+      "Claude AI",
+      "Amazon Bedrock",
+      "Large Language Models"
+    ],
+    "success_factors": {
+      "established_company": true,
+      "business_focus": true,
+      "enterprise_scale": true,
+      "clear_outcomes": true
+    },
+    "business_impact": {}
+  },
+  "case_13": {
+    "company": {
+      "name": "GitLab",
+      "industry": "DevSecOps/Software Development",
+      "size_category": "Large Enterprise"
+    },
+    "technologies": [
+      "Claude 3",
+      "Anthropic API",
+      "AI Models"
+    ],
+    "success_factors": {
+      "established_company": true,
+      "business_focus": true,
+      "enterprise_scale": true,
+      "clear_outcomes": false
+    },
+    "business_impact": {}
+  },
+  "case_14": {
+    "company": {
+      "name": "GitLab",
+      "industry": "DevSecOps/Software Development",
+      "size_category": "Large Enterprise"
+    },
+    "technologies": [
+      "Claude AI",
+      "Anthropic API",
+      "Claude for Work",
+      "Claude Enterprise"
+    ],
+    "success_factors": {
+      "established_company": true,
+      "business_focus": true,
+      "enterprise_scale": true,
+      "clear_outcomes": true
+    },
+    "business_impact": {}
+  },
+  "case_19": {
+    "company": {
+      "name": "Intuit",
+      "industry": "Financial Technology",
+      "size_category": "Large Enterprise"
+    },
+    "technologies": [
+      "Claude AI",
+      "Amazon Bedrock",
+      "Intuit Assist",
+      "Tax Knowledge Engine"
+    ],
+    "success_factors": {
+      "established_company": true,
+      "business_focus": true,
+      "enterprise_scale": true,
+      "clear_outcomes": true
+    },
+    "business_impact": {}
+  },
+  "case_23": {
+    "company": {
+      "name": "MagicSchool",
+      "industry": "Education Technology",
+      "size_category": "Large Enterprise"
+    },
+    "technologies": [
+      "Claude AI",
+      "Anthropic",
+      "Natural Language Processing"
+    ],
+    "success_factors": {
+      "established_company": true,
+      "business_focus": true,
+      "enterprise_scale": true,
+      "clear_outcomes": true
+    },
+    "business_impact": {}
+  },
+  "case_24": {
+    "company": {
+      "name": "Notion",
+      "industry": "Software/Productivity Tools",
+      "size_category": "Large Enterprise"
+    },
+    "technologies": [
+      "Claude AI",
+      "RAG (Retrieval Augmented Generation)",
+      "Prompt Caching"
+    ],
+    "success_factors": {
+      "established_company": true,
+      "business_focus": true,
+      "enterprise_scale": true,
+      "clear_outcomes": true
+    },
+    "business_impact": {}
+  },
+  "case_27": {
+    "company": {
+      "name": "Scribd, Inc.",
+      "industry": "Technology/Digital Content",
+      "size_category": "Large Enterprise"
+    },
+    "technologies": [
+      "Claude AI",
+      "Generative AI"
+    ],
+    "success_factors": {
+      "established_company": true,
+      "business_focus": true,
+      "enterprise_scale": true,
+      "clear_outcomes": true
+    },
+    "business_impact": {}
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "ralph-wiggum-marketer",
+  "version": "1.0.0",
+  "description": "Autonomous AI copywriter agent that creates SaaS marketing content while you sleep. Uses the Ralph Wiggum pattern for iterative content creation from trends, research, and communications.",
+  "author": {
+    "name": "Muratcan Koylan",
+    "url": "https://github.com/muratcankoylan"
+  },
+  "repository": "https://github.com/muratcankoylan/ralph-wiggum-marketer",
+  "license": "MIT",
+  "keywords": [
+    "ralph",
+    "copywriter",
+    "content-marketing",
+    "autonomous-agent",
+    "saas",
+    "blog-writing"
+  ],
+  "commands": "./commands/",
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json"
+}

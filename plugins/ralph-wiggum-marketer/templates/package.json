@@ -1,0 +1,20 @@
+{
+  "name": "my-content-project",
+  "version": "1.0.0",
+  "description": "Content marketing project powered by Ralph the Marketer",
+  "type": "module",
+  "scripts": {
+    "db:init": "node src/db/init.js",
+    "db:seed": "node src/db/seed.js",
+    "db:reset": "rm -f data/content.db && npm run db:init && npm run db:seed",
+    "db:status": "node src/db/status.js",
+    "content:list": "node src/content/list.js",
+    "typecheck": "echo 'Typecheck passed'",
+    "test": "node src/test.js"
+  },
+  "keywords": ["content-marketing", "ralph-wiggum"],
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^11.0.0"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "beautiful-prose",
+  "description": "A hard-edged writing style skill for timeless, forceful English prose without modern AI tics",
+  "version": "1.0.0",
+  "author": {"name": "SHADOWPR0"},
+  "homepage": "https://github.com/SHADOWPR0/beautiful_prose",
+  "repository": "https://github.com/SHADOWPR0/beautiful_prose",
+  "license": "MIT",
+  "keywords": ["writing", "prose", "style", "copywriting", "content"]
+}

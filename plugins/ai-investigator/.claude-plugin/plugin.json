@@ -1,0 +1,10 @@
+{
+  "name": "ai-investigator",
+  "description": "Enterprise AI case study analyzer using Claude and Firecrawl APIs for discovery, analysis, and report generation",
+  "version": "1.0.0",
+  "author": {"name": "muratcankoylan"},
+  "homepage": "https://github.com/muratcankoylan/AI-Investigator",
+  "repository": "https://github.com/muratcankoylan/AI-Investigator",
+  "license": "MIT",
+  "keywords": ["ai", "case-study", "analysis", "enterprise", "firecrawl", "research"]
+}

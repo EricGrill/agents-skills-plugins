@@ -1,0 +1,76 @@
+Title: tl;dv Boosts Revenue 500% with Claude AI-Powered Meeting Intelligence \ Anthropic
+URL: https://www.anthropic.com/customers/tldv
+
+Content:
+Case Study
+
+# tl;dv boosts revenue 500% from AI-powered meeting intelligence with Claude
+
+![tl;dv and Anthropic logo lockups](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F0346f4253f1ba685de5ac7daed343d41de7f5a83-2880x1621.png&w=3840&q=75)
+
+tl;dv, a platform specializing in meeting intelligence, revolutionized its offering by integrating Claude. This partnership transformed tl;dv from a meeting recap tool into a sophisticated AI-powered analytics engine.
+
+With Claude, tl;dv saw:
+
+- 300% growth in new customer sign-ups
+- 500% increase in revenue
+- 20-30% decrease in monthly customer churn
+- 50% faster summary generation
+
+### The Challenge: Modernize technology and business operations for a digital world
+
+In the wake of the 2020 remote work boom, tl;dv emerged as a solution to the growing need for efficient virtual meeting management. Initially offering automated recording, transcription, and summarization of video meetings, tl;dv soon realized the potential for AI to revolutionize their platform. However, they faced challenges in delivering fast, accurate, and actionable insights to their users.
+
+### Enter Claude: Advanced AI to improve the user experience
+
+That's when tl;dv turned to Claude to power their next generation of meeting intelligence.
+
+"At first, our platform helped make meetings more efficient by automating follow-up resources. When we incorporated Claude into our platform, we were able to synthesize insights across multiple meetings, delivering actionable recommendations and driving tangible business outcomes for our customers,” said Raphael Allstadt, Co-founder and CEO. “With Claude, our platform evolved from a meeting recap tool to a powerful intelligence engine."
+
+### Immediate impact: 50% increase in speed and reliability
+
+The impact of Claude on tl;dv's product was immediate and profound. Users experienced a 50% increase in summary generation speed, allowing them to access key meeting insights faster than ever before. This rapid "time to aha moment" significantly boosted customer satisfaction.
+
+> Anthropic is the undisputed winner for us because Claude allows us to serve our users without any interruptions or delays. We see consistently fast response times, high uptime, and excellent documentation and SDKs.
+
+— Yalin Gunayer, AI Engineer at tl;dv.
+
+### Providing customers with advanced analysis and actionable insights
+
+But speed was just the beginning. Claude's advanced analysis capabilities enabled tl;dv to offer deeper, more actionable insights from meeting data. Instead of simple summaries, customers now received customized reports identifying trends across weeks worth of meetings at once and providing concrete recommendations. This depth of analysis transformed tl;dv from a basic transcription service into an indispensable business intelligence tool.
+
+![tl;dv AI report](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F195f8acecd4f645d5a84cba1c881e77d23b25fae-1920x1080.jpg&w=3840&q=75)
+
+### New Claude-powered features
+
+Perhaps the most exciting development was tl;dv's ability to create innovative features powered by Claude. Their automated sales playbook monitoring system, a first of its kind, analyzes sales calls against defined or custom methodologies like MEDDIC. Sales managers can now track team performance across up to 30 meetings at once, identify areas for improvement, and provide data-driven coaching, all through an intuitive dashboard.
+
+"Sales teams have shown significant interest in this application of AI for a critical sales workflow, as it allows them to scale coaching in ways that would have taken hours of manual effort before," said Allstadt.
+
+![tl;dv AI coaching hub](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F42ee6d4a1d5f597a9a1f93f0d541b936265b09ae-1920x1080.jpg&w=3840&q=75)
+
+### A better user experience with AI
+
+The improved quality and consistency of Claude's output also allowed tl;dv to integrate AI-generated insights into more sophisticated user interfaces, including graphs and dashboards.
+
+"Reliability and consistency really matter for the Product Team. Embedding AI into more sophisticated User Interfaces requires the AI to deliver consistent, well-formatted results. Anthropic is the only AI that satisfies our requirements," said Aranzazu del Castillo Figueruelo, Designer and Researcher at tl;dv.
+
+### ROI and business impact
+
+The business impact of these improvements was substantial. These figures reflect the enhanced value users were deriving from the platform:
+
+- 300% growth in sign-ups
+- 500% increase in revenue
+- 20-30% decrease in monthly customer churn
+
+### Looking to the future: Using Claude to revolutionize knowledge transfer
+
+Looking ahead, tl;dv is excited about leveraging Claude's expanding capabilities, particularly longer context windows for more comprehensive multi-meeting analysis, going from 30 to hundreds of meetings analyzed at once. Allstadt envisions a future where AI revolutionizes how organizations onboard and transfer knowledge.
+
+> Imagine joining a new company: With a few summaries, you're up to speed on everything you need to know. Or you take over a customer account and instantly understand the full context as if you've been serving them for years. That's the future we're building with Anthropic.
+
+— Raphael Allstadt, Co-founder and CEO
+
+By integrating Claude, tl;dv has not only enhanced its core product but has also positioned itself at the forefront of AI-driven meeting intelligence. As virtual meetings continue to be a crucial part of business operations, tl;dv's Claude-powered platform stands ready to turn countless hours of conversation into actionable, business-driving insights.
+
+[Share on Twitter](https://twitter.com/intent/tweet?text=https://www.anthropic.com/customers/tldv)[Share on LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/customers/tldv)

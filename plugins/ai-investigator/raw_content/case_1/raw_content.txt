@@ -1,0 +1,72 @@
+Title: Magic Patterns: AI Design Tool
+URL: https://www.magicpatterns.com/customers/roster
+
+Content:
+[![Magic Patterns Logo](https://www.magicpatterns.com/magicpatterns_logo_light.svg)](/ai)
+
+Go back
+
+# Faster UX pattern discovery & interaction design prototyping
+
+> "Magic Patterns is my brainstorming partner for new concepts, component ideation — it solves that blank page problem."
+
+![Roster](https://www.magicpatterns.com/case-studies/roster/roster-screenshot.png)
+
+I have been having **so much fun using Magic Patterns** for rapid UX and interaction brainstorming/prototyping.
+
+Before I built up experience and mental models around when, why, and how to deploy certain patterns, I would have to Google search — often without knowing the right terms to describe the problem. OrI'd have to search sites like Dribbble, Mobbin, or one of the many UX pattern repositories out there — trying to visually parse if something was solving a similar problem to the one I was designing for.
+
+**Magic Patterns bridges knowledge gaps**, accelerating the learning process and enabling designers of all experience levels to reach better solutions more quickly.
+
+Innovations such as Magic Patterns and its screenshot-to-code feature is helping us get past the blank page problem. Tools like this are moving designers into the role of curator and design instructor, rather than simply production designer. Sometimes I feel like Magic Patterns is my intern. Definitely helping me move faster in more directions in parallel.
+
+It's made my current workflow even faster.Existing tools are
+great for visual design, but when it comes to pattern ideation
+that's specific to your use case - that's so much harder to find
+and **Magic Patterns gets the job done**.
+
+Steve WitmerDesign Co-Founder
+
+[![Roster](https://www.magicpatterns.com/case-studies/roster/roster-landing-page.png)](https://onroster.io/)
+
+Roster
+
+The future of work for entertainment production and crew
+
+[onroster.io](https://onroster.io/)
+
+FoundedSan Diego, 2023
+
+Using Magic Patterns sinceMay 2024
+
+Favorite featureDesign inspiration
+
+![Magic Patterns Logo](https://www.magicpatterns.com/patterns_logo_gs.svg)Magic Patterns
+
+[All Systems Operational](https://magicpatterns.statuspage.io/)
+
+[Visit Magic Patterns' Twitter](https://twitter.com/magicpatterns)[Visit Magic Patterns' Github](https://github.com/magicpatterns)[Visit Magic Patterns' LinkedIn](https://www.linkedin.com/company/magicpatterns)[Join Magic Patterns' Slack community](https://join.slack.com/t/magic-patterns/shared_invite/zt-1ps2xtxh0-2NaixFfFzSKZbr5gw_AHfA)
+
+Overview
+
+Get Started
+
+[Documentation](https://www.magicpatterns.com/docs/documentation/get-started/introduction) [Prompting Guide](https://www.magicpatterns.com/docs/documentation/get-started/prompting)
+
+Product
+
+Pricing
+
+[Security](https://www.magicpatterns.com/docs/documentation/enterprise/security) [Contact Sales](https://cal.com/adanilowicz/generating-custom-ui-with-patterns)
+
+Use Cases [Product](/teams/product) [Designers](/teams/designers) [Founders](/teams/startups) [Sales](/teams/sales)
+
+Company [Blog](/blog) [Customers](/customers) [Careers](https://magicpatterns.notion.site/magicpatterns/Jobs-at-Magic-Patterns-56c741e19619434daaf2968f443ee992) [Social Media](https://twitter.com/magicpatterns)
+
+Legal
+
+Contact
+
+[Acceptable Use](https://www.magicpatterns.com/docs/documentation/legal/acceptable-use) [Terms](https://www.magicpatterns.com/docs/documentation/legal/terms) [Privacy Policy](https://www.magicpatterns.com/docs/documentation/legal/privacy)
+
+© North Park Labs 2024

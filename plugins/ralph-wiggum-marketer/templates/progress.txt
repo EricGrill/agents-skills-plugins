@@ -1,0 +1,76 @@
+# Ralph the Copywriter - Progress Log
+
+**Project**: RalphWiggum_theMarketer
+**Role**: Autonomous AI Copywriter for SaaS Content Marketing
+**Started**: 2025-01-06
+**Branch**: ralph/content-sprint-1
+
+---
+
+## Codebase Patterns
+
+_Add reusable patterns here as you discover them. These persist across iterations._
+
+### Database
+- Path: `./data/content.db`
+- Always close connections: `db.close()`
+- JSON columns need `JSON.parse()`: `target_keywords`, `key_messages`, `data_points`
+
+### Content
+- Word count formula: `content.split(/\s+/).filter(w => w.length > 0).length`
+- Draft naming: `[slug]-v[version].md`
+- Published naming: `[slug]-final.md`
+
+### Workflow
+- Check available sources: `node src/content/list.js`
+- Pipeline status: `npm run db:status`
+- Query specific data: `node src/db/query.js [command]`
+
+---
+
+## Key Files
+
+**Ralph System**:
+- Tasks: `scripts/ralph/prd.json`
+- Instructions: `scripts/ralph/prompt.md`
+- This log: `scripts/ralph/progress.txt`
+- Loop script: `scripts/ralph/ralph.sh`
+
+**Database**:
+- Schema: `src/db/init.js`
+- Seed data: `src/db/seed.js`
+- Status: `src/db/status.js`
+- Query tool: `src/db/query.js`
+
+**Content**:
+- Drafts: `content/drafts/`
+- Published: `content/published/`
+
+---
+
+## Content Sources Summary
+
+### Communications (Priority order)
+1. **COMM-1** (P1): AI Writing Assistant 2.0 Launch
+2. **COMM-5** (P1): $50M Series B Funding
+3. **COMM-2** (P2): TechCorp Case Study
+4. **COMM-4** (P2): Notion/Confluence/Docs Integration
+5. **COMM-3** (P3): 10,000 Customers Milestone
+
+### Hot Trends
+1. **TREND-1** (95/100): AI Agents in Enterprise
+2. **TREND-5** (85/100): MCP Protocol Adoption
+3. **TREND-2** (88/100): Prompt Engineering as a Skill
+
+### Available Research
+1. **RESEARCH-1**: Developer Productivity with AI
+2. **RESEARCH-2**: SaaS Content Marketing Benchmarks
+3. **RESEARCH-3**: Enterprise AI Adoption Barriers
+
+---
+
+## Iteration Log
+
+_Ralph appends entries below after each completed story:_
+
+---

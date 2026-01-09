@@ -1,0 +1,47 @@
+Title: Sourcegraph enhances the intelligence and speed of their AI-powered coding assistant with Claude \ Anthropic
+URL: https://www.anthropic.com/customers/sourcegraph
+
+Content:
+Case Study
+
+# Sourcegraph enhances the intelligence and speed of their AI-powered coding assistant with Claude
+
+![Sourcegraph logo](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F2a36df08c00d46dcec121d13d238c84a94baa3d2-2881x1620.png&w=3840&q=75)
+
+Sourcegraph’s AI coding assistant, Cody, uses Claude 3 Sonnet as the default large language model for the free plan, delivering suggestions twice as fast with increased accuracy for developers.
+
+### Creating a faster, intelligent AI coding assistant
+
+Sourcegraph is a code intelligence company that builds tools for developers to search and navigate code across an entire codebase. In 2023, it introduced Cody: an artificial intelligence (AI) coding assistant designed to help developers write and understand code faster. By analyzing the entire codebase, Cody provides context-aware chat and other valuable tools that take into account the full project scope rather than relying on isolated code snippets, significantly accelerating software development.
+
+“Cody accelerates the inner loop of software development,” says Beyang Liu, Chief Technology Officer and Cofounder of Sourcegraph. “It has features like inline completions, codebase-aware chat, inline editing, and tools that alleviate some of the day-to-day burdens that developers experience. This accelerates the pace at which they’re able to write code.”
+
+From its initial release, Cody has allowed developers to select Claude as the large language model powering its features. In 2024, Sourcegraph made the entire Claude 3 model family—Haiku, Sonnet, and Opus—accessible to developers on every Cody plan.
+
+“Claude 3 models excel at following instructions, generating production-ready code without requiring manual intervention or code snippets,” says Philipp Spiess, Software Engineer at Sourcegraph. “We’re confident that it effectively meets developers’ needs and propels their projects forward.”
+
+![App screen in the Sourcegraph platform](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Ffc97a3d875ed8314630ad40dfe8e35a04f8aa319-1568x882.png&w=3840&q=75)
+
+### Improving developer workflows with the Claude 3 model family
+
+Optimized for different levels of speed and intelligence, each Claude 3 model excels at different functions within Cody while helping Sourcegraph keep its costs low without compromising quality.
+
+Claude 3 Sonnet serves as the default model for the free version of Cody, with improved coding abilities and two times the speed of Anthropic’s previous model, Claude 2.1. Pro and Enterprise users can take advantage of Opus, Anthropic’s most powerful model with industry-leading coding abilities and long-context recall accuracy. Devs also have the option of using Haiku—Anthropic’s fastest model—for use cases where rapid responses are critical.
+
+The Claude 3 model family is integral to Cody’s chat and custom command features. Developers can ask questions and receive answers related to their entire codebase, which helps quickly resolve issues and understand complex code interactions. They can also request Cody to perform specific tasks, such as refactoring code or generating documentation, with the custom commands feature. With the near-perfect recall accuracy of Claude 3 Opus, Cody gives developers even better results because it can understand large amounts of code context without missing key information.
+
+![App screen in the Sourcegraph platform](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F363b03799e5077e2f14ba6761d6a9299fb95062e-1738x882.png&w=3840&q=75)
+
+“We’ve decided to use Claude as our default chat model in Cody,” says Liu. “It’s fantastic at incorporating the context we provide into accurate answers about a user’s private codebase and writing code that fits within the context of your code. The family of models, from Opus to Haiku, provides several great points along the frontier of speed and intelligence that power multiple Cody features.”
+
+### Achieving more accurate results for developers
+
+Sourcegraph’s AI assistant, now enhanced by Claude, has transformed the coding experience for developers. Since rolling out Claude 3 Sonnet as the default model to Cody Free users, Sourcegraph has seen an approximate 75 percent increase in code insert rate; Cody users are taking almost twice as much code from Cody’s suggestions and inserting it directly into their files, which indicates an increase in code quality.
+
+Claude 3 Sonnet delivers chat and command responses at twice the speed of its predecessor, which further accelerates the coding process. Sourcegraph also saw that roughly 55 percent of Cody Pro users switched their default model to the new Claude 3 models in the month following the launch.
+
+Sourcegraph plans to expand Cody’s capabilities even further. The company has launched an experimental project to bring more context sources into its integrated development environment, such as system monitoring metrics, to enhance the accuracy and relevancy of the code suggestions. This improvement will take advantage of the large 200K context window available in every Claude 3 model, which will set the stage for even more sophisticated AI interactions. “Our users will soon have the ability to reliably generate code changes, especially with the Claude 3 Haiku model,” says Spiess. “Before, no model offered the latency required to make code edits. We’re now prototyping features with this use case so that we can make the most out of these capabilities.”
+
+These advancements will help solidify Cody as an essential tool in a developer’s repository, and Anthropic is working closely with Sourcegraph to make these upgrades possible. “We’re very happy with our partnership with Anthropic,” says Liu. “The team has been absolutely a delight to work with—super helpful and super sharp. We’re looking forward to continuing to build with Claude to push the frontier of AI coding capabilities.”
+
+[Share on Twitter](https://twitter.com/intent/tweet?text=https://www.anthropic.com/customers/sourcegraph)[Share on LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/customers/sourcegraph)

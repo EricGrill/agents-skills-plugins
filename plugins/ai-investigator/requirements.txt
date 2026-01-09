@@ -1,0 +1,23 @@
+# Core dependencies
+langchain>=0.1.0
+anthropic>=0.18.1
+python-dotenv>=1.0.0
+firecrawl>=0.0.20
+
+# Web scraping
+requests>=2.31.0
+beautifulsoup4>=4.12.3
+aiohttp>=3.9.0
+
+# Data processing
+pandas>=2.2.0
+
+# PDF generation
+fpdf2>=2.7.8
+
+# Async support
+asyncio>=3.4.3
+
+# Utilities
+tqdm>=4.66.1
+PyYAML>=6.0.1

@@ -1,0 +1,28 @@
+{
+  "name": "ralph-wiggum-marketer",
+  "version": "1.0.0",
+  "description": "Claude Code plugin: Autonomous AI copywriter agent for SaaS content marketing",
+  "type": "module",
+  "scripts": {
+    "db:init": "node scripts/src/db/init.js",
+    "db:seed": "node scripts/src/db/seed.js",
+    "db:reset": "rm -f data/content.db && npm run db:init && npm run db:seed",
+    "db:status": "node scripts/src/db/status.js",
+    "content:list": "node scripts/src/content/list.js",
+    "typecheck": "echo 'Typecheck passed'",
+    "test": "node scripts/src/test.js"
+  },
+  "keywords": [
+    "claude-code-plugin",
+    "ai",
+    "copywriting",
+    "content-marketing",
+    "ralph-wiggum",
+    "autonomous-agent"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^11.0.0"
+  }
+}

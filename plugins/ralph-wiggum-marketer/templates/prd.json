@@ -1,0 +1,194 @@
+{
+  "projectName": "RalphWiggum_theMarketer",
+  "description": "Autonomous AI copywriter for SaaS content marketing. Ralph reads trends, research, and communications from the database, creates content plans, writes drafts, iterates, and publishes.",
+  "branchName": "ralph/content-sprint-1",
+  "userStories": [
+    {
+      "id": "SETUP-001",
+      "title": "Initialize database and verify setup",
+      "description": "Set up the content database with seed data and verify everything works",
+      "acceptanceCriteria": [
+        "Run npm install successfully",
+        "Run npm run db:reset to initialize database",
+        "Run npm run db:status shows trends, research, and communications",
+        "Run npm test passes all checks"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": "Foundation story - database must exist before content work begins"
+    },
+    {
+      "id": "PLAN-001",
+      "title": "Create content plan for product launch announcement",
+      "description": "Review COMM-1 (AI Writing Assistant 2.0 launch) and create a comprehensive content plan",
+      "acceptanceCriteria": [
+        "Read communication details from database (id=1)",
+        "Create content plan entry in database with type 'blog'",
+        "Link plan to communication (based_on_comm_id=1)",
+        "Include target keywords in the plan",
+        "Update communication status to 'assigned'"
+      ],
+      "priority": 2,
+      "passes": false,
+      "notes": "This is the highest priority comm (P1). Write an announcement blog post."
+    },
+    {
+      "id": "WRITE-001",
+      "title": "Write first draft of product launch blog",
+      "description": "Write the first draft of the AI Writing Assistant 2.0 launch blog post",
+      "acceptanceCriteria": [
+        "Create draft in drafts table linked to plan",
+        "Draft is at least 800 words",
+        "Includes all key messages from the communication",
+        "Save markdown file to content/drafts/",
+        "Update content plan status to 'writing'",
+        "Update word_count in drafts table"
+      ],
+      "priority": 3,
+      "passes": false,
+      "notes": "Tone: Exciting but professional. Include clear CTAs."
+    },
+    {
+      "id": "PLAN-002",
+      "title": "Plan trend-based thought leadership blog",
+      "description": "Use TREND-1 (AI Agents in Enterprise) and RESEARCH-1 to plan a thought leadership piece",
+      "acceptanceCriteria": [
+        "Read trend id=1 and research id=1 from database",
+        "Create content plan entry with type 'blog'",
+        "Link to both trend and research (based_on_trend_id, based_on_research_id)",
+        "Title should be compelling and SEO-friendly",
+        "Include 5+ target keywords"
+      ],
+      "priority": 4,
+      "passes": false,
+      "notes": "Combine trend data with research findings for credibility"
+    },
+    {
+      "id": "WRITE-002",
+      "title": "Write thought leadership blog on AI Agents",
+      "description": "Write a data-driven blog post about AI agents in enterprise",
+      "acceptanceCriteria": [
+        "Draft is 1500+ words (long-form for SEO)",
+        "Incorporates at least 3 data points from research",
+        "References the trend source",
+        "Includes actionable insights for readers",
+        "Save to content/drafts/",
+        "Update word_count and plan status"
+      ],
+      "priority": 5,
+      "passes": false,
+      "notes": "Position our product as the solution to AI agent adoption challenges"
+    },
+    {
+      "id": "REVIEW-001",
+      "title": "Review and improve product launch draft",
+      "description": "Self-review the product launch blog, improve it, and mark for publication",
+      "acceptanceCriteria": [
+        "Re-read the draft from WRITE-001",
+        "Create version 2 with improvements",
+        "Add compelling headline variations",
+        "Add meta description (under 160 chars)",
+        "Update plan status to 'review'",
+        "Record feedback in drafts table"
+      ],
+      "priority": 6,
+      "passes": false,
+      "notes": "Be critical. Improve clarity, add more value, strengthen CTAs."
+    },
+    {
+      "id": "PUBLISH-001",
+      "title": "Finalize and publish product launch blog",
+      "description": "Make final edits and publish the product launch blog",
+      "acceptanceCriteria": [
+        "Final content saved to content/published/",
+        "Entry created in published table",
+        "Meta description included",
+        "Update plan status to 'published'",
+        "Update communication status to 'completed'",
+        "Log activity in agent_log table"
+      ],
+      "priority": 7,
+      "passes": false,
+      "notes": "First published piece! Make it count."
+    },
+    {
+      "id": "PLAN-003",
+      "title": "Plan case study content",
+      "description": "Create content plan for the TechCorp case study (COMM-2)",
+      "acceptanceCriteria": [
+        "Read communication id=2 from database",
+        "Create plan for 'case_study' content type",
+        "Include customer success metrics as keywords",
+        "Link to communication",
+        "Update communication status to 'assigned'"
+      ],
+      "priority": 8,
+      "passes": false,
+      "notes": "Case studies are high-converting content. Focus on measurable results."
+    },
+    {
+      "id": "WRITE-003",
+      "title": "Write TechCorp case study",
+      "description": "Write a compelling case study showcasing TechCorp's success",
+      "acceptanceCriteria": [
+        "Follow problem-solution-results structure",
+        "Include all 4 key messages from communication",
+        "Add quotes (can be placeholder format)",
+        "Include specific metrics: 400% increase, 60% cost reduction",
+        "1000+ words",
+        "Save to content/drafts/"
+      ],
+      "priority": 9,
+      "passes": false,
+      "notes": "Format: Challenge → Solution → Results → Testimonial"
+    },
+    {
+      "id": "SOCIAL-001",
+      "title": "Create social media content batch",
+      "description": "Write 5 social media posts promoting published content",
+      "acceptanceCriteria": [
+        "Create content plan with type 'social'",
+        "Write 5 distinct posts (LinkedIn, Twitter/X style)",
+        "Each post under 280 characters (Twitter compatible)",
+        "Include relevant hashtags",
+        "Save all to single draft entry",
+        "Reference the content being promoted"
+      ],
+      "priority": 10,
+      "passes": false,
+      "notes": "Promote the product launch and case study with varied angles"
+    },
+    {
+      "id": "NEWSLETTER-001",
+      "title": "Draft weekly newsletter",
+      "description": "Compile a newsletter featuring new content and trends",
+      "acceptanceCriteria": [
+        "Create plan with type 'newsletter'",
+        "Include summary of product launch",
+        "Mention 2-3 relevant trends",
+        "Add CTA for each content piece",
+        "Write compelling subject line options (3)",
+        "500-800 words total"
+      ],
+      "priority": 11,
+      "passes": false,
+      "notes": "Newsletter should feel valuable, not just promotional"
+    },
+    {
+      "id": "METRICS-001",
+      "title": "Log final content metrics and learnings",
+      "description": "Review all work done, log metrics, and document learnings",
+      "acceptanceCriteria": [
+        "Count total content pieces created",
+        "Calculate total word count written",
+        "Log summary to agent_log table",
+        "Update progress.txt with comprehensive learnings",
+        "Document any patterns discovered",
+        "All tests pass: npm test"
+      ],
+      "priority": 12,
+      "passes": false,
+      "notes": "Final story - compile everything learned for future iterations"
+    }
+  ]
+}

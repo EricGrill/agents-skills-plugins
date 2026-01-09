@@ -1,0 +1,978 @@
+2024-11-03 22:33:49,484 - INFO - Loaded 83 case studies
+2024-11-03 22:33:49,484 - INFO - Columns found: ['https://www.pinecone.io/customers/disco/?_gl=1*13pj1p8*_up*MQ..&gclid=CjwKCAjw7s20BhBFEiwABVIMrdXGnEIpJLHBEKgm-e7GmCpXpKPL63vqjvMf82Y1fzWv7gXFd_3ipRoCNo8QAvD_BwE']
+2024-11-03 22:34:45,316 - INFO - Loaded 83 case studies
+2024-11-03 22:34:45,316 - INFO - Original column name: https://www.pinecone.io/customers/disco/?_gl=1*13pj1p8*_up*MQ..&gclid=CjwKCAjw7s20BhBFEiwABVIMrdXGnEIpJLHBEKgm-e7GmCpXpKPL63vqjvMf82Y1fzWv7gXFd_3ipRoCNo8QAvD_BwE
+2024-11-03 22:34:45,316 - INFO - URLs sample: ['https://www.anthropic.com/customers/steno', 'https://www.magicpatterns.com/customers/roster', 'https://www.clarifai.com/customers/opentable', 'https://www.tryleap.ai/case-studies/thirdweb', 'https://www.bensbites.com/case-study/how-ignitetech-is-using-ai-to-change-its-business']
+2024-11-03 22:34:45,739 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:34:46,230 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:34:46,749 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:34:47,295 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:34:47,912 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:34:48,183 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:34:48,470 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:34:48,683 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:39:03,583 - INFO - Loaded 83 case studies
+2024-11-03 22:39:03,584 - INFO - Original column name: https://www.pinecone.io/customers/disco/?_gl=1*13pj1p8*_up*MQ..&gclid=CjwKCAjw7s20BhBFEiwABVIMrdXGnEIpJLHBEKgm-e7GmCpXpKPL63vqjvMf82Y1fzWv7gXFd_3ipRoCNo8QAvD_BwE
+2024-11-03 22:39:03,584 - INFO - URLs sample: ['https://www.anthropic.com/customers/steno', 'https://www.magicpatterns.com/customers/roster', 'https://www.clarifai.com/customers/opentable', 'https://www.tryleap.ai/case-studies/thirdweb', 'https://www.bensbites.com/case-study/how-ignitetech-is-using-ai-to-change-its-business']
+2024-11-03 22:39:03,603 - INFO - Starting extraction for https://www.anthropic.com/customers/steno
+2024-11-03 22:39:03,603 - INFO - Starting extraction for https://www.magicpatterns.com/customers/roster
+2024-11-03 22:39:03,603 - INFO - Starting extraction for https://www.clarifai.com/customers/opentable
+2024-11-03 22:39:03,603 - INFO - Starting extraction for https://www.tryleap.ai/case-studies/thirdweb
+2024-11-03 22:39:03,603 - INFO - Starting extraction for https://www.bensbites.com/case-study/how-ignitetech-is-using-ai-to-change-its-business
+2024-11-03 22:39:03,758 - ERROR - Error extracting content from https://www.clarifai.com/customers/opentable: name 'keywords' is not defined
+2024-11-03 22:39:03,794 - ERROR - Error extracting content from https://www.anthropic.com/customers/steno: name 'keywords' is not defined
+2024-11-03 22:39:03,834 - ERROR - Error extracting content from https://www.tryleap.ai/case-studies/thirdweb: name 'keywords' is not defined
+2024-11-03 22:39:03,889 - ERROR - Error extracting content from https://www.magicpatterns.com/customers/roster: name 'keywords' is not defined
+2024-11-03 22:39:03,946 - ERROR - Error extracting content from https://www.bensbites.com/case-study/how-ignitetech-is-using-ai-to-change-its-business: name 'keywords' is not defined
+2024-11-03 22:39:08,947 - INFO - Starting extraction for https://www.pinecone.io/blog/glasp/
+2024-11-03 22:39:08,948 - INFO - Starting extraction for https://www.deel.com/blog/how-deel-uses-deel-ai/
+2024-11-03 22:39:08,948 - INFO - Starting extraction for https://www.clarifai.com/customers/9gag
+2024-11-03 22:39:08,948 - INFO - Starting extraction for https://cartesia.ai/blog/2024-07-24-vapi
+2024-11-03 22:39:08,949 - INFO - Starting extraction for https://openai.com/index/retool/
+2024-11-03 22:39:09,109 - ERROR - Error extracting content from https://www.clarifai.com/customers/9gag: name 'keywords' is not defined
+2024-11-03 22:39:09,217 - ERROR - Error extracting content from https://www.deel.com/blog/how-deel-uses-deel-ai/: name 'keywords' is not defined
+2024-11-03 22:39:09,241 - ERROR - Error extracting content from https://www.pinecone.io/blog/glasp/: name 'keywords' is not defined
+2024-11-03 22:39:09,384 - ERROR - Failed to fetch https://openai.com/index/retool/ - Status: 403
+2024-11-03 22:39:09,534 - ERROR - Error extracting content from https://cartesia.ai/blog/2024-07-24-vapi: name 'keywords' is not defined
+2024-11-03 22:39:52,730 - INFO - Loaded 83 case studies
+2024-11-03 22:39:52,730 - INFO - Original column name: https://www.pinecone.io/customers/disco/?_gl=1*13pj1p8*_up*MQ..&gclid=CjwKCAjw7s20BhBFEiwABVIMrdXGnEIpJLHBEKgm-e7GmCpXpKPL63vqjvMf82Y1fzWv7gXFd_3ipRoCNo8QAvD_BwE
+2024-11-03 22:39:52,731 - INFO - URLs sample: ['https://www.anthropic.com/customers/steno', 'https://www.magicpatterns.com/customers/roster', 'https://www.clarifai.com/customers/opentable', 'https://www.tryleap.ai/case-studies/thirdweb', 'https://www.bensbites.com/case-study/how-ignitetech-is-using-ai-to-change-its-business']
+2024-11-03 22:39:52,750 - INFO - Starting extraction for https://www.anthropic.com/customers/steno
+2024-11-03 22:39:52,751 - INFO - Starting extraction for https://www.magicpatterns.com/customers/roster
+2024-11-03 22:39:52,751 - INFO - Starting extraction for https://www.clarifai.com/customers/opentable
+2024-11-03 22:39:52,751 - INFO - Starting extraction for https://www.tryleap.ai/case-studies/thirdweb
+2024-11-03 22:39:52,751 - INFO - Starting extraction for https://www.bensbites.com/case-study/how-ignitetech-is-using-ai-to-change-its-business
+2024-11-03 22:39:52,906 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:39:53,090 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:39:53,096 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:39:53,126 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:39:53,190 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:39:58,192 - INFO - Starting extraction for https://www.pinecone.io/blog/glasp/
+2024-11-03 22:39:58,192 - INFO - Starting extraction for https://www.deel.com/blog/how-deel-uses-deel-ai/
+2024-11-03 22:39:58,193 - INFO - Starting extraction for https://www.clarifai.com/customers/9gag
+2024-11-03 22:39:58,193 - INFO - Starting extraction for https://cartesia.ai/blog/2024-07-24-vapi
+2024-11-03 22:39:58,193 - INFO - Starting extraction for https://openai.com/index/retool/
+2024-11-03 22:39:58,285 - ERROR - Failed to fetch https://openai.com/index/retool/ - Status: 403
+2024-11-03 22:39:58,310 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:39:58,351 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:39:58,423 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:39:58,530 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:41:09,828 - INFO - Loaded 83 case studies
+2024-11-03 22:41:09,829 - INFO - Original column name: https://www.pinecone.io/customers/disco/?_gl=1*13pj1p8*_up*MQ..&gclid=CjwKCAjw7s20BhBFEiwABVIMrdXGnEIpJLHBEKgm-e7GmCpXpKPL63vqjvMf82Y1fzWv7gXFd_3ipRoCNo8QAvD_BwE
+2024-11-03 22:41:09,829 - INFO - URLs sample: ['https://www.anthropic.com/customers/steno', 'https://www.magicpatterns.com/customers/roster', 'https://www.clarifai.com/customers/opentable', 'https://www.tryleap.ai/case-studies/thirdweb', 'https://www.bensbites.com/case-study/how-ignitetech-is-using-ai-to-change-its-business']
+2024-11-03 22:41:09,847 - INFO - Starting extraction for https://www.anthropic.com/customers/steno
+2024-11-03 22:41:10,237 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:41:12,239 - INFO - Starting extraction for https://www.magicpatterns.com/customers/roster
+2024-11-03 22:41:12,484 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:41:14,486 - INFO - Starting extraction for https://www.clarifai.com/customers/opentable
+2024-11-03 22:41:14,664 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:42:16,697 - INFO - Loaded 83 case studies
+2024-11-03 22:42:16,698 - INFO - Original column name: https://www.pinecone.io/customers/disco/?_gl=1*13pj1p8*_up*MQ..&gclid=CjwKCAjw7s20BhBFEiwABVIMrdXGnEIpJLHBEKgm-e7GmCpXpKPL63vqjvMf82Y1fzWv7gXFd_3ipRoCNo8QAvD_BwE
+2024-11-03 22:42:16,698 - INFO - URLs sample: ['https://www.anthropic.com/customers/steno', 'https://www.magicpatterns.com/customers/roster', 'https://www.clarifai.com/customers/opentable', 'https://www.tryleap.ai/case-studies/thirdweb', 'https://www.bensbites.com/case-study/how-ignitetech-is-using-ai-to-change-its-business']
+2024-11-03 22:42:16,717 - INFO - Starting extraction for https://www.anthropic.com/customers/steno
+2024-11-03 22:42:18,903 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:42:23,906 - INFO - Starting extraction for https://www.magicpatterns.com/customers/roster
+2024-11-03 22:42:26,193 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:42:31,194 - INFO - Starting extraction for https://www.clarifai.com/customers/opentable
+2024-11-03 22:42:33,602 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:42:38,604 - INFO - Starting extraction for https://www.tryleap.ai/case-studies/thirdweb
+2024-11-03 22:42:41,108 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:42:46,110 - INFO - Starting extraction for https://www.bensbites.com/case-study/how-ignitetech-is-using-ai-to-change-its-business
+2024-11-03 22:42:48,679 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:44:00,392 - INFO - Loaded 83 case studies
+2024-11-03 22:44:00,392 - INFO - Original column name: https://www.pinecone.io/customers/disco/?_gl=1*13pj1p8*_up*MQ..&gclid=CjwKCAjw7s20BhBFEiwABVIMrdXGnEIpJLHBEKgm-e7GmCpXpKPL63vqjvMf82Y1fzWv7gXFd_3ipRoCNo8QAvD_BwE
+2024-11-03 22:44:00,393 - INFO - URLs sample: ['https://www.anthropic.com/customers/steno', 'https://www.magicpatterns.com/customers/roster', 'https://www.clarifai.com/customers/opentable', 'https://www.tryleap.ai/case-studies/thirdweb', 'https://www.bensbites.com/case-study/how-ignitetech-is-using-ai-to-change-its-business']
+2024-11-03 22:44:00,411 - INFO - Starting extraction for https://www.anthropic.com/customers/steno
+2024-11-03 22:44:02,600 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:44:07,603 - INFO - Starting extraction for https://www.magicpatterns.com/customers/roster
+2024-11-03 22:44:09,869 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:44:14,871 - INFO - Starting extraction for https://www.clarifai.com/customers/opentable
+2024-11-03 22:44:17,079 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:44:57,697 - INFO - Loaded 83 case studies
+2024-11-03 22:44:57,698 - INFO - Original column name: https://www.pinecone.io/customers/disco/?_gl=1*13pj1p8*_up*MQ..&gclid=CjwKCAjw7s20BhBFEiwABVIMrdXGnEIpJLHBEKgm-e7GmCpXpKPL63vqjvMf82Y1fzWv7gXFd_3ipRoCNo8QAvD_BwE
+2024-11-03 22:44:57,699 - INFO - URLs sample: ['https://www.anthropic.com/customers/steno', 'https://www.magicpatterns.com/customers/roster', 'https://www.clarifai.com/customers/opentable', 'https://www.tryleap.ai/case-studies/thirdweb', 'https://www.bensbites.com/case-study/how-ignitetech-is-using-ai-to-change-its-business']
+2024-11-03 22:44:57,717 - INFO - Starting extraction for https://www.anthropic.com/customers/steno
+2024-11-03 22:45:00,084 - ERROR - Error in enterprise relevance analysis: '\n            "is_enterprise_ai"'
+2024-11-03 22:45:05,087 - INFO - Starting extraction for https://www.magicpatterns.com/customers/roster
+2024-11-03 22:45:57,603 - INFO - Loaded 83 case studies
+2024-11-03 22:45:57,603 - INFO - Original column name: https://www.pinecone.io/customers/disco/?_gl=1*13pj1p8*_up*MQ..&gclid=CjwKCAjw7s20BhBFEiwABVIMrdXGnEIpJLHBEKgm-e7GmCpXpKPL63vqjvMf82Y1fzWv7gXFd_3ipRoCNo8QAvD_BwE
+2024-11-03 22:45:57,603 - INFO - URLs sample: ['https://www.anthropic.com/customers/steno', 'https://www.magicpatterns.com/customers/roster', 'https://www.clarifai.com/customers/opentable', 'https://www.tryleap.ai/case-studies/thirdweb', 'https://www.bensbites.com/case-study/how-ignitetech-is-using-ai-to-change-its-business']
+2024-11-03 22:45:57,622 - INFO - Starting extraction for https://www.anthropic.com/customers/steno
+2024-11-03 22:45:59,807 - ERROR - Analysis error: '\n            "is_enterprise_ai"'
+2024-11-03 22:46:36,321 - INFO - Loaded 83 case studies
+2024-11-03 22:46:36,321 - INFO - Original column name: https://www.pinecone.io/customers/disco/?_gl=1*13pj1p8*_up*MQ..&gclid=CjwKCAjw7s20BhBFEiwABVIMrdXGnEIpJLHBEKgm-e7GmCpXpKPL63vqjvMf82Y1fzWv7gXFd_3ipRoCNo8QAvD_BwE
+2024-11-03 22:46:36,321 - INFO - URLs sample: ['https://www.anthropic.com/customers/steno', 'https://www.magicpatterns.com/customers/roster', 'https://www.clarifai.com/customers/opentable', 'https://www.tryleap.ai/case-studies/thirdweb', 'https://www.bensbites.com/case-study/how-ignitetech-is-using-ai-to-change-its-business']
+2024-11-03 22:46:36,340 - INFO - Starting extraction for https://www.anthropic.com/customers/steno
+2024-11-03 22:46:38,503 - ERROR - Analysis error: '\n            "is_enterprise_ai"'
+2024-11-03 22:46:43,510 - INFO - Starting extraction for https://www.magicpatterns.com/customers/roster
+2024-11-03 22:46:45,881 - ERROR - Analysis error: '\n            "is_enterprise_ai"'
+2024-11-03 22:46:50,886 - INFO - Starting extraction for https://www.clarifai.com/customers/opentable
+2024-11-03 22:46:53,072 - ERROR - Analysis error: '\n            "is_enterprise_ai"'
+2024-11-03 22:52:37,893 - ERROR - Error loading case studies: [Errno 2] No such file or directory: '/Users/muratcankoylan/ai-investigator/input/urls.csv'
+2024-11-03 22:53:05,547 - INFO - Loaded 83 case studies
+2024-11-03 22:53:05,547 - INFO - URLs sample: ['https://www.anthropic.com/customers/steno', 'https://www.magicpatterns.com/customers/roster', 'https://www.clarifai.com/customers/opentable', 'https://www.tryleap.ai/case-studies/thirdweb', 'https://www.bensbites.com/case-study/how-ignitetech-is-using-ai-to-change-its-business']
+2024-11-03 22:53:05,567 - INFO - Starting extraction for https://www.anthropic.com/customers/steno
+2024-11-03 22:53:05,889 - ERROR - Analysis error: '\n            "is_enterprise_ai"'
+2024-11-03 22:53:08,891 - INFO - Starting extraction for https://www.magicpatterns.com/customers/roster
+2024-11-03 22:53:09,246 - ERROR - Analysis error: '\n            "is_enterprise_ai"'
+2024-11-03 22:53:12,248 - INFO - Starting extraction for https://www.clarifai.com/customers/opentable
+2024-11-03 22:53:12,460 - ERROR - Analysis error: '\n            "is_enterprise_ai"'
+2024-11-03 22:54:18,446 - INFO - Loaded 83 case studies
+2024-11-03 22:54:18,447 - INFO - URLs sample: ['https://www.anthropic.com/customers/steno', 'https://www.magicpatterns.com/customers/roster', 'https://www.clarifai.com/customers/opentable', 'https://www.tryleap.ai/case-studies/thirdweb', 'https://www.bensbites.com/case-study/how-ignitetech-is-using-ai-to-change-its-business']
+2024-11-03 22:54:18,466 - INFO - Starting extraction for https://www.anthropic.com/customers/steno
+2024-11-03 22:54:23,609 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-03 22:54:23,612 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": false,
+  "confidence_score": 0.8,
+  "company_details": {
+    "name": "Steno",
+    "industry": "Legal Technology",
+    "size_category": "Small"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "Claude 3 Opus",
+      "LLM",
+      "Transcript Genius platform"
+    ],
+    "scale": "Serves 1200 law firms with transcript analysis capabilities",
+    "business_areas": [
+      "Legal Document Analysis",
+      "Transcript Management"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": false,
+    "business_focus": true,
+    "enterprise_scale": false,
+    "clear_outcomes": false
+  },
+  "disqualification_reason": "While this is a good AI implementation case study, it doesn't qualify as an enterprise AI case study because: 1) Steno appears to be a startup/growth company, not an established enterprise 2) Specific business metrics and outcomes are not quantified 3) The implementation scale, while significant, is more characteristic of a B2B SaaS product than an enterprise-wide AI transformation"
+}
+2024-11-03 22:54:26,614 - INFO - Starting extraction for https://www.magicpatterns.com/customers/roster
+2024-11-03 22:54:31,196 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-03 22:54:31,196 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": false,
+  "confidence_score": 0.9,
+  "company_details": {
+    "name": "Roster",
+    "industry": "Entertainment Production",
+    "size_category": "Small"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "Magic Patterns"
+    ],
+    "scale": "Individual user/team level",
+    "business_areas": [
+      "UX Design",
+      "Prototyping"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": false,
+    "business_focus": false,
+    "enterprise_scale": false,
+    "clear_outcomes": false
+  },
+  "disqualification_reason": "This is a testimonial about using Magic Patterns (a design tool) by a startup founded in 2023. It's not an enterprise AI implementation case study, but rather a product review of a design tool. No enterprise-scale AI deployment or clear business metrics are discussed."
+}
+2024-11-03 22:54:34,199 - INFO - Starting extraction for https://www.clarifai.com/customers/opentable
+2024-11-03 22:54:38,110 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-03 22:54:38,113 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": true,
+  "confidence_score": 0.9,
+  "company_details": {
+    "name": "OpenTable",
+    "industry": "Restaurant Services/Technology",
+    "size_category": "Large Enterprise"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "Computer Vision",
+      "Custom AI Models",
+      "Content Moderation AI"
+    ],
+    "scale": "Processing 5,000 images per day, enterprise-wide content moderation system",
+    "business_areas": [
+      "Content Moderation",
+      "User Generated Content Management"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": true,
+    "business_focus": true,
+    "enterprise_scale": true,
+    "clear_outcomes": true
+  },
+  "disqualification_reason": null
+}
+2024-11-03 22:54:46,192 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-03 22:54:49,196 - INFO - Starting extraction for https://www.tryleap.ai/case-studies/thirdweb
+2024-11-03 22:54:54,693 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-03 22:54:54,695 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": false,
+  "confidence_score": 0.9,
+  "company_details": {
+    "name": "Thirdweb",
+    "industry": "Developer Tools",
+    "size_category": "Small"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "Leap AI",
+      "ChatGPT",
+      "Claude",
+      "AI Image Generation"
+    ],
+    "scale": "Department-level implementation for marketing content generation",
+    "business_areas": [
+      "Marketing",
+      "Content Production",
+      "SEO"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": false,
+    "business_focus": true,
+    "enterprise_scale": false,
+    "clear_outcomes": true
+  },
+  "disqualification_reason": "This is a startup (50-100 employees) rather than an established enterprise, and the implementation is limited to marketing department rather than enterprise-wide scale"
+}
+2024-11-03 22:54:57,697 - INFO - Starting extraction for https://www.bensbites.com/case-study/how-ignitetech-is-using-ai-to-change-its-business
+2024-11-03 22:55:02,680 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-03 22:55:02,682 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": false,
+  "confidence_score": 0.7,
+  "company_details": {
+    "name": "IgniteTech",
+    "industry": "Enterprise Software",
+    "size_category": "Mid-size"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "ChatGPT",
+      "LLMs",
+      "Generative AI"
+    ],
+    "scale": "Company-wide AI training and product integration initiative",
+    "business_areas": [
+      "Product Development",
+      "Employee Training",
+      "Process Automation"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": true,
+    "business_focus": true,
+    "enterprise_scale": false,
+    "clear_outcomes": false
+  },
+  "disqualification_reason": "While the case study describes AI adoption plans and training initiatives, it lacks specific implementation details and measurable business outcomes. Most content focuses on planned initiatives and training programs rather than completed enterprise-scale AI deployments with clear metrics."
+}
+2024-11-03 22:55:05,684 - INFO - Starting extraction for https://www.pinecone.io/blog/glasp/?_gl=1*13pj1p8*_up*MQ..&gclid=CjwKCAjw7s20BhBFEiwABVIMrdXGnEIpJLHBEKgm-e7GmCpXpKPL63vqjvMf82Y1fzWv7gXFd_3ipRoCNo8QAvD_BwE
+2024-11-03 22:55:10,154 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-03 22:55:10,156 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": false,
+  "confidence_score": 0.8,
+  "company_details": {
+    "name": "Glasp",
+    "industry": "Knowledge Management/SaaS",
+    "size_category": "Small"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "OpenAI embeddings",
+      "ChatGPT",
+      "Pinecone",
+      "Anthropic",
+      "Mistral AI",
+      "RAG"
+    ],
+    "scale": "Browser extension and iOS app serving millions of users",
+    "business_areas": [
+      "Knowledge Management",
+      "Content Summarization",
+      "Semantic Search"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": false,
+    "business_focus": true,
+    "enterprise_scale": false,
+    "clear_outcomes": true
+  },
+  "disqualification_reason": "This appears to be a startup rather than an established enterprise company, and while they use AI technologies effectively, the implementation is for a consumer product rather than an enterprise-scale internal deployment"
+}
+2024-11-03 22:55:13,158 - INFO - Starting extraction for https://www.deel.com/blog/how-deel-uses-deel-ai/
+2024-11-03 22:55:17,456 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-03 22:55:17,458 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": true,
+  "confidence_score": 0.8,
+  "company_details": {
+    "name": "Deel",
+    "industry": "HR Technology/Global Payroll",
+    "size_category": "Large Enterprise"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "OpenAI GPT",
+      "Custom Knowledge Base",
+      "Natural Language Processing"
+    ],
+    "scale": "2,700+ employees across 100+ countries, serving enterprise customers with thousands of workers",
+    "business_areas": [
+      "Global HR",
+      "Compliance",
+      "Customer Support",
+      "Internal Knowledge Management"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": true,
+    "business_focus": true,
+    "enterprise_scale": true,
+    "clear_outcomes": true
+  },
+  "disqualification_reason": null
+}
+2024-11-03 22:55:27,207 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-03 22:55:30,212 - INFO - Starting extraction for https://www.clarifai.com/customers/9gag
+2024-11-03 22:55:33,906 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-03 22:55:33,906 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": true,
+  "confidence_score": 0.9,
+  "company_details": {
+    "name": "9GAG",
+    "industry": "Media and Entertainment",
+    "size_category": "Large Enterprise"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "Computer Vision",
+      "Content Moderation AI",
+      "Pre-trained Moderation Models"
+    ],
+    "scale": "20,000 pieces of content processed daily, serving 150 million users",
+    "business_areas": [
+      "Content Moderation",
+      "Community Management"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": true,
+    "business_focus": true,
+    "enterprise_scale": true,
+    "clear_outcomes": true
+  },
+  "disqualification_reason": null
+}
+2024-11-03 22:55:43,483 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 02:50:22,951 - ERROR - Error extracting links from https://www.anthropic.com/case-studies: Cannot connect to host www.anthropic.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 02:50:22,999 - ERROR - Error extracting links from https://www.anthropic.com/cases: Cannot connect to host www.anthropic.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 02:50:23,040 - ERROR - Error extracting links from https://www.anthropic.com/customers: Cannot connect to host www.anthropic.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 02:50:23,088 - ERROR - Error extracting links from https://www.anthropic.com/success-stories: Cannot connect to host www.anthropic.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 02:50:23,126 - ERROR - Error extracting links from https://www.anthropic.com/resources/case-studies: Cannot connect to host www.anthropic.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 02:50:23,164 - ERROR - Error extracting links from https://www.anthropic.com/: Cannot connect to host www.anthropic.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 02:56:52,004 - ERROR - Error extracting links from anthropic.com: anthropic.com
+2024-11-05 02:56:52,006 - ERROR - No links found on the website
+2024-11-05 02:57:50,621 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2024-11-05 02:57:50,625 - ERROR - Error analyzing links: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+2024-11-05 02:59:23,723 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 02:59:23,734 - INFO - Starting extraction for https://www.anthropic.com/customers/brian-impact-foundation
+2024-11-05 02:59:23,774 - ERROR - Error fetching https://www.anthropic.com/customers/brian-impact-foundation: Cannot connect to host www.anthropic.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 02:59:24,819 - ERROR - Error fetching https://www.anthropic.com/customers/brian-impact-foundation: Cannot connect to host www.anthropic.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 02:59:25,858 - ERROR - Error fetching https://www.anthropic.com/customers/brian-impact-foundation: Cannot connect to host www.anthropic.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 02:59:25,859 - INFO - Starting extraction for https://www.anthropic.com/customers/perplexity
+2024-11-05 02:59:25,897 - ERROR - Error fetching https://www.anthropic.com/customers/perplexity: Cannot connect to host www.anthropic.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 02:59:26,945 - ERROR - Error fetching https://www.anthropic.com/customers/perplexity: Cannot connect to host www.anthropic.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 02:59:27,984 - ERROR - Error fetching https://www.anthropic.com/customers/perplexity: Cannot connect to host www.anthropic.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 02:59:27,984 - INFO - Starting extraction for https://www.anthropic.com/customers/pulpit-ai
+2024-11-05 02:59:28,027 - ERROR - Error fetching https://www.anthropic.com/customers/pulpit-ai: Cannot connect to host www.anthropic.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 02:59:29,069 - ERROR - Error fetching https://www.anthropic.com/customers/pulpit-ai: Cannot connect to host www.anthropic.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 02:59:30,109 - ERROR - Error fetching https://www.anthropic.com/customers/pulpit-ai: Cannot connect to host www.anthropic.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 02:59:30,109 - INFO - Starting extraction for https://www.anthropic.com/customers/scribd
+2024-11-05 02:59:30,155 - ERROR - Error fetching https://www.anthropic.com/customers/scribd: Cannot connect to host www.anthropic.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 03:00:25,580 - ERROR - No links found on the website
+2024-11-05 03:02:39,308 - WARNING - Failed to fetch https://www.heygen.com/case-studies - Status: 403
+2024-11-05 03:02:39,375 - WARNING - Failed to fetch https://www.heygen.com/cases - Status: 403
+2024-11-05 03:02:39,451 - WARNING - Failed to fetch https://www.heygen.com/customers - Status: 403
+2024-11-05 03:02:39,520 - WARNING - Failed to fetch https://www.heygen.com/success-stories - Status: 403
+2024-11-05 03:02:39,585 - WARNING - Failed to fetch https://www.heygen.com/resources/case-studies - Status: 403
+2024-11-05 03:02:39,654 - WARNING - Failed to fetch https://www.heygen.com/customer-stories - Status: 403
+2024-11-05 03:02:39,719 - WARNING - Failed to fetch https://www.heygen.com/examples - Status: 403
+2024-11-05 03:02:39,778 - WARNING - Failed to fetch https://www.heygen.com/use-cases - Status: 403
+2024-11-05 03:02:39,836 - WARNING - Failed to fetch https://www.heygen.com/testimonials - Status: 403
+2024-11-05 03:02:39,897 - WARNING - Failed to fetch https://www.heygen.com/clients - Status: 403
+2024-11-05 03:02:39,963 - WARNING - Failed to fetch https://www.heygen.com/results - Status: 403
+2024-11-05 03:02:40,030 - WARNING - Failed to fetch https://www.heygen.com/resources - Status: 403
+2024-11-05 03:02:40,096 - WARNING - Failed to fetch https://www.heygen.com/blog - Status: 403
+2024-11-05 03:02:40,159 - WARNING - Failed to fetch https://www.heygen.com/stories - Status: 403
+2024-11-05 03:02:40,226 - WARNING - Failed to fetch https://www.heygen.com - Status: 403
+2024-11-05 03:02:40,228 - ERROR - No links found on the website
+2024-11-05 03:04:21,806 - ERROR - Error getting initial cookies: 400, message='Can not decode content-encoding: brotli (br). Please install `Brotli`', url='https://www.heygen.com'
+2024-11-05 03:04:21,807 - ERROR - Failed to get initial access to website
+2024-11-05 03:09:22,216 - ERROR - Error mapping website: Cannot connect to host api.firecrawl.dev:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 03:18:23,924 - ERROR - Error mapping website: Cannot connect to host api.firecrawl.dev:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 03:18:23,924 - ERROR - No links found in website map
+2024-11-05 03:21:40,740 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:21:40,761 - ERROR - Error processing case study #1: Only one live display may be active at once
+2024-11-05 03:21:40,762 - ERROR - Error processing case study #2: Only one live display may be active at once
+2024-11-05 03:21:40,763 - ERROR - Error processing case study #3: Only one live display may be active at once
+2024-11-05 03:21:40,764 - ERROR - Error processing case study #4: Only one live display may be active at once
+2024-11-05 03:21:40,766 - ERROR - Error processing case study #5: Only one live display may be active at once
+2024-11-05 03:21:40,767 - ERROR - Error processing case study #6: Only one live display may be active at once
+2024-11-05 03:21:40,768 - ERROR - Error processing case study #7: Only one live display may be active at once
+2024-11-05 03:21:40,769 - ERROR - Error processing case study #8: Only one live display may be active at once
+2024-11-05 03:21:40,770 - ERROR - Error processing case study #9: Only one live display may be active at once
+2024-11-05 03:21:40,771 - ERROR - Error processing case study #10: Only one live display may be active at once
+2024-11-05 03:21:40,772 - ERROR - Error processing case study #11: Only one live display may be active at once
+2024-11-05 03:21:40,773 - ERROR - Error processing case study #12: Only one live display may be active at once
+2024-11-05 03:21:40,774 - ERROR - Error processing case study #13: Only one live display may be active at once
+2024-11-05 03:21:40,775 - ERROR - Error processing case study #14: Only one live display may be active at once
+2024-11-05 03:21:40,777 - ERROR - Error processing case study #15: Only one live display may be active at once
+2024-11-05 03:21:40,778 - ERROR - Error processing case study #16: Only one live display may be active at once
+2024-11-05 03:21:40,779 - ERROR - Error processing case study #17: Only one live display may be active at once
+2024-11-05 03:21:40,780 - ERROR - Error processing case study #18: Only one live display may be active at once
+2024-11-05 03:21:40,781 - ERROR - Error processing case study #19: Only one live display may be active at once
+2024-11-05 03:21:40,782 - ERROR - Error processing case study #20: Only one live display may be active at once
+2024-11-05 03:21:40,782 - ERROR - Error processing case study #21: Only one live display may be active at once
+2024-11-05 03:21:40,783 - ERROR - Error processing case study #22: Only one live display may be active at once
+2024-11-05 03:21:40,784 - ERROR - Error processing case study #23: Only one live display may be active at once
+2024-11-05 03:21:40,785 - ERROR - Error processing case study #24: Only one live display may be active at once
+2024-11-05 03:21:40,787 - ERROR - Error processing case study #25: Only one live display may be active at once
+2024-11-05 03:21:40,788 - ERROR - Error processing case study #26: Only one live display may be active at once
+2024-11-05 03:21:40,789 - ERROR - Error processing case study #27: Only one live display may be active at once
+2024-11-05 03:21:40,790 - ERROR - Error processing case study #28: Only one live display may be active at once
+2024-11-05 03:21:40,791 - ERROR - Error processing case study #29: Only one live display may be active at once
+2024-11-05 03:21:40,791 - ERROR - Error processing case study #30: Only one live display may be active at once
+2024-11-05 03:21:40,792 - ERROR - Error processing case study #31: Only one live display may be active at once
+2024-11-05 03:21:40,793 - ERROR - Error processing case study #32: Only one live display may be active at once
+2024-11-05 03:21:40,794 - ERROR - Error processing case study #33: Only one live display may be active at once
+2024-11-05 03:21:40,795 - ERROR - Error processing case study #34: Only one live display may be active at once
+2024-11-05 03:21:40,796 - ERROR - Error processing case study #35: Only one live display may be active at once
+2024-11-05 03:21:40,798 - ERROR - Error processing case study #36: Only one live display may be active at once
+2024-11-05 03:21:40,799 - ERROR - Error processing case study #37: Only one live display may be active at once
+2024-11-05 03:21:40,799 - ERROR - Error processing case study #38: Only one live display may be active at once
+2024-11-05 03:24:00,184 - ERROR - Error mapping website: Cannot connect to host api.firecrawl.dev:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 03:24:00,222 - ERROR - Error mapping website: Cannot connect to host api.firecrawl.dev:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 03:24:00,222 - ERROR - No links found in website map
+2024-11-05 03:25:33,553 - ERROR - Error mapping website: Cannot connect to host api.firecrawl.dev:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 03:25:33,597 - ERROR - Error mapping website: Cannot connect to host api.firecrawl.dev:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 03:25:33,597 - ERROR - No links found in website map
+2024-11-05 03:26:24,796 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:26:24,812 - ERROR - Error processing case study #1: Only one live display may be active at once
+2024-11-05 03:26:24,813 - ERROR - Error processing case study #2: Only one live display may be active at once
+2024-11-05 03:26:24,814 - ERROR - Error processing case study #3: Only one live display may be active at once
+2024-11-05 03:26:24,815 - ERROR - Error processing case study #4: Only one live display may be active at once
+2024-11-05 03:26:24,816 - ERROR - Error processing case study #5: Only one live display may be active at once
+2024-11-05 03:26:24,817 - ERROR - Error processing case study #6: Only one live display may be active at once
+2024-11-05 03:26:24,818 - ERROR - Error processing case study #7: Only one live display may be active at once
+2024-11-05 03:26:24,819 - ERROR - Error processing case study #8: Only one live display may be active at once
+2024-11-05 03:26:24,820 - ERROR - Error processing case study #9: Only one live display may be active at once
+2024-11-05 03:26:24,821 - ERROR - Error processing case study #10: Only one live display may be active at once
+2024-11-05 03:26:24,822 - ERROR - Error processing case study #11: Only one live display may be active at once
+2024-11-05 03:26:24,823 - ERROR - Error processing case study #12: Only one live display may be active at once
+2024-11-05 03:26:24,824 - ERROR - Error processing case study #13: Only one live display may be active at once
+2024-11-05 03:26:24,825 - ERROR - Error processing case study #14: Only one live display may be active at once
+2024-11-05 03:26:24,826 - ERROR - Error processing case study #15: Only one live display may be active at once
+2024-11-05 03:26:24,827 - ERROR - Error processing case study #16: Only one live display may be active at once
+2024-11-05 03:26:24,828 - ERROR - Error processing case study #17: Only one live display may be active at once
+2024-11-05 03:26:24,829 - ERROR - Error processing case study #18: Only one live display may be active at once
+2024-11-05 03:26:24,830 - ERROR - Error processing case study #19: Only one live display may be active at once
+2024-11-05 03:26:24,831 - ERROR - Error processing case study #20: Only one live display may be active at once
+2024-11-05 03:26:24,832 - ERROR - Error processing case study #21: Only one live display may be active at once
+2024-11-05 03:26:24,833 - ERROR - Error processing case study #22: Only one live display may be active at once
+2024-11-05 03:26:24,834 - ERROR - Error processing case study #23: Only one live display may be active at once
+2024-11-05 03:26:24,835 - ERROR - Error processing case study #24: Only one live display may be active at once
+2024-11-05 03:26:24,836 - ERROR - Error processing case study #25: Only one live display may be active at once
+2024-11-05 03:26:24,837 - ERROR - Error processing case study #26: Only one live display may be active at once
+2024-11-05 03:26:24,838 - ERROR - Error processing case study #27: Only one live display may be active at once
+2024-11-05 03:26:24,839 - ERROR - Error processing case study #28: Only one live display may be active at once
+2024-11-05 03:26:24,840 - ERROR - Error processing case study #29: Only one live display may be active at once
+2024-11-05 03:26:24,841 - ERROR - Error processing case study #30: Only one live display may be active at once
+2024-11-05 03:26:24,842 - ERROR - Error processing case study #31: Only one live display may be active at once
+2024-11-05 03:26:24,843 - ERROR - Error processing case study #32: Only one live display may be active at once
+2024-11-05 03:26:24,844 - ERROR - Error processing case study #33: Only one live display may be active at once
+2024-11-05 03:26:24,845 - ERROR - Error processing case study #34: Only one live display may be active at once
+2024-11-05 03:26:24,846 - ERROR - Error processing case study #35: Only one live display may be active at once
+2024-11-05 03:26:24,847 - ERROR - Error processing case study #36: Only one live display may be active at once
+2024-11-05 03:26:24,848 - ERROR - Error processing case study #37: Only one live display may be active at once
+2024-11-05 03:29:06,038 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:29:06,054 - INFO - Starting extraction for https://www.anthropic.com/customers/sourcegraph-claude-for-work
+2024-11-05 03:29:06,113 - ERROR - Error fetching https://www.anthropic.com/customers/sourcegraph-claude-for-work: Cannot connect to host www.anthropic.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 03:29:07,164 - ERROR - Error fetching https://www.anthropic.com/customers/sourcegraph-claude-for-work: Cannot connect to host www.anthropic.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 03:29:08,207 - ERROR - Error fetching https://www.anthropic.com/customers/sourcegraph-claude-for-work: Cannot connect to host www.anthropic.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 03:29:08,210 - INFO - Starting extraction for https://www.anthropic.com/customers/factory
+2024-11-05 03:29:08,249 - ERROR - Error fetching https://www.anthropic.com/customers/factory: Cannot connect to host www.anthropic.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 03:29:09,290 - ERROR - Error fetching https://www.anthropic.com/customers/factory: Cannot connect to host www.anthropic.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]
+2024-11-05 03:31:32,338 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:31:32,354 - INFO - Starting Firecrawl extraction for https://www.anthropic.com/customers/sourcegraph-claude-for-work
+2024-11-05 03:31:38,954 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:31:38,955 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": false,
+  "confidence_score": 0.8,
+  "company_details": {
+    "name": "Sourcegraph",
+    "industry": "Software/Developer Tools",
+    "size_category": "Mid-size"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "Claude AI",
+      "Claude for Work"
+    ],
+    "scale": "Limited deployment for community feedback analysis and product insights",
+    "business_areas": [
+      "Community Management",
+      "Product Development",
+      "Customer Feedback Analysis"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": true,
+    "business_focus": true,
+    "enterprise_scale": false,
+    "clear_outcomes": false
+  },
+  "disqualification_reason": "While this is a real AI implementation, it doesn't demonstrate true enterprise-scale deployment and lacks specific quantifiable business outcomes beyond general improvements. The implementation appears limited to community feedback analysis rather than showing broad enterprise-wide impact."
+}
+2024-11-05 03:31:40,959 - INFO - Starting Firecrawl extraction for https://www.anthropic.com/customers/factory
+2024-11-05 03:31:47,025 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:31:47,028 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": false,
+  "confidence_score": 0.8,
+  "company_details": {
+    "name": "Factory",
+    "industry": "Software Development/AI",
+    "size_category": "Small"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "Claude 3 Opus",
+      "Claude 3 Haiku",
+      "AI Droids"
+    ],
+    "scale": "Multiple enterprise customers with hundreds to thousands of engineers",
+    "business_areas": [
+      "Software Development",
+      "Code Review",
+      "Development Automation"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": false,
+    "business_focus": true,
+    "enterprise_scale": true,
+    "clear_outcomes": true
+  },
+  "disqualification_reason": "Company founded in 2023 - not an established enterprise implementing AI, but rather a startup providing AI solutions to enterprises"
+}
+2024-11-05 03:31:49,034 - INFO - Starting Firecrawl extraction for https://www.anthropic.com/customers/brian-impact-foundation
+2024-11-05 03:31:57,805 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:31:57,807 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": false,
+  "confidence_score": 0.8,
+  "company_details": {
+    "name": "Brian Impact Foundation",
+    "industry": "Non-profit/Philanthropy",
+    "size_category": "Small"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "Claude AI",
+      "Large Language Models",
+      "Custom BEES platform"
+    ],
+    "scale": "13-person team using AI to review 20,000+ fellowship candidates",
+    "business_areas": [
+      "Fellowship candidate screening",
+      "Application review",
+      "Data analysis"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": false,
+    "business_focus": true,
+    "enterprise_scale": false,
+    "clear_outcomes": true
+  },
+  "disqualification_reason": "While this is a good AI implementation case study, it doesn't qualify as an enterprise case study because it's a small non-profit organization (13 people) rather than an established enterprise company. The implementation, while effective, is not at enterprise scale."
+}
+2024-11-05 03:31:59,812 - INFO - Starting Firecrawl extraction for https://www.anthropic.com/customers/clay
+2024-11-05 03:32:06,233 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:32:06,237 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": false,
+  "confidence_score": 0.8,
+  "company_details": {
+    "name": "Clay",
+    "industry": "Software/RevOps",
+    "size_category": "Small"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "Claude AI",
+      "Claude 3 Haiku",
+      "Claygent"
+    ],
+    "scale": "Platform integration serving multiple customers",
+    "business_areas": [
+      "Sales Outreach",
+      "Lead Generation",
+      "Data Enrichment"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": false,
+    "business_focus": true,
+    "enterprise_scale": false,
+    "clear_outcomes": true
+  },
+  "disqualification_reason": "This appears to be a startup/smaller company implementing AI in their product offering rather than an enterprise implementing AI for internal operations. While they show clear outcomes and implementation details, they don't meet the established company or enterprise scale criteria."
+}
+2024-11-05 03:32:08,243 - INFO - Starting Firecrawl extraction for https://www.anthropic.com/customers/cove
+2024-11-05 03:32:15,006 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:32:15,009 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": false,
+  "confidence_score": 0.9,
+  "company_details": {
+    "name": "Cove",
+    "industry": "Software/AI",
+    "size_category": "Small"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "Claude 3.5 Sonnet",
+      "Claude 3 Haiku",
+      "LLMs"
+    ],
+    "scale": "Product implementation for customer use",
+    "business_areas": [
+      "Product Development",
+      "User Interface"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": false,
+    "business_focus": true,
+    "enterprise_scale": false,
+    "clear_outcomes": true
+  },
+  "disqualification_reason": "This is a startup company implementing AI in their product offering rather than an enterprise implementing AI for internal operations. While they show clear outcomes (30% faster response times), they are a startup building an AI product, not an established enterprise deploying AI internally."
+}
+2024-11-05 03:32:17,016 - INFO - Starting Firecrawl extraction for https://www.anthropic.com/customers/lex
+2024-11-05 03:32:23,713 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:32:23,714 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": false,
+  "confidence_score": 0.9,
+  "company_details": {
+    "name": "Lex",
+    "industry": "Software/Writing Technology",
+    "size_category": "Small"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "Claude AI",
+      "Large Language Models"
+    ],
+    "scale": "Consumer SaaS product with 25,000+ users",
+    "business_areas": [
+      "Writing assistance",
+      "Content generation",
+      "Editorial feedback"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": false,
+    "business_focus": true,
+    "enterprise_scale": false,
+    "clear_outcomes": true
+  },
+  "disqualification_reason": "This is a startup company implementing AI in a consumer product, not an enterprise implementing AI internally. While it shows clear metrics and implementation details, it doesn't meet the criteria of being an established enterprise deploying AI within their organization."
+}
+2024-11-05 03:32:25,718 - INFO - Starting Firecrawl extraction for https://www.anthropic.com/customers/magicschool
+2024-11-05 03:32:32,508 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:32:32,512 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": true,
+  "confidence_score": 0.9,
+  "company_details": {
+    "name": "MagicSchool",
+    "industry": "Education Technology",
+    "size_category": "Large Enterprise"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "Claude AI",
+      "Anthropic LLM"
+    ],
+    "scale": "3 million educators, 100M+ AI engagements, 5,500+ school partnerships",
+    "business_areas": [
+      "Lesson Planning",
+      "Student Feedback",
+      "IEP Generation",
+      "Curriculum Development",
+      "Assessment Creation"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": true,
+    "business_focus": true,
+    "enterprise_scale": true,
+    "clear_outcomes": true
+  },
+  "disqualification_reason": null
+}
+2024-11-05 03:32:42,554 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:32:44,565 - INFO - Starting Firecrawl extraction for https://www.anthropic.com/customers/sourcegraph
+2024-11-05 03:32:56,850 - INFO - Loaded 83 URLs from CSV
+2024-11-05 03:32:56,852 - INFO - Starting Firecrawl extraction for https://www.anthropic.com/customers/steno
+2024-11-05 03:33:04,291 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:33:04,297 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": false,
+  "confidence_score": 0.8,
+  "company_details": {
+    "name": "Steno",
+    "industry": "Legal Technology",
+    "size_category": "Small"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "Claude 3 Opus",
+      "LLM"
+    ],
+    "scale": "1200 law firm clients, transcript analysis platform",
+    "business_areas": [
+      "Legal Document Analysis",
+      "Transcript Management"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": true,
+    "business_focus": true,
+    "enterprise_scale": false,
+    "clear_outcomes": false
+  },
+  "disqualification_reason": "While this is a real AI implementation, it doesn't qualify as an enterprise case study because: 1) Steno appears to be a smaller technology company, not an enterprise, 2) Specific business outcomes and metrics are not quantified in the case study, only general benefits are described. The implementation itself is more of a product offering rather than an internal enterprise transformation."
+}
+2024-11-05 03:33:06,302 - INFO - Starting Firecrawl extraction for https://www.magicpatterns.com/customers/roster
+2024-11-05 03:33:14,195 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:33:14,198 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": false,
+  "confidence_score": 0.9,
+  "company_details": {
+    "name": "Magic Patterns",
+    "industry": "Software/Design Tools",
+    "size_category": "Small"
+  },
+  "ai_implementation": {
+    "technologies": [],
+    "scale": "Not applicable",
+    "business_areas": []
+  },
+  "qualification_criteria": {
+    "established_company": false,
+    "business_focus": false,
+    "enterprise_scale": false,
+    "clear_outcomes": false
+  },
+  "disqualification_reason": "This is a marketing case study about Magic Patterns' product offering rather than an enterprise AI implementation case study. It describes a design tool product and customer testimonial, not an enterprise's internal AI deployment."
+}
+2024-11-05 03:33:16,202 - INFO - Starting Firecrawl extraction for https://www.clarifai.com/customers/opentable
+2024-11-05 03:33:23,720 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:33:23,723 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": true,
+  "confidence_score": 0.9,
+  "company_details": {
+    "name": "OpenTable",
+    "industry": "Restaurant Services/Technology",
+    "size_category": "Large Enterprise"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "Computer Vision",
+      "Custom AI Models",
+      "Content Moderation API"
+    ],
+    "scale": "Processing 5,000 images per day per moderator across platform",
+    "business_areas": [
+      "Content Moderation",
+      "Image Classification",
+      "User Generated Content Management"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": true,
+    "business_focus": true,
+    "enterprise_scale": true,
+    "clear_outcomes": true
+  },
+  "disqualification_reason": null
+}
+2024-11-05 03:33:35,086 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:37:04,897 - INFO - Loaded 83 URLs from CSV
+2024-11-05 03:37:04,899 - INFO - Starting Firecrawl extraction for https://www.anthropic.com/customers/steno
+2024-11-05 03:37:12,313 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:37:12,319 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": false,
+  "confidence_score": 0.7,
+  "company_details": {
+    "name": "Steno",
+    "industry": "Legal Technology",
+    "size_category": "Small"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "Claude 3 Opus",
+      "LLM"
+    ],
+    "scale": "1200 law firm clients, centralized transcript analysis platform",
+    "business_areas": [
+      "Legal Document Analysis",
+      "Transcript Management"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": true,
+    "business_focus": true,
+    "enterprise_scale": false,
+    "clear_outcomes": false
+  },
+  "disqualification_reason": "While this is a real AI implementation, it doesn't qualify as an enterprise case study because: 1) Steno appears to be a smaller technology company, not an enterprise, 2) Specific business metrics and outcomes are not quantified in the case study, only general benefits are described. The implementation itself is more of a product offering rather than an internal enterprise transformation."
+}
+2024-11-05 03:37:22,306 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:38:41,470 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:40:47,549 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:40:47,560 - INFO - Starting Firecrawl extraction for https://www.heygen.com/showcase
+2024-11-05 03:40:57,968 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:40:57,971 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": false,
+  "confidence_score": 0.3,
+  "company_details": {
+    "name": "HeyGen",
+    "industry": "AI/Software",
+    "size_category": "Small"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "AI video generation",
+      "avatar creation"
+    ],
+    "scale": "Product showcase/marketing materials",
+    "business_areas": [
+      "Marketing",
+      "Content Creation"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": false,
+    "business_focus": false,
+    "enterprise_scale": false,
+    "clear_outcomes": false
+  },
+  "disqualification_reason": "This appears to be a product showcase page for HeyGen's AI video generation technology rather than a case study of enterprise AI implementation. The content shows examples of the product being used but does not detail specific enterprise deployment metrics or outcomes."
+}
+2024-11-05 03:43:12,774 - ERROR - Error crawling website https://heygen.com: 'i'
+2024-11-05 03:43:25,863 - ERROR - Error crawling website https://anthropic.com: 'i'
+2024-11-05 03:44:58,612 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:44:58,622 - INFO - Starting Firecrawl extraction for https://www.heygen.com/showcase
+2024-11-05 03:45:09,046 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:45:09,060 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": false,
+  "confidence_score": 0.3,
+  "company_details": {
+    "name": "HeyGen",
+    "industry": "AI/Software",
+    "size_category": "Small"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "AI video generation",
+      "avatar creation"
+    ],
+    "scale": "Product showcase/marketing materials",
+    "business_areas": [
+      "marketing",
+      "content creation"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": false,
+    "business_focus": false,
+    "enterprise_scale": false,
+    "clear_outcomes": false
+  },
+  "disqualification_reason": "This appears to be a product showcase page for HeyGen's AI video generation technology rather than a case study of enterprise AI implementation. The content shows examples of the product being used but does not detail specific enterprise deployment metrics or business outcomes."
+}
+2024-11-05 03:47:17,985 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:47:18,003 - INFO - Starting Firecrawl extraction for https://www.anthropic.com/customers
+2024-11-05 03:47:48,377 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:47:48,388 - ERROR - Error processing Claude's response: invalid syntax (<string>, line 3)
+2024-11-05 03:51:17,949 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:52:17,990 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:53:38,751 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:53:38,762 - INFO - Starting Firecrawl extraction for https://www.heygen.com/customer-stories/trivago
+2024-11-05 03:53:46,937 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:53:46,938 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": true,
+  "confidence_score": 0.9,
+  "company_details": {
+    "name": "Trivago",
+    "industry": "Travel & Hospitality",
+    "size_category": "Large Enterprise"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "HeyGen AI",
+      "Text-to-Speech AI",
+      "Video Localization AI"
+    ],
+    "scale": "Deployed across 30 global markets for TV ad localization",
+    "business_areas": [
+      "Marketing",
+      "Video Production",
+      "Content Localization"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": true,
+    "business_focus": true,
+    "enterprise_scale": true,
+    "clear_outcomes": true
+  },
+  "disqualification_reason": null
+}
+2024-11-05 03:53:59,782 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:54:01,790 - INFO - Starting Firecrawl extraction for https://www.heygen.com/case-studies/how-uniform-used-ai-to-build-a-video-marketing-strategy
+2024-11-05 03:57:11,050 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:58:27,354 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:59:43,648 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:59:43,664 - INFO - Starting Firecrawl extraction for https://www.heygen.com/showcase
+2024-11-05 03:59:55,880 - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2024-11-05 03:59:55,886 - INFO - Successfully analyzed content: {
+  "is_enterprise_ai": false,
+  "confidence_score": 0.3,
+  "company_details": {
+    "name": "HeyGen",
+    "industry": "AI/Software",
+    "size_category": "Small"
+  },
+  "ai_implementation": {
+    "technologies": [
+      "AI video generation",
+      "avatar creation"
+    ],
+    "scale": "Product showcase/marketing materials",
+    "business_areas": [
+      "marketing",
+      "content creation"
+    ]
+  },
+  "qualification_criteria": {
+    "established_company": false,
+    "business_focus": true,
+    "enterprise_scale": false,
+    "clear_outcomes": false
+  },
+  "disqualification_reason": "This appears to be a product showcase page for HeyGen's AI video generation technology rather than a case study of enterprise AI implementation. The content shows examples of the product being used but does not detail specific enterprise deployment metrics or business outcomes."
+}

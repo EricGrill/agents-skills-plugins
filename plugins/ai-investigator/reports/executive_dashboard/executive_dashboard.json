@@ -1,0 +1,139 @@
+{
+  "case_2": {
+    "company": "ASAPP",
+    "industry": "Customer Service Technology",
+    "confidence_score": 0.9,
+    "implementation_scale": "Enterprise-wide deployment across multiple customer service centers serving millions of interactions",
+    "key_technologies": [
+      "Claude AI",
+      "Amazon Bedrock",
+      "AWS PrivateLink",
+      "GenerativeAgent"
+    ]
+  },
+  "case_6": {
+    "company": "MagicSchool",
+    "industry": "Education Technology",
+    "confidence_score": 0.9,
+    "implementation_scale": "3 million educators, 100M+ AI engagements, 5,500+ school partnerships",
+    "key_technologies": [
+      "Claude AI",
+      "Anthropic LLM"
+    ]
+  },
+  "case_7": {
+    "company": "9GAG",
+    "industry": "Media and Entertainment",
+    "confidence_score": 0.9,
+    "implementation_scale": "20,000 pieces of content processed daily, serving 150 million users",
+    "key_technologies": [
+      "Computer Vision",
+      "Content Moderation AI",
+      "Pre-trained Moderation Models"
+    ]
+  },
+  "case_0": {
+    "company": "Healthify",
+    "industry": "Healthcare Technology",
+    "confidence_score": 0.9,
+    "implementation_scale": "40 million users globally with AI-powered features deployed across food tracking, coaching, and nutrition advice",
+    "key_technologies": [
+      "GPT-4 Vision",
+      "GPT-3.5",
+      "GPT-4 Turbo",
+      "OpenAI Embeddings",
+      "LSTMs",
+      "CNNs",
+      "NLU Systems"
+    ]
+  },
+  "case_1": {
+    "company": "Armanino LLP",
+    "industry": "Accounting and Professional Services",
+    "confidence_score": 0.95,
+    "implementation_scale": "Firm-wide deployment across audit, tax, and consulting practices, impacting thousands of audits annually",
+    "key_technologies": [
+      "Claude AI",
+      "Amazon Bedrock",
+      "AWS"
+    ]
+  },
+  "case_10": {
+    "company": "European Parliament",
+    "industry": "Government",
+    "confidence_score": 0.9,
+    "implementation_scale": "2.1 million documents processed, available to users worldwide",
+    "key_technologies": [
+      "Claude AI",
+      "Amazon Bedrock",
+      "Large Language Models"
+    ]
+  },
+  "case_13": {
+    "company": "GitLab",
+    "industry": "DevSecOps/Software Development",
+    "confidence_score": 0.9,
+    "implementation_scale": "Platform-wide implementation across multiple features including code generation, interactive chat, planning summarization, and security vulnerability analysis",
+    "key_technologies": [
+      "Claude 3",
+      "Anthropic API",
+      "AI Models"
+    ]
+  },
+  "case_14": {
+    "company": "GitLab",
+    "industry": "DevSecOps/Software Development",
+    "confidence_score": 0.95,
+    "implementation_scale": "Company-wide deployment across multiple departments including sales, marketing, engineering, and technical writing",
+    "key_technologies": [
+      "Claude AI",
+      "Anthropic API",
+      "Claude for Work",
+      "Claude Enterprise"
+    ]
+  },
+  "case_19": {
+    "company": "Intuit",
+    "industry": "Financial Technology",
+    "confidence_score": 0.95,
+    "implementation_scale": "Millions of TurboTax customers served during peak tax season",
+    "key_technologies": [
+      "Claude AI",
+      "Amazon Bedrock",
+      "Intuit Assist",
+      "Tax Knowledge Engine"
+    ]
+  },
+  "case_23": {
+    "company": "MagicSchool",
+    "industry": "Education Technology",
+    "confidence_score": 0.9,
+    "implementation_scale": "3 million educators, 100M+ AI-powered engagements, 5,500+ school partnerships",
+    "key_technologies": [
+      "Claude AI",
+      "Anthropic",
+      "Natural Language Processing"
+    ]
+  },
+  "case_24": {
+    "company": "Notion",
+    "industry": "Software/Productivity Tools",
+    "confidence_score": 0.9,
+    "implementation_scale": "Millions of users including Fortune 100 companies",
+    "key_technologies": [
+      "Claude AI",
+      "RAG (Retrieval Augmented Generation)",
+      "Prompt Caching"
+    ]
+  },
+  "case_27": {
+    "company": "Scribd, Inc.",
+    "industry": "Technology/Digital Content",
+    "confidence_score": 0.9,
+    "implementation_scale": "Processing over 100 million documents across global platforms",
+    "key_technologies": [
+      "Claude AI",
+      "Generative AI"
+    ]
+  }
+}

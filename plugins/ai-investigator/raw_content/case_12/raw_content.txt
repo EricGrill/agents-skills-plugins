@@ -1,0 +1,49 @@
+Title: Gamma helps teams create polished presentations with Claude \ Anthropic
+URL: https://www.anthropic.com/customers/gamma
+
+Content:
+Case Study
+
+# Gamma helps teams create polished presentations with Claude
+
+![Gamma logo](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fbed8bebf263a00a5ee0cf3ede2573b44b79bf234-2880x1620.png&w=3840&q=75)
+
+Gamma, an AI-powered presentation platform, went viral after launching in March 2023—but the team was concerned about quality and costs as they scaled. Claude helped Gamma lower costs while increasing user satisfaction by 30% and free-to-paid conversions by 20%.
+
+### A viral launch powered by generative AI
+
+Gamma was founded in 2020 to help invent a new way for people to share ideas. Initially, co-founders Jon Noronha, Grant Lee, and James Fox focused on improving the traditional presentation format, which hadn’t changed much since PowerPoint introduced the concept of 16x9 slides in the 1980s. Early explorations were fruitful, but didn’t feel compelling enough.
+
+Fast forward to 2022, and the widespread availability of image generators and large language models put the team on a new path. “We were in between product-market fit,” Jon explains. “People liked our product, there was clearly promise, but it was missing that really strong hook that gave people a reason to abandon something they were really familiar with to use it.”
+
+Generative AI became that hook. Gamma launched their app with a [video](https://www.youtube.com/watch?v=r9VOYJM6nZc) that quickly went viral. “Ever since then, it’s been a runaway train,” Jon says. Users immediately loved Gamma for two main use cases: generating presentations from scratch and iterating on slide content and design.
+
+![App screen from Gamma platform](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F28bf834aca6299bd34add845729396d0cf2b6df2-2880x1620.jpg&w=3840&q=75)
+
+As it became clear that the AI generation flow was a primary driver of Gamma’s business growth, the team started to dig into the data to understand just how well their initial LLM choices were performing.
+
+They discovered that while the LLMs performed well on simple tasks, such as one-line prompts in English, they struggled with more advanced concepts, such as turning a long document into a presentation. User feedback on more advanced use cases was about 50% positive and 50% negative. “That’s an F,” says Jon. “So we were on the lookout for ways to improve.”
+
+### Lower costs, improved performance
+
+The team was initially drawn to Claude for its state of the art performance and cost-effective price point, which had become a concern as the company’s viral growth continued to scale. As a result, they decided to A/B test Claude 3 Haiku against their existing solution.
+
+After a quick implementation, the team had Claude up and running—and the results surprised them. “In our evaluations, Claude 3 Haiku exceeded our previous LLM on output quality, in spite of being significantly more cost-effective for our business.” Jon says. “I had expected similar quality for lower cost, but Claude 3 Haiku exceeded our expectations.”
+
+In fact, positive feedback for advanced use cases increased 30%. Gamma users responded particularly well to Claude’s voice and tone. “People had been frustrated that the tone of all of these presentations sounded the same,” Jon says, adding that the previous LLM’s tone was “very salesy.” Users appreciated Claude’s more neutral tone and ability to adapt to different audiences.
+
+### Taking on the next phase of growth
+
+Based on the positive outcome of the A/B test, Gamma quickly shipped the new version of their app to production—and that initial 30% improvement in user satisfaction has driven a 20% increase in conversions from free to paid.
+
+![App screen from Gamma platform](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F67439d21381bf144c10475711fce55ea88f2d10b-2880x1620.jpg&w=3840&q=75)
+
+Today, Claude powers well over half of Gamma’s AI features. Though they consider themselves an AI-native company, they no longer feel sharp pressure to aggressively hire AI specialists onto their 16-person team, which supports 17 million users. “One benefit of models like Claude being so good is that we haven’t had to build a huge team around AI,” Jon says. “We’ve been able to focus more on productizing the experience versus training our own models or even fine-tuning them, because there’s already so much we can do.”
+
+For their next act, Gamma is taking on websites. The team recently released a feature— powered by Claude—that lets people use AI to create and publish a website on their chosen domain. With a strong user base, a compelling vision, and a recent Series A led by Accel Partners, they’re well-positioned to succeed.
+
+> Implementing Claude took a couple days and about ten lines of code. Claude has driven 30% improvement in user satisfaction, which has translated into a 20% improvement in our free-to-pay conversion rate.
+
+— Jon Noronha, Co-Founder at Gamma
+
+[Share on Twitter](https://twitter.com/intent/tweet?text=https://www.anthropic.com/customers/gamma)[Share on LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/customers/gamma)

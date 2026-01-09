@@ -1,0 +1,35 @@
+Title: European Parliament Revolutionizes Archive Access with Claude AI \ Anthropic
+URL: https://www.anthropic.com/customers/european-parliament
+
+Content:
+Case Study
+
+# European Parliament expands access to their archives with Claude
+
+The [European Parliament](https://www.europarl.europa.eu/portal/en) has transformed the accessibility of the Parliament's archives. Leveraging Anthropic's Claude in Amazon Bedrock, the EU Parliament has created 'Ask the EP Archives', also known as Archibot, a sophisticated AI assistant that makes over 2.1 million official documents readily available to researchers, policymakers, educators, and the public.
+
+The [Archives Unit at the European Parliament](https://historicalarchives.europarl.europa.eu/home.html) leads the charge of preserving, managing, and processing all documents that have been produced and received by the European Parliament dating back to 1952.
+
+For years, the archivists were confronted with two main challenges: making the archives easy to search and ensuring they’re accessible to anyone who needs to access them. The arrival of generative AI has dramatically changed how archivists and researchers can navigate the millions of documents within the archives.
+
+Archibot, now available on the European Parliament's [archive website](https://historicalarchives.europarl.europa.eu/home.html), offers users worldwide easy access to EU Parliament documents in multiple languages - including resolutions, positions, policies, and inter-institutional negotiations - while also helping researchers and staff analyze data and create comprehensive reports.
+
+The project showcases how generative AI can be used by governments to enhance transparency and accessibility for citizens. What once required deep searches into the EU’s physical archives is now available instantly - at everyone’s fingertips - bringing the story of European democracy to life for citizens everywhere.
+
+Key features of Archibot include:
+
+- **Advanced search and summarisation:** Allowing users to navigate and synthesize vast amounts of information quickly
+- **Report building:** Allowing users to extrapolate information and build reports
+- **Multilingual capabilities:** Expanding Language support beyond French to serve all EU member states
+- **Global accessibility:** Available to users worldwide through the European Parliament's website
+- **Constitutional AI:** Ensuring trustworthy and controlled use of AI technology
+
+The project has already demonstrated significant benefits:
+
+- Reduces document search and analysis time by 80%, significantly boosting efficiency.
+- Provides policymakers and researchers with quick access to historical context and precedents.
+- Has been used by hundreds of educators and students for an all-access window into European parliamentary history.
+
+Since launching Claude in Europe earlier this year, Anthropic has continued to bring the latest in safe and responsible generative AI to European businesses and consumers. This includes Claude 3.5 - one of the most powerful large language models (LLMs) on the market - alongside the [Claude Team](https://www.anthropic.com/team) plan, [Claude Enterprise](https://www.anthropic.com/news/claude-for-enterprise), and Claude’s [Artifacts](https://support.anthropic.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them) feature. Claude is available on iOS and Android, further enhancing accessibility to everyday users across Europe and other markets.
+
+[Share on Twitter](https://twitter.com/intent/tweet?text=https://www.anthropic.com/customers/european-parliament)[Share on LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/customers/european-parliament)

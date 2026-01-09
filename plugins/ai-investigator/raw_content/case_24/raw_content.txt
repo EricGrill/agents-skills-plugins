@@ -1,0 +1,84 @@
+Title: Notion creates more intelligent workspaces with Claude AI | Anthropic case study \ Anthropic
+URL: https://www.anthropic.com/customers/notion
+
+Content:
+Case Study
+
+# Notion creates more intelligent workspaces with Claude
+
+![Notion and Anthropic logo lockups](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F357aa8f41ed682afe97d5d7deafce4dc9a778939-2880x1620.png&w=3840&q=75)
+
+Notion, the connected workspace platform, uses Claude to power AI features that help millions of users find information faster, automate busy work, and boost productivity.
+
+With Claude, Notion:
+
+- Helps large enterprises like Osaka Gas reduce time spent searching for information by 35%
+- Saves customers like Remote an estimated 10 minutes per search across 300 daily queries
+- Serves millions of users with AI features, from individuals to Fortune 100 companies
+- Helps companies like dbt Labs save over $35k annually by eliminating the need for additional AI tools
+- Streamlines onboarding every new employee, instantly answering 10-20 of their questions daily
+
+### Automating busywork to unlock human potential
+
+Notion is a connected workspace for docs, notes, knowledge, and project workflows—with built-in AI. “Millions love Notion because it increases productivity, reduces costs, and empowers everyone to do their best work—from individuals, to startups and SMBs, to Fortune 100 companies” explains Simon Last, co-founder at Notion leading its AI efforts.
+
+Notion frees up knowledge workers from tedious tasks to instead focus more strategic projects. “We want to automate busy work out of knowledge work and free up humans so they can do more high-value activities,” said Last.
+
+### Notion’s AI evolution
+
+Notion’s AI capabilities have evolved rapidly over the past two years. Notion AI Writer debuted in November 2022, two weeks before before the most popular AI models hit the market. “Notion AI Writer democratized writing power in the context of your Notion workspace and drove growth with our consumer audience,” Last says.
+
+Notion’s latest release integrates AI functionality across its application—powered in part by Claude. Claude introduced new capabilities like improved search, Q&A through RAG, and an AI assistant that brings it all together. This enabled Notion to launch features like Q&A, AI Connectors, and the brand new Notion AI--search, generation, analysis, and chat, all right inside the platform.
+
+### Transforming knowledge work with Claude-powered AI
+
+Claude enables Notion to offer its customers a more intelligent, responsive, and user-friendly experience. This helps to position the company at the forefront of AI-augmented productivity tools, driving business growth and user satisfaction.
+
+Now, Claude is central to Notion’s AI, offering a unified assistant that uses Claude’s for:
+
+- AI Writer: A writing and editing assistant that helps users create and refine content more efficiently.
+- Autofill: An intelligent system that automatically populates database fields, saving time on data entry.
+- Q&A: A universal search tool that answers questions about any content in a user’s workspace.
+
+“We’ve integrated our retrieval system throughout the platform, including in our writing assistance,” Last explained. “This allows users to instantly access relevant information from their entire workspace, whether drafting a document or asking a specific question.”
+
+![Notion product screen](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fd67034af7078c10d31e5c622fff38a0ffbf3799e-1600x858.png&w=3840&q=75)
+
+![Notion product screenshot](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F5f166365aa82cafd9b98ca123a4bec0558cf96a4-1920x1034.jpg&w=3840&q=75)
+
+### Delivering measurable impact at scale
+
+Notion’s use of Claude across its products has transformed how its customers access and utilize their company’s collective knowledge. This leads to significant cost savings and enhanced productivity for Notion’s customers.
+
+Claude improves Notion’s performance and scalability. Notion users who use Q&A ask an average of 2.7 questions per day, with a majority reporting they save at least 5 minutes of work time per question. For businesses of every size, these time savings compound dramatically:
+
+- Osaka Gas, with approximately 3,000 employees, estimates a 35% reduction in time spent searching for information
+- [Remote.com](http://Remote.com), with around 1,400 employees, saves an estimated 10 minutes per search and executes 300 Q&A queries per day
+
+Compared to previous AI tools, Claude delivered higher helpfulness ratings and improved task completion rates. Claude’s advanced generative AI capabilities scale for Notion’s millions of users during peak periods without compromising performance, ensuring consistent user satisfaction as its customer base expands.
+
+Claude's value extends across diverse use cases. Customer support teams quickly locate troubleshooting steps, new sales reps efficiently learn Salesforce processes, and product designers instantly find brand guidelines. For companies like dbt Labs, this comprehensive functionality has translated to over $35k in annual savings by eliminating the need for additional enterprise AI or search tools.
+
+The AI assistant powered by Claude has has proven particularly transformative for employee onboarding. “When someone new joins the company, they use it 10-20 times daily,” Last shared. “We get consistent feedback that it’s amazingly useful for the first few weeks.”
+
+By creating a more intelligent, responsive workspace powered by Claude, Notion delivers measurable benefits that scale across teams, use cases, and organizations of all sizes.
+
+### Choosing Claude for performance, personality, and ease of implementation
+
+When evaluating AI partners, Notion sought a solution that could deliver superior performance while maintaining its high standards for user experience and ease of implementation. Claude emerged as the clear leader across all criteria.
+
+“Claude powers many use cases where we really care about the response’s feel and vibe,” said Last. The team was particularly impressed by Claude’s reasoning and instruction-following capabilities, conversational tone that creates natural, helpful interactions, and balanced approach to safety and refusals. “Claude’s model quality really impressed us—especially as we wanted to expand to one-click skills where certain tasks like writing and editing were better served by Anthropic’s models,” Last noted. Ultimately, they found Claude to be “the best across the board.”
+
+Notion is also using prompt caching to reduce costs by 90% and latency by up to 85%. “Prompt caching makes Notion AI faster and cheaper, all while maintaining state-of-the-art quality. This enables us to create a more elevated and responsive user experience for our customers,” said Last.
+
+Notion's integration of Claude was seamless. “Implementing Claude was as simple as changing a flag and doing some offline evaluations,” Last explained. Prompt caching enabled Notion to balance costs and speed, while Claude’s voice and tone matched user expectations perfectly. The straightforward evaluation and testing process further simplified implementation.
+
+### Shaping the future of augmented knowledge work
+
+Notion is transforming knowledge management from static information repositories into a dynamic, intelligent workspace that enhances your thinking and productivity. For Notion, AI isn’t just about automation—it’s about empowering everyone “to do their best work.”
+
+The partnership with Anthropic uniquely positions Notion to lead this transformation. With Claude, Notion plans to improve database support and writer capabilities and expand data sources through more AI connectors and web search. They'll do this while ensuring that superior retrieval and search quality continue to differentiate its platform.
+
+As the landscape of knowledge work evolves, Notion remains focused on ensuring AI amplifies rather than replaces human capabilities. Through Notion’s partnership with Anthropic, they’re creating a future where technology doesn’t just store our collective knowledge—it helps us leverage it in more powerful and meaningful ways.
+
+[Share on Twitter](https://twitter.com/intent/tweet?text=https://www.anthropic.com/customers/notion)[Share on LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/customers/notion)

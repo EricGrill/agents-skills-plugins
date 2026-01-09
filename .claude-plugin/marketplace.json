@@ -187,6 +187,24 @@
       "description": "Multi-agent architecture patterns: supervisor, swarm, hierarchical designs for context isolation (from muratcankoylan)",
       "repository": "EricGrill/agents-skills-plugins",
       "path": "plugins/multi-agent-patterns"
+    },
+    {
+      "name": "beautiful-prose",
+      "description": "Hard-edged writing style skill for timeless, forceful prose without AI tics (from SHADOWPR0)",
+      "repository": "EricGrill/agents-skills-plugins",
+      "path": "plugins/beautiful-prose"
+    },
+    {
+      "name": "ralph-wiggum-marketer",
+      "description": "Autonomous AI copywriter for SaaS content marketing using the Ralph Wiggum pattern (from muratcankoylan)",
+      "repository": "EricGrill/agents-skills-plugins",
+      "path": "plugins/ralph-wiggum-marketer"
+    },
+    {
+      "name": "ai-investigator",
+      "description": "Enterprise AI case study analyzer with Claude and Firecrawl for discovery and report generation (from muratcankoylan)",
+      "repository": "EricGrill/agents-skills-plugins",
+      "path": "plugins/ai-investigator"
     }
   ]
 }

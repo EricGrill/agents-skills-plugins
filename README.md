@@ -286,6 +286,28 @@ Design and implement multi-agent architectures with supervisor, swarm, and hiera
 
 </details>
 
+<details>
+<summary><b>ai-investigator</b> - Enterprise AI case study analyzer</summary>
+
+Analyze enterprise AI case studies using Claude and Firecrawl APIs with automatic discovery and report generation.
+
+```
+/plugin install ai-investigator@agents-skills-plugins
+```
+
+**Reports Generated:**
+| Report Type | Description |
+|-------------|-------------|
+| Individual | Executive summary, AI strategy, tech implementation, business impact |
+| Cross-Case | Patterns, success factors, technology trends, ROI metrics |
+| Executive Dashboard | Company profiles, tech stacks, success metrics |
+
+**Modes:** CSV analysis (specific URLs) or Website discovery (automatic crawl)
+
+*From [muratcankoylan/AI-Investigator](https://github.com/muratcankoylan/AI-Investigator)*
+
+</details>
+
 ---
 
 ### Code Quality
@@ -514,6 +536,51 @@ Content marketing with strategy and search specialist agents.
 
 </details>
 
+<details>
+<summary><b>ralph-wiggum-marketer</b> - Autonomous AI copywriter (4 commands)</summary>
+
+Autonomous AI copywriter for SaaS content using the Ralph Wiggum pattern - iterative loops that ship content while you sleep.
+
+```
+/plugin install ralph-wiggum-marketer@agents-skills-plugins
+```
+
+| Commands | Description |
+|----------|-------------|
+| `/ralph-init` | Initialize a new content project |
+| `/ralph-marketer` | Start the autonomous copywriter loop |
+| `/ralph-status` | Check content pipeline and progress |
+| `/ralph-cancel` | Cancel the active loop |
+
+**The Ralph Loop:** Read PRD → Check Progress → Pick Task → Execute → Verify → Commit → Update → Repeat
+
+*From [muratcankoylan/ralph-wiggum-marketer](https://github.com/muratcankoylan/ralph-wiggum-marketer)*
+
+</details>
+
+<details>
+<summary><b>beautiful-prose</b> - Forceful writing without AI tics</summary>
+
+A hard-edged writing style skill for clean, exact, muscular prose free of modern AI cadence.
+
+```
+/plugin install beautiful-prose@agents-skills-plugins
+```
+
+**Registers:**
+| Register | Style |
+|----------|-------|
+| founding_fathers | Formal, spare, civic gravity |
+| literary_modern | Vivid, lean imagery (default) |
+| cold_steel | Severe compression, punchy |
+| journalistic | Crisp, factual, narrative clarity |
+
+**Controls:** `DENSITY: lean|standard|dense`, `HEAT: cool|warm|hot`, `LENGTH: micro|short|medium|long`
+
+*From [SHADOWPR0/beautiful_prose](https://github.com/SHADOWPR0/beautiful_prose)*
+
+</details>
+
 ---
 
 ### Data & Backend
@@ -637,10 +704,10 @@ Generate images using Google's Gemini API.
 
 | Metric | Count |
 |--------|-------|
-| Total Plugins | 31 |
+| Total Plugins | 34 |
 | Total Agents | 60+ |
 | Total Skills | 100+ |
-| Total Commands | 30+ |
+| Total Commands | 35+ |
 
 ---
 
@@ -652,7 +719,8 @@ Plugins in this marketplace come from:
 - **[wshobson/agents](https://github.com/wshobson/agents)** - Specialized agents and skills
 - **[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)** - Document & productivity skills
 - **[conorluddy/ios-simulator-skill](https://github.com/conorluddy/ios-simulator-skill)** - iOS testing automation
-- **[muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering)** - Multi-agent patterns
+- **[muratcankoylan](https://github.com/muratcankoylan)** - Multi-agent patterns, ralph-wiggum-marketer, AI-Investigator
+- **[SHADOWPR0/beautiful_prose](https://github.com/SHADOWPR0/beautiful_prose)** - Writing style skill
 - **Original** - nano-banana, plugin-finder
 
 All plugins are MIT licensed.

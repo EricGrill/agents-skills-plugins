@@ -1,0 +1,57 @@
+Title: Pulpit AI turns sermons into multiple pieces of content with Claude \ Anthropic
+URL: https://www.anthropic.com/customers/pulpit-ai
+
+Content:
+Case Study
+
+# Pulpit AI turns sermons into multiple pieces of content with Claude
+
+![](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F72dd4a481d9153c988c73ef45547d255d00d7672-2880x1621.png&w=3840&q=75)
+
+Pulpit AI, a tool for pastors to turn sermons into content, uses Claude to help pastors communicate with and reach their congregations.
+
+- 80% reduction in operational costs while maintaining high-quality output
+- 200% increase in customer base within three months of Claude integration
+- 20+ pieces of content from one sermon to increase reach and engagement
+
+### Competing for attention in a digital world
+
+Pulpit AI helps pastors and church teams communicate with and reach their congregation and local community. Using AI, it allows pastors to upload sermons and quickly receive 20+ pieces of content.
+
+Pastors, who put in hours creating their weekly sermons, have limited resources to amplify their content. “The average church has about 100 people, with just one pastor and an admin on staff. Pastors spend 30 hours a week preaching to 100 people, but lack the means to extend that message’s reach,” notes Michael Whittle, Founder and CEO of Pulpit AI.
+
+Whittle, a former pastor, created Pulpit AI to maximize the reach and impact of sermons. With Claude, Pulpit AI transforms sermons into shareable content, empowering churches to amplify their message beyond Sunday service.
+
+### Transforming sermons into multi-format content
+
+Pulpit AI originally used a different LLM that didn't fully meet the unique needs of faith-based content creation. It struggled to parse complex theological ideas and often produced robotic-sounding content.
+
+Andy Waters, Pulpit AI’s CTO, suggested trying Claude, noting, “We chose Claude for its superior ability to parse theological ideas without sounding robotic or obviously written by AI. Our customers noticed the improvement, noting that Claude sounds human and can adopt the ‘voice’ of the preacher.”
+
+The integration process was smooth and efficient. According to Waters, "Integrating Claude into our platform was quick, required minimal prompt engineering and had high-quality outputs."
+
+With Claude, Pulpit AI offers innovative features for pastors and congregation members:
+
+- Video clip selection: Claude analyzes sermon transcripts to identify impactful moments, creating video clips with appropriate titles and categories.
+- Multi-format content: A single sermon can be transformed into devotionals, social media posts, e-books, and discipleship materials.
+- Improved sermons: Pastors can get AI-powered feedback on their sermons, with suggestions for clearer introductions or future ideas.
+
+![Pulpit AI product screenshot](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F4502c2c905f484fcb582b3786c1ae7f6fd2195b0-1920x1036.jpg&w=3840&q=75)
+
+### Expanded reach, empowered pastors, engaged congregations
+
+Claude's integration into Pulpit AI's platform created a ripple of positive change. "When we integrated Claude Sonnet into our platform, our costs went down 80% overnight." Whittle said. This cost reduction fueled rapid growth, and Pulpit AI saw a 200% increase in its customer base within three months.
+
+Pulpit AI drastically reduces pastors' content creation time, turning hours into minutes. Waters explained, "We're increasing pastors' reach and scaling their ability to engage with their congregations."
+
+Pulpit AI, designed for pastors, has had a significant impact on congregations. It transforms a single sermon into multiple pieces of content, providing "spiritual nourishment" throughout the week, catering to diverse learning styles and preferences. "Our goal is for the local church pastor's voice to be the loudest in a Christian's life," says Whittle. "Pulpit AI helps extend the impact of sermons beyond Sunday."
+
+### The future of faith-based content
+
+Pulpit AI is excited to use Claude's expanding capabilities for sermon analysis and personalized content creation. The team envisions a personalized AI model based on a pastor's body of work, revolutionizing the multi-billion dollar Christian publishing industry.
+
+> We’re excited to continue our partnership with Anthropic to help pastors connect with their congregations. With 5 million sermons delivered worldwide to 2 billion Christians every week, the impact is enormous!
+
+– Michael Whittle, Founder and CEO, Pulpit AI
+
+[Share on Twitter](https://twitter.com/intent/tweet?text=https://www.anthropic.com/customers/pulpit-ai)[Share on LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/customers/pulpit-ai)

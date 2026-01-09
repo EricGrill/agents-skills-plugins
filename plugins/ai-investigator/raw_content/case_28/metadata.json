@@ -1,0 +1,32 @@
+{
+  "title": "Sourcegraph enhances the intelligence and speed of their AI-powered coding assistant with Claude \\ Anthropic",
+  "url": "https://www.anthropic.com/customers/sourcegraph",
+  "extraction_timestamp": "753159.696330666",
+  "metadata": {
+    "title": "Sourcegraph enhances the intelligence and speed of their AI-powered coding assistant with Claude \\ Anthropic",
+    "description": "Sourcegraph\u2019s AI coding assistant, Cody, uses Claude 3 Sonnet as the default large language model for the free plan, delivering suggestions twice as fast with increased accuracy for developers.",
+    "language": "en",
+    "ogTitle": "Sourcegraph enhances the intelligence and speed of their AI-powered coding assistant with Claude",
+    "ogDescription": "Sourcegraph\u2019s AI coding assistant, Cody, uses Claude 3 Sonnet as the default large language model for the free plan, delivering suggestions twice as fast with increased accuracy for developers.",
+    "ogImage": "https://cdn.sanity.io/images/4zrzovbb/website/2a36df08c00d46dcec121d13d238c84a94baa3d2-2881x1620.png",
+    "ogLocaleAlternate": [],
+    "viewport": "width=device-width, initial-scale=1",
+    "theme-color": "#141413",
+    "msapplication-TileColor": "141413",
+    "msapplication-config": "/browserconfig.xml",
+    "og:title": "Sourcegraph enhances the intelligence and speed of their AI-powered coding assistant with Claude",
+    "og:description": "Sourcegraph\u2019s AI coding assistant, Cody, uses Claude 3 Sonnet as the default large language model for the free plan, delivering suggestions twice as fast with increased accuracy for developers.",
+    "og:image": "https://cdn.sanity.io/images/4zrzovbb/website/2a36df08c00d46dcec121d13d238c84a94baa3d2-2881x1620.png",
+    "og:image:alt": "Anthropic logo",
+    "og:type": "website",
+    "twitter:card": "summary_large_image",
+    "twitter:site": "@AnthropicAI",
+    "twitter:creator": "@AnthropicAI",
+    "twitter:title": "Sourcegraph enhances the intelligence and speed of their AI-powered coding assistant with Claude",
+    "twitter:description": "Sourcegraph\u2019s AI coding assistant, Cody, uses Claude 3 Sonnet as the default large language model for the free plan, delivering suggestions twice as fast with increased accuracy for developers.",
+    "twitter:image": "https://cdn.sanity.io/images/4zrzovbb/website/2a36df08c00d46dcec121d13d238c84a94baa3d2-2881x1620.png",
+    "twitter:image:alt": "Anthropic logo",
+    "sourceURL": "https://www.anthropic.com/customers/sourcegraph",
+    "statusCode": 200
+  }
+}

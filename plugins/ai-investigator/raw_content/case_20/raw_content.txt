@@ -1,0 +1,49 @@
+Title: Jumpcut helps Hollywood find the next big script with Claude \ Anthropic
+URL: https://www.anthropic.com/customers/jumpcut
+
+Content:
+Case Study
+
+# Jumpcut helps Hollywood find the next big script with Claude
+
+![](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F1d0090cbfe87ba909a2eedca5cb0983379a8b9c7-2881x1620.png&w=3840&q=75)
+
+Jumpcut uses Claude 3 Opus to save Hollywood studios, agencies, and production companies hundreds of hours on script reviews by generating comprehensive reports that help entertainment teams review more scripts and more writers catch their big break.
+
+### Finding the right script
+
+Each year, hundreds of thousands of screenplays compete for attention from creative executives, agents, managers, and talent. But meticulously analyzing a script takes hours at a time, and many decision makers prioritize reading projects from established writers, leaving most scripts unread and hindering the production of novel ideas from new writers.
+
+Jumpcut offers a radically different approach using generative AI. Its founders have built a product, ScriptSense, to reduce the hours spent analyzing each script so entertainment teams can deeply consider a more diverse array of projects.
+
+Teams upload scripts to ScriptSense to produce comprehensive script coverage on everything from scene summaries to character breakdowns to similar titles—all in seconds. In order to capture the rich stories and unique subtext from each script, the team chose to power ScriptSense with Claude.
+
+![App screen from the Jumpcut platform](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fcce4f1f69906a5e5a4d887d491677f9bd0e13115-1920x1080.jpg&w=3840&q=75)
+
+> In storytelling, subtext matters. Other foundation models required significant prompt engineering and still weren’t able to capture the nuances of what made a script unique. Claude analyzes scripts more effectively and produces work that sounds more human, all with significantly less prompt work.
+
+— Kartik Hosanagar, Chairman and Founder of Jumpcut
+
+### Evaluating scripts in seconds
+
+Over the course of a 100+ page screenplay, a reader will often encounter multiple storylines, flashbacks, and changing points of view. The story is woven together by lines of dialogue, scene and action descriptions, and transitions. Standard LLM summaries fall short of capturing the nuance and subtext contained in these documents. And it’s these small details that elevate an award-winning screenplay from the rest of the pack.
+
+With ScriptSense, the Jumpcut team built a multi-step, agentic architecture to break a script down into its core components and understand the plot, character, and thematic devices that form the story.
+
+![App screen from the Jumpcut platform](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F5a8ae362e7c28294842ab993ab6692bd359fd2a2-1920x1080.jpg&w=3840&q=75)
+
+> We ran tests and evaluations across all major foundation models, which revealed that Claude performed best at the summarization and creative analysis subtasks involved in the multi-step script breakdown process. The end result was more context-rich results that help entertainment teams make informed decisions faster.
+>
+> \- Dilip Rajan, Co-Founder and Head of Product of Jumpcut
+
+In addition to high quality, unbiased script coverage, ScriptSense breaks down silos across large teams by indexing all uploaded material and making it easily searchable in a centralized database. When a studio or agent is looking to meet a very specific content mandate, they can easily search across the thousands of scripts that their teams have collected, down to the detail of subgenres, settings, themes, type of characters, or storylines.
+
+### Results with Claude
+
+After integrating Claude, Jumpcut observed a dramatic increase in both the quality of generated script coverage and reported user satisfaction. The coverage started to capture nuances in complex screenplays that were previously being missed—such as certain types of humor, or implied character motivations.
+
+With the increased quality of script coverage, Jumpcut was able to close several key enterprise deals. To date, users at 200+ companies are using ScriptSense and have saved 35,000+ hours in reading scripts to save time in finding their next big hit. As a creative executive at a leading production company put it, “ScriptSense gives me a superpower — it helps me kiss all the toads to find the diamond in the rough”.
+
+Even better, building Claude into ScriptSense was a smooth and straightforward process for Jumpcut. “The workbench in the Anthropic Console made it easy for the team to collaborate, iterate, and test the various prompts involved in the script breakdown process,” says Rajan. “The prompt engineering process was faster than with other LLMs that Jumpcut had previously tested—and the team found Claude to be more responsive to detailed instructions and easier to steer.”
+
+[Share on Twitter](https://twitter.com/intent/tweet?text=https://www.anthropic.com/customers/jumpcut)[Share on LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/customers/jumpcut)

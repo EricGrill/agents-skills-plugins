@@ -1,0 +1,32 @@
+{
+  "title": "European Parliament Revolutionizes Archive Access with Claude AI \\ Anthropic",
+  "content": "Case Study\n\n# European Parliament expands access to their archives with Claude\n\nThe [European Parliament](https://www.europarl.europa.eu/portal/en) has transformed the accessibility of the Parliament's archives. Leveraging Anthropic's Claude in Amazon Bedrock, the EU Parliament has created 'Ask the EP Archives', also known as Archibot, a sophisticated AI assistant that makes over 2.1 million official documents readily available to researchers, policymakers, educators, and the public.\n\nThe [Archives Unit at the European Parliament](https://historicalarchives.europarl.europa.eu/home.html) leads the charge of preserving, managing, and processing all documents that have been produced and received by the European Parliament dating back to 1952.\n\nFor years, the archivists were confronted with two main challenges: making the archives easy to search and ensuring they\u2019re accessible to anyone who needs to access them. The arrival of generative AI has dramatically changed how archivists and researchers can navigate the millions of documents within the archives.\n\nArchibot, now available on the European Parliament's [archive website](https://historicalarchives.europarl.europa.eu/home.html), offers users worldwide easy access to EU Parliament documents in multiple languages - including resolutions, positions, policies, and inter-institutional negotiations - while also helping researchers and staff analyze data and create comprehensive reports.\n\nThe project showcases how generative AI can be used by governments to enhance transparency and accessibility for citizens. What once required deep searches into the EU\u2019s physical archives is now available instantly - at everyone\u2019s fingertips - bringing the story of European democracy to life for citizens everywhere.\n\nKey features of Archibot include:\n\n- **Advanced search and summarisation:** Allowing users to navigate and synthesize vast amounts of information quickly\n- **Report building:** Allowing users to extrapolate information and build reports\n- **Multilingual capabilities:** Expanding Language support beyond French to serve all EU member states\n- **Global accessibility:** Available to users worldwide through the European Parliament's website\n- **Constitutional AI:** Ensuring trustworthy and controlled use of AI technology\n\nThe project has already demonstrated significant benefits:\n\n- Reduces document search and analysis time by 80%, significantly boosting efficiency.\n- Provides policymakers and researchers with quick access to historical context and precedents.\n- Has been used by hundreds of educators and students for an all-access window into European parliamentary history.\n\nSince launching Claude in Europe earlier this year, Anthropic has continued to bring the latest in safe and responsible generative AI to European businesses and consumers. This includes Claude 3.5 - one of the most powerful large language models (LLMs) on the market - alongside the [Claude Team](https://www.anthropic.com/team) plan, [Claude Enterprise](https://www.anthropic.com/news/claude-for-enterprise), and Claude\u2019s [Artifacts](https://support.anthropic.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them) feature. Claude is available on iOS and Android, further enhancing accessibility to everyday users across Europe and other markets.\n\n[Share on Twitter](https://twitter.com/intent/tweet?text=https://www.anthropic.com/customers/european-parliament)[Share on LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/customers/european-parliament)",
+  "url": "https://www.anthropic.com/customers/european-parliament",
+  "metadata": {
+    "title": "European Parliament Revolutionizes Archive Access with Claude AI \\ Anthropic",
+    "description": "Discover how the European Parliament uses Anthropic's Claude AI to power Archibot, dramatically improving access to 2.1 million documents. Learn how this AI solution cuts search time by 80% and boosts user satisfaction, while maintaining ethical standards and security.",
+    "language": "en",
+    "ogTitle": "European Parliament Revolutionizes Archive Access with Claude AI",
+    "ogDescription": "Discover how the European Parliament uses Anthropic's Claude AI to power Archibot, dramatically improving access to 2.1 million documents. Learn how this AI solution cuts search time by 80% and boosts user satisfaction, while maintaining ethical standards and security.",
+    "ogImage": "https://cdn.sanity.io/images/4zrzovbb/website/84949fb83b2b987a7ffcc20d0d500a1f91a7fc5a-2880x1620.png",
+    "ogLocaleAlternate": [],
+    "viewport": "width=device-width, initial-scale=1",
+    "theme-color": "#141413",
+    "msapplication-TileColor": "141413",
+    "msapplication-config": "/browserconfig.xml",
+    "og:title": "European Parliament Revolutionizes Archive Access with Claude AI",
+    "og:description": "Discover how the European Parliament uses Anthropic's Claude AI to power Archibot, dramatically improving access to 2.1 million documents. Learn how this AI solution cuts search time by 80% and boosts user satisfaction, while maintaining ethical standards and security.",
+    "og:image": "https://cdn.sanity.io/images/4zrzovbb/website/84949fb83b2b987a7ffcc20d0d500a1f91a7fc5a-2880x1620.png",
+    "og:image:alt": "EU Parliament and Anthropic logo lockup",
+    "og:type": "website",
+    "twitter:card": "summary_large_image",
+    "twitter:site": "@AnthropicAI",
+    "twitter:creator": "@AnthropicAI",
+    "twitter:title": "European Parliament Revolutionizes Archive Access with Claude AI",
+    "twitter:description": "Discover how the European Parliament uses Anthropic's Claude AI to power Archibot, dramatically improving access to 2.1 million documents. Learn how this AI solution cuts search time by 80% and boosts user satisfaction, while maintaining ethical standards and security.",
+    "twitter:image": "https://cdn.sanity.io/images/4zrzovbb/website/84949fb83b2b987a7ffcc20d0d500a1f91a7fc5a-2880x1620.png",
+    "twitter:image:alt": "EU Parliament and Anthropic logo lockup",
+    "sourceURL": "https://www.anthropic.com/customers/european-parliament",
+    "statusCode": 200
+  }
+}
