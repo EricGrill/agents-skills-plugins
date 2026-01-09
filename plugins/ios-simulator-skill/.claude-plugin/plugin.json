@@ -1,0 +1,10 @@
+{
+  "name": "ios-simulator-skill",
+  "description": "iOS Simulator automation with 21 scripts for building, testing, and semantic navigation using accessibility APIs",
+  "version": "1.0.0",
+  "author": {"name": "conorluddy"},
+  "homepage": "https://github.com/conorluddy/ios-simulator-skill",
+  "repository": "https://github.com/conorluddy/ios-simulator-skill",
+  "license": "MIT",
+  "keywords": ["ios", "simulator", "xcode", "testing", "automation", "accessibility", "mobile"]
+}

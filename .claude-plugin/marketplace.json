@@ -175,6 +175,18 @@
       "description": "27 practical Claude Skills for documents (docx, pdf, pptx, xlsx), creative media, development, business, and productivity (from ComposioHQ)",
       "repository": "EricGrill/agents-skills-plugins",
       "path": "plugins/awesome-claude-skills"
+    },
+    {
+      "name": "ios-simulator-skill",
+      "description": "iOS Simulator automation with 21 scripts for building, testing, and semantic navigation (from conorluddy)",
+      "repository": "EricGrill/agents-skills-plugins",
+      "path": "plugins/ios-simulator-skill"
+    },
+    {
+      "name": "multi-agent-patterns",
+      "description": "Multi-agent architecture patterns: supervisor, swarm, hierarchical designs for context isolation (from muratcankoylan)",
+      "repository": "EricGrill/agents-skills-plugins",
+      "path": "plugins/multi-agent-patterns"
     }
   ]
 }

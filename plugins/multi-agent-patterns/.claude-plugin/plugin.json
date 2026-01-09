@@ -1,0 +1,10 @@
+{
+  "name": "multi-agent-patterns",
+  "description": "Multi-agent architecture patterns including supervisor, swarm, and hierarchical designs for context isolation and parallel execution",
+  "version": "1.0.0",
+  "author": {"name": "muratcankoylan"},
+  "homepage": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+  "repository": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+  "license": "MIT",
+  "keywords": ["multi-agent", "orchestration", "swarm", "supervisor", "context-engineering", "architecture"]
+}

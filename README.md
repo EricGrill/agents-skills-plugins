@@ -264,6 +264,28 @@ Orchestrate complex multi-agent workflows with context management and performanc
 
 </details>
 
+<details>
+<summary><b>multi-agent-patterns</b> - Architecture patterns for multi-agent systems</summary>
+
+Design and implement multi-agent architectures with supervisor, swarm, and hierarchical patterns.
+
+```
+/plugin install multi-agent-patterns@agents-skills-plugins
+```
+
+**Patterns Covered:**
+| Pattern | Description |
+|---------|-------------|
+| Supervisor/Orchestrator | Central control, delegating to specialists |
+| Peer-to-Peer/Swarm | Direct agent communication, flexible handoffs |
+| Hierarchical | Layered abstraction and coordination |
+
+**Key Concepts:** Context isolation, token economics, parallelization strategies, consensus mechanisms, failure mode handling.
+
+*From [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering)*
+
+</details>
+
 ---
 
 ### Code Quality
@@ -363,6 +385,30 @@ Security-focused frontend development with vulnerability scanning.
 | Agents | Commands |
 |--------|----------|
 | frontend-developer, frontend-security-coder, mobile-security-coder | `/xss-scan` |
+
+</details>
+
+<details>
+<summary><b>ios-simulator-skill</b> - iOS testing automation (21 scripts)</summary>
+
+Production-ready iOS simulator automation with semantic navigation using accessibility APIs.
+
+```
+/plugin install ios-simulator-skill@agents-skills-plugins
+```
+
+**Categories:**
+| Category | Scripts |
+|----------|---------|
+| Build & Dev | build_and_test.py, log_monitor.py |
+| Navigation | screen_mapper.py, navigator.py, gesture.py, keyboard.py, app_launcher.py |
+| Testing | accessibility_audit.py, visual_diff.py, test_recorder.py, app_state_capture.py |
+| Permissions | clipboard.py, status_bar.py, push_notification.py, privacy_manager.py |
+| Lifecycle | simctl_boot.py, simctl_shutdown.py, simctl_create.py, simctl_delete.py, simctl_erase.py |
+
+**Features:** Semantic navigation (find by meaning, not coordinates), 96% token reduction, WCAG compliance checking, CI/CD ready with JSON output.
+
+*From [conorluddy/ios-simulator-skill](https://github.com/conorluddy/ios-simulator-skill)*
 
 </details>
 
@@ -591,7 +637,7 @@ Generate images using Google's Gemini API.
 
 | Metric | Count |
 |--------|-------|
-| Total Plugins | 29 |
+| Total Plugins | 31 |
 | Total Agents | 60+ |
 | Total Skills | 100+ |
 | Total Commands | 30+ |
@@ -605,6 +651,8 @@ Plugins in this marketplace come from:
 - **[obra/superpowers](https://github.com/obra/superpowers)** by Jesse Vincent - Core skills library
 - **[wshobson/agents](https://github.com/wshobson/agents)** - Specialized agents and skills
 - **[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)** - Document & productivity skills
+- **[conorluddy/ios-simulator-skill](https://github.com/conorluddy/ios-simulator-skill)** - iOS testing automation
+- **[muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering)** - Multi-agent patterns
 - **Original** - nano-banana, plugin-finder
 
 All plugins are MIT licensed.
