@@ -1,0 +1,156 @@
+name: Sync Plugins from wshobson/agents
+
+on:
+  schedule:
+    # Run weekly on Sundays at 1am UTC (after superpowers sync)
+    - cron: '0 1 * * 0'
+  workflow_dispatch:
+    # Allow manual triggering
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Clone upstream wshobson/agents
+        run: |
+          git clone --depth 1 https://github.com/wshobson/agents.git /tmp/upstream-agents
+
+      - name: Get upstream commit SHA
+        id: upstream
+        run: |
+          cd /tmp/upstream-agents
+          SHA=$(git rev-parse --short HEAD)
+          echo "sha=$SHA" >> $GITHUB_OUTPUT
+
+      - name: Sync plugins
+        run: |
+          # List of plugins to sync from wshobson/agents
+          PLUGINS=(
+            "agent-orchestration"
+            "blockchain-web3"
+            "business-analytics"
+            "code-documentation"
+            "comprehensive-review"
+            "content-marketing"
+            "context-management"
+            "customer-sales-automation"
+            "database-design"
+            "data-validation-suite"
+            "deployment-strategies"
+            "developer-essentials"
+            "documentation-generation"
+            "frontend-mobile-development"
+            "frontend-mobile-security"
+            "full-stack-orchestration"
+            "game-development"
+            "git-pr-workflows"
+            "javascript-typescript"
+            "llm-application-dev"
+            "python-development"
+            "seo-analysis-monitoring"
+            "seo-content-creation"
+            "seo-technical-optimization"
+            "team-collaboration"
+            "unit-testing"
+          )
+
+          for plugin in "${PLUGINS[@]}"; do
+            if [ -d "/tmp/upstream-agents/plugins/$plugin" ]; then
+              echo "Syncing $plugin..."
+
+              # Backup our plugin.json (contains our customizations)
+              if [ -f "plugins/$plugin/.claude-plugin/plugin.json" ]; then
+                cp "plugins/$plugin/.claude-plugin/plugin.json" /tmp/plugin-$plugin.json
+              fi
+
+              # Remove old content except .claude-plugin
+              find "plugins/$plugin" -mindepth 1 -maxdepth 1 ! -name '.claude-plugin' -exec rm -rf {} +
+
+              # Copy new content from upstream (except .claude-plugin if it exists)
+              for item in /tmp/upstream-agents/plugins/$plugin/*; do
+                basename=$(basename "$item")
+                if [ "$basename" != ".claude-plugin" ]; then
+                  cp -r "$item" "plugins/$plugin/"
+                fi
+              done
+
+              # Restore our plugin.json
+              if [ -f "/tmp/plugin-$plugin.json" ]; then
+                mkdir -p "plugins/$plugin/.claude-plugin"
+                mv "/tmp/plugin-$plugin.json" "plugins/$plugin/.claude-plugin/plugin.json"
+              fi
+            else
+              echo "Warning: $plugin not found in upstream"
+            fi
+          done
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            # Count changed files
+            CHANGED=$(git diff --name-only | wc -l)
+            echo "changed_files=$CHANGED" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Sync plugins from wshobson/agents (${{ steps.upstream.outputs.sha }})"
+          title: "Sync plugins from wshobson/agents"
+          body: |
+            This PR syncs plugins from the upstream wshobson/agents repository.
+
+            **Upstream:** [wshobson/agents](https://github.com/wshobson/agents)
+            **Upstream commit:** ${{ steps.upstream.outputs.sha }}
+            **Files changed:** ${{ steps.changes.outputs.changed_files }}
+
+            ## Plugins synced:
+            - agent-orchestration
+            - blockchain-web3
+            - business-analytics
+            - code-documentation
+            - comprehensive-review
+            - content-marketing
+            - context-management
+            - customer-sales-automation
+            - database-design
+            - data-validation-suite
+            - deployment-strategies
+            - developer-essentials
+            - documentation-generation
+            - frontend-mobile-development
+            - frontend-mobile-security
+            - full-stack-orchestration
+            - game-development
+            - git-pr-workflows
+            - javascript-typescript
+            - llm-application-dev
+            - python-development
+            - seo-analysis-monitoring
+            - seo-content-creation
+            - seo-technical-optimization
+            - team-collaboration
+            - unit-testing
+
+            Please review the changes before merging.
+          branch: sync-wshobson-agents-${{ steps.upstream.outputs.sha }}
+          delete-branch: true
+          labels: |
+            automated
+            sync
+            wshobson-agents
