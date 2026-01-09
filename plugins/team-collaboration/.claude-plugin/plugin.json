@@ -1,0 +1,9 @@
+{
+  "name": "team-collaboration",
+  "description": "Team collaboration with DX optimization, issue tracking, and standup notes",
+  "version": "1.0.0",
+  "author": {"name": "wshobson"},
+  "homepage": "https://github.com/wshobson/agents",
+  "license": "MIT",
+  "keywords": ["team", "collaboration", "dx", "issues", "standup"]
+}

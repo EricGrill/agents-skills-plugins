@@ -1,0 +1,9 @@
+{
+  "name": "data-validation-suite",
+  "description": "Data validation and backend security coding",
+  "version": "1.0.0",
+  "author": {"name": "wshobson"},
+  "homepage": "https://github.com/wshobson/agents",
+  "license": "MIT",
+  "keywords": ["validation", "security", "backend"]
+}

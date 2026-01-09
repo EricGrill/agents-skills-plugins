@@ -1,0 +1,9 @@
+{
+  "name": "llm-application-dev",
+  "description": "LLM application development with RAG, embeddings, LangChain, and prompt engineering",
+  "version": "1.0.0",
+  "author": {"name": "wshobson"},
+  "homepage": "https://github.com/wshobson/agents",
+  "license": "MIT",
+  "keywords": ["llm", "rag", "embeddings", "langchain", "prompt-engineering", "vector-database"]
+}

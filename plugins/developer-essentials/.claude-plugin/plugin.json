@@ -1,0 +1,9 @@
+{
+  "name": "developer-essentials",
+  "description": "Essential developer skills for monorepos, debugging, testing, and build optimization",
+  "version": "1.0.0",
+  "author": {"name": "wshobson"},
+  "homepage": "https://github.com/wshobson/agents",
+  "license": "MIT",
+  "keywords": ["monorepo", "debugging", "testing", "bazel", "turborepo", "nx"]
+}

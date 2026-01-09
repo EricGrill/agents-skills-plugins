@@ -1,0 +1,9 @@
+{
+  "name": "python-development",
+  "description": "Python development with Django, FastAPI, async patterns, and uv package management",
+  "version": "1.0.0",
+  "author": {"name": "wshobson"},
+  "homepage": "https://github.com/wshobson/agents",
+  "license": "MIT",
+  "keywords": ["python", "django", "fastapi", "async", "uv"]
+}

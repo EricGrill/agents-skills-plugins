@@ -1,0 +1,9 @@
+{
+  "name": "deployment-strategies",
+  "description": "Deployment engineering with Terraform and infrastructure as code",
+  "version": "1.0.0",
+  "author": {"name": "wshobson"},
+  "homepage": "https://github.com/wshobson/agents",
+  "license": "MIT",
+  "keywords": ["deployment", "terraform", "infrastructure", "devops"]
+}

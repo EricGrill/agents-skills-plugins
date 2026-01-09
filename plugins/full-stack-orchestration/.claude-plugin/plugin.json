@@ -1,0 +1,9 @@
+{
+  "name": "full-stack-orchestration",
+  "description": "Full-stack orchestration with deployment, performance, security, and test automation",
+  "version": "1.0.0",
+  "author": {"name": "wshobson"},
+  "homepage": "https://github.com/wshobson/agents",
+  "license": "MIT",
+  "keywords": ["full-stack", "deployment", "performance", "security", "testing"]
+}

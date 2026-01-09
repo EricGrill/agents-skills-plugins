@@ -1,0 +1,9 @@
+{
+  "name": "seo-content-creation",
+  "description": "SEO content creation with auditing, planning, and optimized writing",
+  "version": "1.0.0",
+  "author": {"name": "wshobson"},
+  "homepage": "https://github.com/wshobson/agents",
+  "license": "MIT",
+  "keywords": ["seo", "content", "writing", "planning"]
+}

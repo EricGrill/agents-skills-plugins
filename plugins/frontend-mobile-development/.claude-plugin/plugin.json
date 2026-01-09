@@ -1,0 +1,9 @@
+{
+  "name": "frontend-mobile-development",
+  "description": "Frontend and mobile development with React, Next.js, React Native, and Tailwind",
+  "version": "1.0.0",
+  "author": {"name": "wshobson"},
+  "homepage": "https://github.com/wshobson/agents",
+  "license": "MIT",
+  "keywords": ["frontend", "mobile", "react", "nextjs", "react-native", "tailwind"]
+}

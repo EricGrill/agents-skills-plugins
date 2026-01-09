@@ -5,3 +5,32 @@ CLAUDE.md
 # Common excludes
 .DS_Store
 *.log
+
+# Secrets and credentials
+.env
+.env.*
+.env.local
+.env.*.local
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+credentials.json
+**/secrets/
+**/.secrets/
+*.secret
+
+# API keys and tokens
+.npmrc
+.pypirc
+.netrc
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db

@@ -1,0 +1,10 @@
+{
+  "name": "agent-exchange",
+  "description": "Marketplace management plugin with an agent to find and add Claude Code plugins",
+  "version": "1.0.0",
+  "author": {
+    "name": "Eric Grill"
+  },
+  "repository": "EricGrill/agents-skills-plugins",
+  "keywords": ["marketplace", "plugin-discovery", "agent-exchange"]
+}

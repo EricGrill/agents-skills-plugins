@@ -1,0 +1,9 @@
+{
+  "name": "context-management",
+  "description": "Context management with save and restore capabilities",
+  "version": "1.0.0",
+  "author": {"name": "wshobson"},
+  "homepage": "https://github.com/wshobson/agents",
+  "license": "MIT",
+  "keywords": ["context", "memory", "state-management"]
+}

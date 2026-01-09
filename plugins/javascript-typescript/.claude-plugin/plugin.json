@@ -1,0 +1,9 @@
+{
+  "name": "javascript-typescript",
+  "description": "JavaScript and TypeScript development with modern patterns and Node.js backend",
+  "version": "1.0.0",
+  "author": {"name": "wshobson"},
+  "homepage": "https://github.com/wshobson/agents",
+  "license": "MIT",
+  "keywords": ["javascript", "typescript", "nodejs", "testing"]
+}

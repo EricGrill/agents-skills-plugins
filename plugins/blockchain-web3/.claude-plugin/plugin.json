@@ -1,0 +1,12 @@
+{
+  "name": "blockchain-web3",
+  "description": "Blockchain development with Solidity security, DeFi protocols, NFT standards, and Web3 testing",
+  "version": "1.0.0",
+  "author": {
+    "name": "wshobson"
+  },
+  "homepage": "https://github.com/wshobson/agents",
+  "repository": "https://github.com/wshobson/agents",
+  "license": "MIT",
+  "keywords": ["blockchain", "web3", "solidity", "defi", "nft", "smart-contracts"]
+}

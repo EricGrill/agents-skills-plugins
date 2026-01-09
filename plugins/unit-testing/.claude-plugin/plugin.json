@@ -1,0 +1,9 @@
+{
+  "name": "unit-testing",
+  "description": "Unit testing with debugging and test automation",
+  "version": "1.0.0",
+  "author": {"name": "wshobson"},
+  "homepage": "https://github.com/wshobson/agents",
+  "license": "MIT",
+  "keywords": ["testing", "unit-tests", "debugging", "automation"]
+}

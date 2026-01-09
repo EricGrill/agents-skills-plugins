@@ -1,0 +1,12 @@
+{
+  "name": "comprehensive-review",
+  "description": "Comprehensive code review with architecture, security, and PR enhancement",
+  "version": "1.0.0",
+  "author": {
+    "name": "wshobson"
+  },
+  "homepage": "https://github.com/wshobson/agents",
+  "repository": "https://github.com/wshobson/agents",
+  "license": "MIT",
+  "keywords": ["code-review", "security-audit", "architecture", "pull-requests"]
+}

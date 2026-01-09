@@ -1,0 +1,12 @@
+{
+  "name": "code-documentation",
+  "description": "Code documentation with automated doc generation, code explanation, and tutorial engineering",
+  "version": "1.0.0",
+  "author": {
+    "name": "wshobson"
+  },
+  "homepage": "https://github.com/wshobson/agents",
+  "repository": "https://github.com/wshobson/agents",
+  "license": "MIT",
+  "keywords": ["documentation", "code-review", "tutorials", "technical-writing"]
+}

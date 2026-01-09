@@ -1,0 +1,12 @@
+{
+  "name": "business-analytics",
+  "description": "Business analysis with data storytelling and KPI dashboard design",
+  "version": "1.0.0",
+  "author": {
+    "name": "wshobson"
+  },
+  "homepage": "https://github.com/wshobson/agents",
+  "repository": "https://github.com/wshobson/agents",
+  "license": "MIT",
+  "keywords": ["business", "analytics", "kpi", "dashboards", "data-storytelling"]
+}

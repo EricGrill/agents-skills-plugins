@@ -1,0 +1,9 @@
+{
+  "name": "database-design",
+  "description": "Database architecture and SQL optimization with PostgreSQL expertise",
+  "version": "1.0.0",
+  "author": {"name": "wshobson"},
+  "homepage": "https://github.com/wshobson/agents",
+  "license": "MIT",
+  "keywords": ["database", "sql", "postgresql", "architecture"]
+}

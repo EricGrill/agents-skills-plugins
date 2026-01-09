@@ -1,0 +1,9 @@
+{
+  "name": "content-marketing",
+  "description": "Content marketing with content strategy and search specialist agents",
+  "version": "1.0.0",
+  "author": {"name": "wshobson"},
+  "homepage": "https://github.com/wshobson/agents",
+  "license": "MIT",
+  "keywords": ["content", "marketing", "seo", "search"]
+}

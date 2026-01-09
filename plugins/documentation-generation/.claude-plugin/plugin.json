@@ -1,0 +1,9 @@
+{
+  "name": "documentation-generation",
+  "description": "Documentation generation with API docs, architecture diagrams, and tutorials",
+  "version": "1.0.0",
+  "author": {"name": "wshobson"},
+  "homepage": "https://github.com/wshobson/agents",
+  "license": "MIT",
+  "keywords": ["documentation", "api", "mermaid", "tutorials", "openapi"]
+}

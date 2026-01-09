@@ -1,0 +1,12 @@
+{
+  "name": "agent-orchestration",
+  "description": "Context management and multi-agent orchestration with performance optimization tools",
+  "version": "1.0.0",
+  "author": {
+    "name": "wshobson"
+  },
+  "homepage": "https://github.com/wshobson/agents",
+  "repository": "https://github.com/wshobson/agents",
+  "license": "MIT",
+  "keywords": ["context-management", "multi-agent", "orchestration", "optimization", "ai-workflows"]
+}

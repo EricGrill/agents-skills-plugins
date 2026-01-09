@@ -1,0 +1,9 @@
+{
+  "name": "customer-sales-automation",
+  "description": "Customer support and sales automation agents",
+  "version": "1.0.0",
+  "author": {"name": "wshobson"},
+  "homepage": "https://github.com/wshobson/agents",
+  "license": "MIT",
+  "keywords": ["customer-support", "sales", "automation", "crm"]
+}
