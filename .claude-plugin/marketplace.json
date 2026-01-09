@@ -1,5 +1,12 @@
 {
   "name": "agent-skills-plugins",
   "description": "Eric Grill's curated collection of Claude Code skills and agents",
-  "plugins": []
+  "plugins": [
+    {
+      "name": "nano-banana",
+      "description": "Image generation using Google's Gemini API",
+      "repository": "EricGrill/agent-skills-plugins",
+      "path": "plugins/nano-banana"
+    }
+  ]
 }

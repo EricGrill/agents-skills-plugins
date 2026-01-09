@@ -11,7 +11,19 @@ Add this marketplace:
 
 ## Available Plugins
 
-(None yet - coming soon)
+### nano-banana
+
+Image generation MCP server using Google's Gemini API.
+
+```
+/plugin install nano-banana@agent-skills-plugins
+```
+
+**Tools:**
+- `generate_image` - Generate a single image from a text prompt
+- `generate_blog_images` - Generate a complete set of images for a blog post
+
+**Requires:** `GEMINI_API_KEY` environment variable
 
 ## License
 
