@@ -1,0 +1,98 @@
+name: Sync awesome-claude-skills from ComposioHQ
+
+on:
+  schedule:
+    # Run weekly on Sundays at 2am UTC (after other syncs)
+    - cron: '0 2 * * 0'
+  workflow_dispatch:
+    # Allow manual triggering
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Clone upstream ComposioHQ/awesome-claude-skills
+        run: |
+          git clone --depth 1 https://github.com/ComposioHQ/awesome-claude-skills.git /tmp/upstream-composio
+
+      - name: Get upstream commit SHA
+        id: upstream
+        run: |
+          cd /tmp/upstream-composio
+          SHA=$(git rev-parse --short HEAD)
+          echo "sha=$SHA" >> $GITHUB_OUTPUT
+
+      - name: Sync plugin
+        run: |
+          echo "Syncing awesome-claude-skills..."
+
+          # Backup our plugin.json
+          if [ -f "plugins/awesome-claude-skills/.claude-plugin/plugin.json" ]; then
+            cp "plugins/awesome-claude-skills/.claude-plugin/plugin.json" /tmp/plugin-composio.json
+          fi
+
+          # Remove old content except .claude-plugin
+          find "plugins/awesome-claude-skills" -mindepth 1 -maxdepth 1 ! -name '.claude-plugin' -exec rm -rf {} +
+
+          # Copy new content from upstream (except .git and .claude-plugin)
+          for item in /tmp/upstream-composio/*; do
+            basename=$(basename "$item")
+            if [ "$basename" != ".git" ] && [ "$basename" != ".claude-plugin" ]; then
+              cp -r "$item" "plugins/awesome-claude-skills/"
+            fi
+          done
+
+          # Restore our plugin.json
+          if [ -f "/tmp/plugin-composio.json" ]; then
+            mkdir -p "plugins/awesome-claude-skills/.claude-plugin"
+            mv "/tmp/plugin-composio.json" "plugins/awesome-claude-skills/.claude-plugin/plugin.json"
+          fi
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            CHANGED=$(git diff --name-only | wc -l)
+            echo "changed_files=$CHANGED" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Sync awesome-claude-skills from ComposioHQ (${{ steps.upstream.outputs.sha }})"
+          title: "Sync awesome-claude-skills from ComposioHQ"
+          body: |
+            This PR syncs the awesome-claude-skills plugin from upstream.
+
+            **Upstream:** [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
+            **Upstream commit:** ${{ steps.upstream.outputs.sha }}
+            **Files changed:** ${{ steps.changes.outputs.changed_files }}
+
+            This plugin includes 27 practical Claude Skills for:
+            - Document processing (docx, pdf, pptx, xlsx)
+            - Creative & media (canvas-design, video-downloader, etc.)
+            - Development tools (mcp-builder, webapp-testing, etc.)
+            - Business & marketing
+            - Productivity
+
+            Please review the changes before merging.
+          branch: sync-composio-skills-${{ steps.upstream.outputs.sha }}
+          delete-branch: true
+          labels: |
+            automated
+            sync
+            composio

@@ -169,6 +169,12 @@
       "description": "Frontend and mobile security with XSS scanning and secure coding practices (from wshobson/agents)",
       "repository": "EricGrill/agents-skills-plugins",
       "path": "plugins/frontend-mobile-security"
+    },
+    {
+      "name": "awesome-claude-skills",
+      "description": "27 practical Claude Skills for documents (docx, pdf, pptx, xlsx), creative media, development, business, and productivity (from ComposioHQ)",
+      "repository": "EricGrill/agents-skills-plugins",
+      "path": "plugins/awesome-claude-skills"
     }
   ]
 }

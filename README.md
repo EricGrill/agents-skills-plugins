@@ -34,6 +34,7 @@
 | Category | Plugins | Best For |
 |----------|---------|----------|
 | [Core & Workflows](#-core--workflows) | superpowers, developer-essentials, git-pr-workflows | Every developer |
+| [Documents & Productivity](#-documents--productivity) | awesome-claude-skills (27 skills!) | Office docs, media, productivity |
 | [Languages](#-languages) | python-development, javascript-typescript | Language-specific development |
 | [AI & LLM](#-ai--llm-development) | llm-application-dev, agent-orchestration | Building AI applications |
 | [Code Quality](#-code-quality) | comprehensive-review, unit-testing, code-documentation | Better code |
@@ -125,6 +126,69 @@ Never lose your place. Save and restore conversation context across sessions.
 | Agents | Commands |
 |--------|----------|
 | context-manager | `/context-save` `/context-restore` |
+
+</details>
+
+---
+
+### Documents & Productivity
+
+Work with Office documents, create media, and boost productivity.
+
+<details>
+<summary><b>awesome-claude-skills</b> - 27 practical skills from ComposioHQ</summary>
+
+A comprehensive collection covering documents, creative media, development tools, business, and productivity.
+
+```
+/plugin install awesome-claude-skills@agents-skills-plugins
+```
+
+**Document Skills:**
+| Skill | Description |
+|-------|-------------|
+| docx | Create, edit, analyze Word docs with tracked changes |
+| pdf | Extract text, tables, metadata, merge & annotate PDFs |
+| pptx | Read, generate, and adjust slides and layouts |
+| xlsx | Spreadsheet manipulation: formulas, charts, data |
+
+**Creative & Media:**
+| Skill | Description |
+|-------|-------------|
+| canvas-design | Creates visual art in PNG and PDF |
+| image-enhancer | Improves resolution, sharpness, clarity |
+| slack-gif-creator | Animated GIFs optimized for Slack |
+| theme-factory | Professional font and color themes |
+| video-downloader | Download videos from YouTube |
+
+**Development:**
+| Skill | Description |
+|-------|-------------|
+| artifacts-builder | Multi-component HTML with React & Tailwind |
+| changelog-generator | Git commits to release notes |
+| mcp-builder | Create MCP servers for LLM integrations |
+| skill-creator | Guide to building Claude Skills |
+| webapp-testing | Test apps with Playwright |
+
+**Business & Marketing:**
+| Skill | Description |
+|-------|-------------|
+| brand-guidelines | Apply brand standards to artifacts |
+| competitive-ads-extractor | Analyze competitor ads |
+| domain-name-brainstormer | Generate and check domain names |
+| internal-comms | Newsletters, FAQs, status reports |
+| lead-research-assistant | Identify and qualify leads |
+
+**Productivity:**
+| Skill | Description |
+|-------|-------------|
+| file-organizer | Organize files, find duplicates |
+| invoice-organizer | Automate invoice organization |
+| content-research-writer | Research and refine content |
+| meeting-insights-analyzer | Analyze meeting transcripts |
+| raffle-winner-picker | Secure random selection |
+
+*From [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)*
 
 </details>
 
@@ -527,9 +591,9 @@ Generate images using Google's Gemini API.
 
 | Metric | Count |
 |--------|-------|
-| Total Plugins | 28 |
+| Total Plugins | 29 |
 | Total Agents | 60+ |
-| Total Skills | 70+ |
+| Total Skills | 100+ |
 | Total Commands | 30+ |
 
 ---
@@ -540,6 +604,7 @@ Plugins in this marketplace come from:
 
 - **[obra/superpowers](https://github.com/obra/superpowers)** by Jesse Vincent - Core skills library
 - **[wshobson/agents](https://github.com/wshobson/agents)** - Specialized agents and skills
+- **[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)** - Document & productivity skills
 - **Original** - nano-banana, plugin-finder
 
 All plugins are MIT licensed.

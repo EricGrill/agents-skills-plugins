@@ -1,0 +1,13 @@
+{
+  "name": "awesome-claude-skills",
+  "description": "A curated collection of 27 practical Claude Skills for documents, development, creative media, business, and productivity",
+  "version": "1.0.0",
+  "author": {
+    "name": "ComposioHQ",
+    "email": "tech@composio.dev"
+  },
+  "homepage": "https://github.com/ComposioHQ/awesome-claude-skills",
+  "repository": "https://github.com/ComposioHQ/awesome-claude-skills",
+  "license": "MIT",
+  "keywords": ["documents", "docx", "pdf", "pptx", "xlsx", "creative", "canvas", "video", "productivity", "development", "mcp"]
+}
