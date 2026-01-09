@@ -6,7 +6,7 @@ A curated collection of Claude Code skills and agents by Eric Grill.
 
 Add this marketplace:
 ```
-/plugin marketplace add ericgrill/agent-skills-plugins
+/plugin marketplace add EricGrill/agents-skills-plugins
 ```
 
 ## Available Plugins
@@ -16,7 +16,7 @@ Add this marketplace:
 Image generation MCP server using Google's Gemini API.
 
 ```
-/plugin install nano-banana@agent-skills-plugins
+/plugin install nano-banana@agents-skills-plugins
 ```
 
 **Tools:**
