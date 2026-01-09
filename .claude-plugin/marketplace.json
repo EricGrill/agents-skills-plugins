@@ -7,6 +7,12 @@
       "description": "Image generation using Google's Gemini API",
       "repository": "EricGrill/agents-skills-plugins",
       "path": "plugins/nano-banana"
+    },
+    {
+      "name": "superpowers",
+      "description": "Core skills library: TDD, debugging, collaboration patterns (forked from obra/superpowers)",
+      "repository": "EricGrill/agents-skills-plugins",
+      "path": "plugins/superpowers"
     }
   ]
 }
