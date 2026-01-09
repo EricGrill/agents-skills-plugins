@@ -1,0 +1,11 @@
+# Anthropic SDK for Claude
+anthropic>=0.40.0
+
+# Firecrawl for web scraping
+firecrawl-py>=4.0.0
+
+# Environment and utilities
+python-dotenv>=1.0.0
+
+# Scheduling
+schedule>=1.2.0

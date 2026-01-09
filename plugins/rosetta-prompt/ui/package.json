@@ -1,0 +1,34 @@
+{
+  "name": "rosetta-prompt-ui",
+  "version": "1.0.0",
+  "description": "3D UI for The Rosetta Prompt - Agentic Prompt Optimization",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "@pmndrs/assets": "1.6.0",
+    "@react-three/drei": "9.96.0",
+    "@react-three/fiber": "8.15.12",
+    "@react-three/postprocessing": "2.15.11",
+    "@types/three": "0.158.3",
+    "framer-motion": "^11.0.0",
+    "maath": "^0.10.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-scripts": "5.0.1",
+    "three": "0.159.0",
+    "zustand": "^4.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">1%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

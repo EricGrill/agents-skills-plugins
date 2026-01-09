@@ -1,0 +1,10 @@
+{
+  "name": "rosetta-prompt",
+  "description": "Prompt optimization system that adapts prompts for different AI providers using multi-agent ReAct loops",
+  "version": "1.0.0",
+  "author": {"name": "muratcankoylan"},
+  "homepage": "https://github.com/muratcankoylan/The-Rosetta-Prompt",
+  "repository": "https://github.com/muratcankoylan/The-Rosetta-Prompt",
+  "license": "MIT",
+  "keywords": ["prompt", "optimization", "multi-provider", "langchain", "agents"]
+}

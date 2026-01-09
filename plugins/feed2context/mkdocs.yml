@@ -1,0 +1,14 @@
+site_name: Notebook
+theme:
+  name: material
+  palette:
+    scheme: slate
+  features:
+    - navigation.instant
+nav:
+  - Home: index.md
+extra_javascript:
+  - js/notebook.js
+extra_css:
+  - css/notebook.css
+

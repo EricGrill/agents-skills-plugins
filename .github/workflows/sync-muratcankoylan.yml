@@ -1,0 +1,144 @@
+name: Sync Plugins from muratcankoylan
+
+on:
+  schedule:
+    # Run weekly on Sundays at 3am UTC (after other syncs)
+    - cron: '0 3 * * 0'
+  workflow_dispatch:
+    # Allow manual triggering
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Clone upstream repos
+        run: |
+          mkdir -p /tmp/upstream
+
+          # Clone all muratcankoylan repos
+          git clone --depth 1 https://github.com/muratcankoylan/ralph-wiggum-marketer.git /tmp/upstream/ralph-wiggum-marketer || true
+          git clone --depth 1 https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering.git /tmp/upstream/agent-skills || true
+          git clone --depth 1 https://github.com/muratcankoylan/AI-Investigator.git /tmp/upstream/ai-investigator || true
+          git clone --depth 1 https://github.com/muratcankoylan/The-Rosetta-Prompt.git /tmp/upstream/rosetta-prompt || true
+          git clone --depth 1 https://github.com/muratcankoylan/readwren.git /tmp/upstream/readwren || true
+          git clone --depth 1 https://github.com/muratcankoylan/Food-tour-planner-agent.git /tmp/upstream/food-tour-planner || true
+          git clone --depth 1 https://github.com/muratcankoylan/actual_code.git /tmp/upstream/actual-code || true
+          git clone --depth 1 https://github.com/muratcankoylan/book-training.git /tmp/upstream/book-training || true
+          git clone --depth 1 https://github.com/muratcankoylan/linkedin-analyzer.git /tmp/upstream/linkedin-analyzer || true
+          git clone --depth 1 https://github.com/muratcankoylan/feed2context.git /tmp/upstream/feed2context || true
+
+      - name: Get upstream commit SHAs
+        id: upstream
+        run: |
+          cd /tmp/upstream
+          SHA=""
+          for dir in */; do
+            if [ -d "$dir/.git" ]; then
+              cd "$dir"
+              SHA="$SHA$(basename $dir):$(git rev-parse --short HEAD) "
+              cd ..
+            fi
+          done
+          echo "shas=$SHA" >> $GITHUB_OUTPUT
+
+      - name: Sync plugins
+        run: |
+          sync_plugin() {
+            local upstream_dir=$1
+            local plugin_name=$2
+
+            if [ -d "/tmp/upstream/$upstream_dir" ]; then
+              echo "Syncing $plugin_name..."
+
+              # Backup our plugin.json
+              if [ -f "plugins/$plugin_name/.claude-plugin/plugin.json" ]; then
+                cp "plugins/$plugin_name/.claude-plugin/plugin.json" "/tmp/plugin-$plugin_name.json"
+              fi
+
+              # Remove old content except .claude-plugin
+              if [ -d "plugins/$plugin_name" ]; then
+                find "plugins/$plugin_name" -mindepth 1 -maxdepth 1 ! -name '.claude-plugin' -exec rm -rf {} +
+              else
+                mkdir -p "plugins/$plugin_name/.claude-plugin"
+              fi
+
+              # Copy new content (except .git, .venv, large files)
+              for item in /tmp/upstream/$upstream_dir/*; do
+                basename=$(basename "$item")
+                if [ "$basename" != ".git" ] && [ "$basename" != ".venv" ] && [ "$basename" != "*.mp4" ]; then
+                  cp -r "$item" "plugins/$plugin_name/" 2>/dev/null || true
+                fi
+              done
+
+              # Remove any video files
+              find "plugins/$plugin_name" -name "*.mp4" -delete 2>/dev/null || true
+
+              # Restore our plugin.json
+              if [ -f "/tmp/plugin-$plugin_name.json" ]; then
+                mkdir -p "plugins/$plugin_name/.claude-plugin"
+                mv "/tmp/plugin-$plugin_name.json" "plugins/$plugin_name/.claude-plugin/plugin.json"
+              fi
+            fi
+          }
+
+          # Sync each plugin
+          sync_plugin "ralph-wiggum-marketer" "ralph-wiggum-marketer"
+          sync_plugin "agent-skills/skills/multi-agent-patterns" "multi-agent-patterns"
+          sync_plugin "ai-investigator" "ai-investigator"
+          sync_plugin "rosetta-prompt" "rosetta-prompt"
+          sync_plugin "readwren" "readwren"
+          sync_plugin "food-tour-planner" "food-tour-planner"
+          sync_plugin "actual-code" "actual-code"
+          sync_plugin "book-training" "book-training"
+          sync_plugin "linkedin-analyzer" "linkedin-analyzer"
+          sync_plugin "feed2context" "feed2context"
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            CHANGED=$(git diff --name-only | wc -l)
+            echo "changed_files=$CHANGED" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Sync plugins from muratcankoylan repos"
+          title: "Sync plugins from muratcankoylan"
+          body: |
+            This PR syncs plugins from muratcankoylan's repositories.
+
+            Plugins synced:
+            - ralph-wiggum-marketer
+            - multi-agent-patterns
+            - ai-investigator
+            - rosetta-prompt
+            - readwren
+            - food-tour-planner
+            - actual-code
+            - book-training
+            - linkedin-analyzer
+            - feed2context
+
+            Please review the changes before merging.
+          branch: sync-muratcankoylan-plugins
+          delete-branch: true
+          labels: |
+            automated
+            sync
+            muratcankoylan

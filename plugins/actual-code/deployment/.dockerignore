@@ -1,0 +1,15 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+*.so
+.git
+.gitignore
+*.md
+!deployment/requirements.txt
+assessment_*.json
+*.log
+*.txt
+!deployment/requirements.txt

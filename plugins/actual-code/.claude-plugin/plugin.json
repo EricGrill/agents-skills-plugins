@@ -1,0 +1,10 @@
+{
+  "name": "actual-code",
+  "description": "AI-powered code assessment generator using 7-agent architecture with Google Gemini to analyze GitHub repos",
+  "version": "1.0.0",
+  "author": {"name": "muratcankoylan"},
+  "homepage": "https://github.com/muratcankoylan/actual_code",
+  "repository": "https://github.com/muratcankoylan/actual_code",
+  "license": "MIT",
+  "keywords": ["code-assessment", "github", "gemini", "multi-agent", "hiring"]
+}

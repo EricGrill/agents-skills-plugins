@@ -1,0 +1,10 @@
+{
+  "name": "food-tour-planner",
+  "description": "AI-powered food tour planner using LangChain DeepAgents, Google Maps API, and multi-agent coordination",
+  "version": "1.0.0",
+  "author": {"name": "muratcankoylan"},
+  "homepage": "https://github.com/muratcankoylan/Food-tour-planner-agent",
+  "repository": "https://github.com/muratcankoylan/Food-tour-planner-agent",
+  "license": "MIT",
+  "keywords": ["food-tour", "travel", "deepagents", "google-maps", "multi-agent"]
+}

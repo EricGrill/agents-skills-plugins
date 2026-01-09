@@ -281,6 +281,62 @@
       "version": "1.0.0",
       "author": { "name": "muratcankoylan" },
       "category": "ai"
+    },
+    {
+      "name": "rosetta-prompt",
+      "source": "./plugins/rosetta-prompt",
+      "description": "Prompt optimization for different AI providers using multi-agent ReAct",
+      "version": "1.0.0",
+      "author": { "name": "muratcankoylan" },
+      "category": "ai"
+    },
+    {
+      "name": "readwren",
+      "source": "./plugins/readwren",
+      "description": "Multi-agent literary interview for extracting reading profiles",
+      "version": "1.0.0",
+      "author": { "name": "muratcankoylan" },
+      "category": "productivity"
+    },
+    {
+      "name": "food-tour-planner",
+      "source": "./plugins/food-tour-planner",
+      "description": "AI food tour planner with DeepAgents and Google Maps",
+      "version": "1.0.0",
+      "author": { "name": "muratcankoylan" },
+      "category": "productivity"
+    },
+    {
+      "name": "actual-code",
+      "source": "./plugins/actual-code",
+      "description": "7-agent code assessment generator from GitHub repos",
+      "version": "1.0.0",
+      "author": { "name": "muratcankoylan" },
+      "category": "development"
+    },
+    {
+      "name": "book-training",
+      "source": "./plugins/book-training",
+      "description": "Style transfer pipeline for author-style LLM training with LoRA",
+      "version": "1.0.0",
+      "author": { "name": "muratcankoylan" },
+      "category": "ai"
+    },
+    {
+      "name": "linkedin-analyzer",
+      "source": "./plugins/linkedin-analyzer",
+      "description": "LinkedIn profile analysis with Cohere Command R+",
+      "version": "1.0.0",
+      "author": { "name": "muratcankoylan" },
+      "category": "productivity"
+    },
+    {
+      "name": "feed2context",
+      "source": "./plugins/feed2context",
+      "description": "One-click feed to research report for LinkedIn and X",
+      "version": "1.0.0",
+      "author": { "name": "muratcankoylan" },
+      "category": "productivity"
     }
   ]
 }

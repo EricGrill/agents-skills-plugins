@@ -1,0 +1,40 @@
+{
+  "updates": [
+    {
+      "timestamp": "2025-12-07T18:11:56.461907",
+      "provider_id": "anthropic",
+      "status": "error",
+      "summary": "Unable to scrape Anthropic documentation URLs. Both batch_scrape_urls and individual scrape_url functions failed with error: 'Firecrawl' object has no attribute 'scrape_url'. The Firecrawl integration appears to be misconfigured or unavailable. Current guide (7384 chars) was preserved. 10 URLs could not be scraped: be-clear-and-direct, use-examples, let-claude-think, extended-thinking-tips, long-context-tips, prefill-claudes-response, system-prompts, use-xml-tags, chain-of-thought, multishot-prompting."
+    },
+    {
+      "timestamp": "2025-12-07T18:12:54.682131",
+      "provider_id": "anthropic",
+      "status": "error",
+      "summary": "Failed to scrape documentation URLs due to FirecrawlClient technical error: \"FirecrawlClient.scrape() got an unexpected keyword argument 'params'\". All 10 URLs failed to scrape. The existing guide was preserved unchanged. This appears to be a system-level issue with the Firecrawl integration."
+    },
+    {
+      "timestamp": "2025-12-07T18:14:51.839922",
+      "provider_id": "anthropic",
+      "status": "success",
+      "summary": "Successfully updated Anthropic prompting guide. Synthesized content from 10 documentation URLs covering: be clear and direct, use examples (multishot prompting), let Claude think (CoT), extended thinking tips, long context tips, prefill responses, system prompts, XML tags, chain of thought, and multishot prompting. New guide is 8594 characters with comprehensive coverage of key principles, techniques, practical examples, and tips/pitfalls."
+    },
+    {
+      "timestamp": "2025-12-07T18:16:35.080830",
+      "provider_id": "openai",
+      "status": "success",
+      "summary": "Updated OpenAI prompting guide with latest documentation from platform.openai.com and cookbook. Key updates include: GPT-5/GPT-5.1 best practices, new \"none\" reasoning mode guidance, message roles (developer/user/assistant), tool-calling patterns, apply_patch tool usage, agentic user updates, planning tools for coding agents, few-shot learning examples, RAG context handling, design system enforcement, and migration tips from GPT-5 to GPT-5.1. Guide now covers both reasoning and non-reasoning model prompting strategies."
+    },
+    {
+      "timestamp": "2025-12-07T18:18:55.266709",
+      "provider_id": "google",
+      "status": "success",
+      "summary": "Updated Google (Gemini) prompting guide with comprehensive content including: Overview, Key Principles (5 main points), Techniques (input types, constraints, few-shot prompting, prefixes, breaking down prompts), Gemini 3 specific guidance (core principles, structured prompting with XML/Markdown, reasoning enhancement), 3 practical examples, and detailed tips with do's/don'ts and model parameters. New guide: 6604 chars."
+    },
+    {
+      "timestamp": "2025-12-07T18:18:55.267297",
+      "provider_id": "kimi",
+      "status": "success",
+      "summary": "Updated Kimi (Moonshot) prompting guide with comprehensive content including: Overview, Key Principles (5 main points), Techniques (role assignment, delimiters with XML tags and headings, step-by-step instructions, few-shot prompting, output length specification, reference text usage), 3 practical examples comparing effective vs ineffective prompts, and Tips section covering complex task breakdown, best practices, and common pitfalls. New guide: 6673 chars."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "feed2context",
+  "description": "One-click feed to research report converter for LinkedIn and X using Groq Compound and Kimi-K2",
+  "version": "1.0.0",
+  "author": {"name": "muratcankoylan"},
+  "homepage": "https://github.com/muratcankoylan/feed2context",
+  "repository": "https://github.com/muratcankoylan/feed2context",
+  "license": "MIT",
+  "keywords": ["feed", "research", "linkedin", "twitter", "groq", "report"]
+}

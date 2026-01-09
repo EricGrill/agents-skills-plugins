@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "X Post Note Trigger",
+  "version": "0.1.0",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": [
+    "https://x.com/*",
+    "https://*.x.com/*",
+    "https://www.linkedin.com/*",
+    "https://*.linkedin.com/*",
+    "http://127.0.0.1:8000/*",
+    "http://127.0.0.1:8001/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*", "https://*.x.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["https://www.linkedin.com/*", "https://*.linkedin.com/*"],
+      "js": ["content_linkedin.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
+
+

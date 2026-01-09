@@ -1,0 +1,10 @@
+{
+  "name": "book-training",
+  "description": "Style transfer pipeline for training LLMs to write in specific author styles using SFT with LoRA",
+  "version": "1.0.0",
+  "author": {"name": "muratcankoylan"},
+  "homepage": "https://github.com/muratcankoylan/book-training",
+  "repository": "https://github.com/muratcankoylan/book-training",
+  "license": "MIT",
+  "keywords": ["style-transfer", "fine-tuning", "lora", "sft", "writing"]
+}

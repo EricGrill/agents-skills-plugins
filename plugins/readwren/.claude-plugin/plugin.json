@@ -1,0 +1,10 @@
+{
+  "name": "readwren",
+  "description": "Multi-agent literary interview system that extracts literary DNA and generates actionable reading profiles",
+  "version": "1.0.0",
+  "author": {"name": "muratcankoylan"},
+  "homepage": "https://github.com/muratcankoylan/readwren",
+  "repository": "https://github.com/muratcankoylan/readwren",
+  "license": "MIT",
+  "keywords": ["literary", "interview", "multi-agent", "langgraph", "reading-profile"]
+}

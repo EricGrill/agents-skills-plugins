@@ -1,0 +1,12 @@
+{
+  "model_name": "Qwen/Qwen3-8B-Base",
+  "dataset_path": "/Users/muratcankoylan/booktune/three-lives-sft-dataset.jsonl",
+  "test_dataset_path": "/Users/muratcankoylan/booktune/three-lives-sft-dataset_test.jsonl",
+  "lora_rank": 32,
+  "learning_rate": 0.0005,
+  "batch_size": 4,
+  "epochs": 3,
+  "eval_every": 20,
+  "save_every": 50,
+  "log_path": "/Users/muratcankoylan/booktune/training-logs"
+}

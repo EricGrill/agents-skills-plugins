@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+python-dotenv
+pydantic
+groq
+
+# Composio + LangChain (merged)
+composio==0.8.10
+composio-langchain==0.8.9
+langchain==0.3.27
+openai==1.99.2

@@ -1,0 +1,10 @@
+{
+  "name": "linkedin-analyzer",
+  "description": "LinkedIn profile analysis tool using Cohere Command R+ for professional insights and engagement metrics",
+  "version": "1.0.0",
+  "author": {"name": "muratcankoylan"},
+  "homepage": "https://github.com/muratcankoylan/linkedin-analyzer",
+  "repository": "https://github.com/muratcankoylan/linkedin-analyzer",
+  "license": "MIT",
+  "keywords": ["linkedin", "profile-analysis", "cohere", "professional", "insights"]
+}

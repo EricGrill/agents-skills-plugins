@@ -1,0 +1,8 @@
+.wrap{display:grid;grid-template-columns:320px 1fr;min-height:60vh}
+.side{border-right:1px solid #1f1f22;padding:16px;overflow:auto}
+.main{padding:24px}
+.item{padding:8px 0;border-bottom:1px dashed #222}
+.item a{color:var(--md-typeset-color);text-decoration:none}
+.item small{color:var(--md-default-fg-color--light);display:block}
+.answer{white-space:pre-wrap;background:#111214;border:1px solid #1f1f22;border-radius:10px;padding:16px}
+.meta{color:var(--md-default-fg-color--light);margin:8px 0 16px}

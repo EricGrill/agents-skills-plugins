@@ -1,0 +1,56 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║                   ActualCode Web UI - Quick Start                 ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+📍 You are here: /Users/muratcankoylan/ActualCode/hackathon_code
+
+🚀 TO START THE WEB UI:
+
+    ./start_web_ui.sh
+
+🌐 THEN OPEN IN BROWSER:
+
+    http://localhost:5001
+
+⚠️  NOTE: Port 5001 is used (5000 conflicts with macOS AirPlay)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 DEMO FLOW:
+
+1. Enter a GitHub repo URL (e.g., krutarthh/example-chat-app)
+2. Select difficulty and problem type
+3. Click "Generate Assessment"
+4. Watch 7 AI agents work in real-time! 🤖
+5. View results and download JSON
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ WHAT YOU'LL SEE:
+
+  🔍 Scanner Agent - Fetches repository data
+  💻 Code Analyzer - Analyzes code structure  
+  🔀 PR Analyzer - Reviews pull requests
+  🐛 Issue Analyzer - Examines issues
+  📦 Dependency Analyzer - Checks tech stack
+  ✨ Problem Creator - Generates assessment
+  ✅ QA Validator - Validates quality (85+ score)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 TROUBLESHOOTING:
+
+  Port already in use?
+    → Kill other process: lsof -ti:5001 | xargs kill -9
+    → Or use custom port: PORT=8080 python3 web_server.py
+
+  Can't connect?
+    → Check server is running in terminal
+    → Try http://127.0.0.1:5001
+
+  Need help?
+    → Read QUICK_DEMO.md for full guide
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Ready to impress the judges? 🎯 Start the server now!

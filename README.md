@@ -698,16 +698,121 @@ Generate images using Google's Gemini API.
 
 </details>
 
+<details>
+<summary><b>rosetta-prompt</b> - Multi-provider prompt optimization</summary>
+
+Adapts prompts for different AI providers using multi-agent ReAct loops with LangChain.
+
+```
+/plugin install rosetta-prompt@agents-skills-plugins
+```
+
+**Architecture:** Orchestrator spawns parallel optimizer agents for OpenAI, Anthropic, Google, etc.
+
+*From [muratcankoylan/The-Rosetta-Prompt](https://github.com/muratcankoylan/The-Rosetta-Prompt)*
+
+</details>
+
+<details>
+<summary><b>readwren</b> - Literary DNA extraction</summary>
+
+Multi-agent interview system that extracts your literary preferences and generates reading profiles.
+
+```
+/plugin install readwren@agents-skills-plugins
+```
+
+**Features:** 12-turn adaptive interview, taste anchors, style signature mapping, vocabulary analysis.
+
+*From [muratcankoylan/readwren](https://github.com/muratcankoylan/readwren)*
+
+</details>
+
+<details>
+<summary><b>food-tour-planner</b> - AI food tour planning</summary>
+
+Multi-agent food tour planner using LangChain DeepAgents and Google Maps API.
+
+```
+/plugin install food-tour-planner@agents-skills-plugins
+```
+
+**Agents:** Restaurant Finder, Neighborhood Researcher, Dashboard Creator.
+
+*From [muratcankoylan/Food-tour-planner-agent](https://github.com/muratcankoylan/Food-tour-planner-agent)*
+
+</details>
+
+<details>
+<summary><b>actual-code</b> - 7-agent code assessment generator</summary>
+
+Analyzes GitHub repos and generates personalized coding challenges using Google Gemini.
+
+```
+/plugin install actual-code@agents-skills-plugins
+```
+
+**Pipeline:** Scanner → Code/PR/Issue/Dependency Analyzers → Problem Creator → QA Validator
+
+*From [muratcankoylan/actual_code](https://github.com/muratcankoylan/actual_code)*
+
+</details>
+
+<details>
+<summary><b>book-training</b> - Author style transfer with LoRA</summary>
+
+Complete pipeline for training LLMs to write in specific author styles using SFT.
+
+```
+/plugin install book-training@agents-skills-plugins
+```
+
+**Results:** 97% loss reduction, ~50-70% human score on AI detectors.
+
+*From [muratcankoylan/book-training](https://github.com/muratcankoylan/book-training)*
+
+</details>
+
+<details>
+<summary><b>linkedin-analyzer</b> - LinkedIn profile insights</summary>
+
+Analyze LinkedIn profiles using Cohere Command R+ for professional insights.
+
+```
+/plugin install linkedin-analyzer@agents-skills-plugins
+```
+
+**Features:** Post analysis, engagement metrics, professional growth recommendations.
+
+*From [muratcankoylan/linkedin-analyzer](https://github.com/muratcankoylan/linkedin-analyzer)*
+
+</details>
+
+<details>
+<summary><b>feed2context</b> - Feed to research report</summary>
+
+One-click transformation of LinkedIn/X posts into detailed research reports.
+
+```
+/plugin install feed2context@agents-skills-plugins
+```
+
+**Pipeline:** Extract post → Build query (Kimi-K2) → Search & reason (Groq Compound) → Report
+
+*From [muratcankoylan/feed2context](https://github.com/muratcankoylan/feed2context)*
+
+</details>
+
 ---
 
 ## Stats
 
 | Metric | Count |
 |--------|-------|
-| Total Plugins | 34 |
-| Total Agents | 60+ |
-| Total Skills | 100+ |
-| Total Commands | 35+ |
+| Total Plugins | 41 |
+| Total Agents | 70+ |
+| Total Skills | 110+ |
+| Total Commands | 40+ |
 
 ---
 
@@ -719,7 +824,7 @@ Plugins in this marketplace come from:
 - **[wshobson/agents](https://github.com/wshobson/agents)** - Specialized agents and skills
 - **[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)** - Document & productivity skills
 - **[conorluddy/ios-simulator-skill](https://github.com/conorluddy/ios-simulator-skill)** - iOS testing automation
-- **[muratcankoylan](https://github.com/muratcankoylan)** - Multi-agent patterns, ralph-wiggum-marketer, AI-Investigator
+- **[muratcankoylan](https://github.com/muratcankoylan)** - 10 plugins including multi-agent patterns, rosetta-prompt, readwren, actual-code, book-training, and more
 - **[SHADOWPR0/beautiful_prose](https://github.com/SHADOWPR0/beautiful_prose)** - Writing style skill
 - **Original** - nano-banana, plugin-finder
 

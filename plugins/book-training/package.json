@@ -1,0 +1,27 @@
+{
+  "name": "booktune-sft-pipeline",
+  "version": "1.0.0",
+  "description": "SFT training dataset generator from books using AI SDK and Gemini",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsx src/pipeline.ts",
+    "generate": "tsx src/pipeline.ts",
+    "test-api": "tsx src/test-api.ts",
+    "setup-training": "tsx src/train-tinker.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/google": "^1.2.0",
+    "ai": "^4.3.0",
+    "dotenv": "^16.4.7",
+    "epub2": "^3.0.2",
+    "htmlparser2": "^9.1.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
+
