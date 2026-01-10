@@ -82,6 +82,8 @@ Essential plugins that every developer should consider.
 
 The foundation for effective Claude Code usage. Includes TDD, debugging, code review, and collaboration patterns.
 
+> **Read the guide:** [Brainstorming Superpower Guide](https://ericgrill.com/blog/superpowers-brainstorming-guide) — How to use the brainstorming skill to explore ideas before writing code.
+
 ```
 /plugin install superpowers@agents-skills-plugins
 ```
@@ -99,6 +101,8 @@ The foundation for effective Claude Code usage. Includes TDD, debugging, code re
 
 Essential patterns for modern development workflows including monorepo management, build optimization, and advanced git.
 
+> **Read the guide:** [Developer-Essentials Monorepo Guide](https://ericgrill.com/blog/developer-essentials-monorepo-guide) — Setting up monorepo architecture with Nx, Turborepo, and Bazel.
+
 ```
 /plugin install developer-essentials@agents-skills-plugins
 ```
@@ -113,6 +117,8 @@ Essential patterns for modern development workflows including monorepo managemen
 <summary><b>git-pr-workflows</b> - Git and PR automation (3 commands)</summary>
 
 Streamline your git workflow with code review, onboarding, and PR enhancement tools.
+
+> **Read the guide:** [Git-PR-Workflows Plugin](https://ericgrill.com/blog/git-pr-workflows-plugin) — Automate code reviews and PR enhancements with Claude Code.
 
 ```
 /plugin install git-pr-workflows@agents-skills-plugins
@@ -129,6 +135,8 @@ Streamline your git workflow with code review, onboarding, and PR enhancement to
 
 Improve team workflows with issue tracking and standup automation.
 
+> **Read the guide:** [Team-Collaboration Plugin](https://ericgrill.com/blog/team-collaboration-plugin) — Streamline standups and issue tracking for dev teams.
+
 ```
 /plugin install team-collaboration@agents-skills-plugins
 ```
@@ -143,6 +151,8 @@ Improve team workflows with issue tracking and standup automation.
 <summary><b>context-management</b> - Save and restore context (2 commands)</summary>
 
 Never lose your place. Save and restore conversation context across sessions.
+
+> **Read the guide:** [Context Management Plugin](https://ericgrill.com/blog/context-management-plugin) — Save and restore Claude Code conversation context.
 
 ```
 /plugin install context-management@agents-skills-plugins
@@ -164,6 +174,12 @@ Work with Office documents, create media, and boost productivity.
 <summary><b>awesome-claude-skills</b> - 27 practical skills from ComposioHQ</summary>
 
 A comprehensive collection covering documents, creative media, development tools, business, and productivity.
+
+> **Read the guides:**
+> - [Document Skills](https://ericgrill.com/blog/anthropic-document-skills) — Word, PDF, PowerPoint, and Excel automation
+> - [Design Skills](https://ericgrill.com/blog/anthropic-design-skills) — Canvas design, image enhancement, and themes
+> - [Builder Skills](https://ericgrill.com/blog/anthropic-builder-skills) — MCP servers, artifacts, and webapp testing
+> - [Communication Skills](https://ericgrill.com/blog/anthropic-communication-skills) — Brand guidelines and internal comms
 
 ```
 /plugin install awesome-claude-skills@agents-skills-plugins
@@ -228,6 +244,8 @@ Language-specific development tools and patterns.
 
 Complete Python development toolkit with framework support and modern tooling.
 
+> **Read the guide:** [Python Development Plugin](https://ericgrill.com/blog/python-development-plugin) — Django, FastAPI, and async Python patterns with uv package manager.
+
 ```
 /plugin install python-development@agents-skills-plugins
 ```
@@ -264,6 +282,8 @@ Build intelligent applications with RAG, embeddings, and prompt engineering.
 
 Everything you need to build production LLM applications.
 
+> **Read the guide:** [LLM-Application-Dev Plugin](https://ericgrill.com/blog/llm-application-dev-plugin) — Build RAG systems, embeddings, and LangChain agents.
+
 ```
 /plugin install llm-application-dev@agents-skills-plugins
 ```
@@ -278,6 +298,8 @@ Everything you need to build production LLM applications.
 <summary><b>agent-orchestration</b> - Multi-agent coordination (2 commands)</summary>
 
 Orchestrate complex multi-agent workflows with context management and performance optimization.
+
+> **Read the guide:** [Agent-Orchestration Plugin](https://ericgrill.com/blog/agent-orchestration-plugin) — Coordinate multi-agent workflows and optimize performance.
 
 ```
 /plugin install agent-orchestration@agents-skills-plugins
@@ -358,6 +380,8 @@ Deep code review covering architecture, security, and PR quality.
 <summary><b>unit-testing</b> - Testing and debugging (1 command)</summary>
 
 Automated test generation and systematic debugging.
+
+> **Read the guide:** [Unit-Testing Plugin](https://ericgrill.com/blog/unit-testing-plugin) — Generate tests and debug systematically with Claude Code.
 
 ```
 /plugin install unit-testing@agents-skills-plugins
@@ -616,6 +640,8 @@ Database design, validation, and backend services.
 <summary><b>database-design</b> - SQL and PostgreSQL (1 skill)</summary>
 
 Database architecture and query optimization.
+
+> **Read the guide:** [Database-Design Plugin](https://ericgrill.com/blog/database-design-plugin) — PostgreSQL architecture and SQL query optimization.
 
 ```
 /plugin install database-design@agents-skills-plugins
@@ -879,6 +905,13 @@ The marketplace auto-syncs weekly from upstream sources to pull in updates.
 
 ## Related Resources
 
+**Learn Claude Code:**
+- [Claude Code Intro](https://ericgrill.com/blog/claude-code-intro) - Getting started with Claude Code CLI
+- [Claude Code Skills](https://ericgrill.com/blog/claude-code-skills) - Understanding and using skills
+- [Claude Code Agents](https://ericgrill.com/blog/claude-code-agents) - Working with specialized agents
+- [Claude Code Hooks](https://ericgrill.com/blog/claude-code-hooks) - Automating workflows with hooks
+
+**Official Documentation:**
 - [Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code) - Official docs for Claude Code CLI
 - [Plugin Development Guide](https://docs.anthropic.com/en/docs/claude-code/plugins) - How to build your own plugins
 
