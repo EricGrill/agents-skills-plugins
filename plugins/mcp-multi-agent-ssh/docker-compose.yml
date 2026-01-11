@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  mcp-multi-agent-ssh:
+    build: .
+    image: mcp-multi-agent-ssh
+    stdin_open: true
+    tty: true
+    environment:
+      - MCP_SSH_MASTER_PASSWORD=${MCP_SSH_MASTER_PASSWORD}
+    volumes:
+      - ~/.mcp-multi-agent-ssh:/root/.mcp-multi-agent-ssh

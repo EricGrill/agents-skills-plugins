@@ -27,6 +27,22 @@
       "category": "devops"
     },
     {
+      "name": "mcp-multi-agent-ssh",
+      "source": "./plugins/mcp-multi-agent-ssh",
+      "description": "Persistent SSH connections with encrypted credential storage and SFTP support",
+      "version": "1.0.0",
+      "author": { "name": "Eric Grill" },
+      "category": "devops"
+    },
+    {
+      "name": "mcp-kali-orchestration",
+      "source": "./plugins/mcp-kali-orchestration",
+      "description": "Kali Linux orchestration with 50+ security tools for authorized pentesting",
+      "version": "1.0.0",
+      "author": { "name": "Eric Grill" },
+      "category": "security"
+    },
+    {
       "name": "superpowers",
       "source": "./plugins/superpowers",
       "description": "Core skills library: TDD, debugging, collaboration patterns",

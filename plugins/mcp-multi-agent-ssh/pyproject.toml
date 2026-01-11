@@ -1,0 +1,59 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcp-multi-agent-ssh"
+version = "0.1.0"
+description = "Stateful SSH connections for Claude Code via MCP"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Your Name", email = "your@email.com" }
+]
+keywords = ["mcp", "ssh", "claude", "ai", "automation", "multi-agent"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "mcp>=1.0.0",
+    "asyncssh>=2.14.0",
+    "cryptography>=41.0.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+mcp-multi-agent-ssh = "mcp_multi_agent_ssh.server:main"
+
+[project.urls]
+Homepage = "https://github.com/ericgrill/mcp-multi-agent-ssh"
+Repository = "https://github.com/ericgrill/mcp-multi-agent-ssh"
+Issues = "https://github.com/ericgrill/mcp-multi-agent-ssh/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mcp_multi_agent_ssh"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

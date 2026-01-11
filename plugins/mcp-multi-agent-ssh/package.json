@@ -1,0 +1,35 @@
+{
+  "name": "mcp-multi-agent-ssh",
+  "version": "0.1.0",
+  "description": "Stateful SSH connections for Claude Code via MCP",
+  "bin": {
+    "mcp-multi-agent-ssh": "./bin/launcher.js"
+  },
+  "scripts": {
+    "start": "node bin/launcher.js"
+  },
+  "keywords": [
+    "mcp",
+    "ssh",
+    "claude",
+    "ai",
+    "automation",
+    "model-context-protocol",
+    "multi-agent"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ericgrill/mcp-multi-agent-ssh"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "pyproject.toml",
+    "README.md"
+  ]
+}
