@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "proxmox": {
+      "command": "npx",
+      "args": ["mcp-proxmox-admin"],
+      "env": {
+        "PROXMOX_HOST": "192.168.1.100",
+        "PROXMOX_PORT": "8006",
+        "PROXMOX_API_TOKEN_ID": "user@pam!mytoken",
+        "PROXMOX_API_TOKEN_SECRET": "your-secret-here",
+        "PROXMOX_VERIFY_SSL": "true",
+        "PROXMOX_SSH_USER": "root",
+        "PROXMOX_SSH_PORT": "22",
+        "PROXMOX_SSH_KEY_PATH": "~/.ssh/id_rsa",
+        "PROXMOX_DEFAULT_TRANSPORT": "auto",
+        "PROXMOX_DEFAULT_NODE": "pve",
+        "PROXMOX_TIMEOUT": "30000"
+      }
+    }
+  }
+}

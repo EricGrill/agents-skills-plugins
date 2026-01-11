@@ -1,0 +1,37 @@
+{
+  "name": "mcp-proxmox-admin",
+  "version": "0.1.0",
+  "description": "MCP server for Proxmox VE administration",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "mcp-proxmox-admin": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": ["mcp", "proxmox", "virtualization", "claude"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "axios": "^1.7.0",
+    "dotenv": "^16.4.0",
+    "ssh2": "^1.16.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/ssh2": "^1.15.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,34 @@
+# Credentials - NEVER commit these
+.env
+proxmox-config.json
+*.pem
+*.key
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Test coverage
+coverage/
+
+# Git worktrees
+.worktrees/
