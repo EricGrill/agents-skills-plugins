@@ -5,7 +5,7 @@
   </p>
   <p align="center">
     <a href="https://github.com/EricGrill/agents-skills-plugins/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
-    <img src="https://img.shields.io/badge/plugins-41-green.svg" alt="41 Plugins">
+    <img src="https://img.shields.io/badge/plugins-49-green.svg" alt="49 Plugins">
     <img src="https://img.shields.io/badge/agents-70+-purple.svg" alt="70+ Agents">
     <img src="https://img.shields.io/badge/skills-110+-orange.svg" alt="110+ Skills">
   </p>
@@ -65,6 +65,7 @@ Get started in two commands:
 | [Code Quality](#-code-quality) | comprehensive-review, unit-testing, code-documentation | Better code |
 | [Frontend & Mobile](#-frontend--mobile) | frontend-mobile-development, frontend-mobile-security | Web & mobile apps |
 | [DevOps](#-devops--infrastructure) | deployment-strategies, full-stack-orchestration | Infrastructure & deployment |
+| [MCP Servers](#-mcp-servers) | mcp-proxmox-admin, mcp-kali-orchestration, mcp-bitcoin-cli | Claude tool integrations |
 | [SEO & Marketing](#-seo--marketing) | seo-content-creation, content-marketing | Content & SEO |
 | [Data & Backend](#-data--backend) | database-design, data-validation-suite | Data management |
 | [Specialized](#-specialized) | blockchain-web3, game-development | Domain-specific |
@@ -521,6 +522,185 @@ Infrastructure as code with Terraform expertise.
 
 ---
 
+### MCP Servers
+
+Model Context Protocol servers that give Claude direct access to external systems and APIs.
+
+<details>
+<summary><b>mcp-proxmox-admin</b> - Proxmox VE infrastructure management</summary>
+
+Manage Proxmox virtual machines, containers, and infrastructure through Claude with 16 tools across VM control, snapshots, and monitoring.
+
+```
+/plugin install mcp-proxmox-admin@agents-skills-plugins
+```
+
+| Tools | Features |
+|-------|----------|
+| VM control (start, stop, restart) | Hybrid SSH/REST transport |
+| LXC container management | Optional read-only safe mode |
+| Snapshot operations | API token or SSH auth |
+| Node/storage/cluster monitoring | |
+
+*From [EricGrill/mcp-proxmox-admin](https://github.com/EricGrill/mcp-proxmox-admin)*
+
+</details>
+
+<details>
+<summary><b>mcp-multi-agent-ssh</b> - Persistent SSH connections</summary>
+
+Maintain persistent SSH connections with encrypted credential storage instead of opening/closing for each command. 10-minute idle timeout with auto-reconnection.
+
+```
+/plugin install mcp-multi-agent-ssh@agents-skills-plugins
+```
+
+| Tools | Security |
+|-------|----------|
+| `ssh_exec` - Remote command execution | AES-256-GCM encryption |
+| SFTP upload/download | PBKDF2 key derivation (100k iterations) |
+| Connection pooling & status | Master password protection |
+| Credential management | File permissions (600) |
+
+*From [EricGrill/mcp-multi-agent-ssh](https://github.com/EricGrill/mcp-multi-agent-ssh)*
+
+</details>
+
+<details>
+<summary><b>mcp-kali-orchestration</b> - Kali Linux security tools (50+)</summary>
+
+Spin up Kali Linux instances and access professional security tools for authorized pentesting, CTFs, and security research.
+
+```
+/plugin install mcp-kali-orchestration@agents-skills-plugins
+```
+
+| Category | Tools |
+|----------|-------|
+| Reconnaissance | nmap, amass, DNS enumeration |
+| Web Application | sqlmap, nuclei, gobuster |
+| Exploitation | Metasploit, msfvenom |
+| Password Attacks | hydra, john, hashcat |
+| Post-Exploitation | impacket, crackmapexec, BloodHound |
+| Network | tcpdump, Wireshark, responder |
+
+**Backends:** Docker (fast, local) or Proxmox (full VM isolation)
+
+*From [EricGrill/mcp-kali-orchestration](https://github.com/EricGrill/mcp-kali-orchestration)*
+
+</details>
+
+<details>
+<summary><b>mcp-multi-agent-server-delegation</b> - Isolated VM task execution</summary>
+
+Delegate tasks to isolated Proxmox VMs for secure, sandboxed execution with automatic cleanup and HTTP callback status reporting.
+
+```
+/plugin install mcp-multi-agent-server-delegation@agents-skills-plugins
+```
+
+| Features | Agent Types |
+|----------|-------------|
+| Complete VM isolation per job | Claude CLI |
+| Automatic cleanup after completion | Shell scripts |
+| HTTP webhook status callbacks | Custom binaries |
+| Timeout protection | |
+| CPU/memory/disk quotas | |
+
+*From [EricGrill/mcp-multi-agent-server-delegation](https://github.com/EricGrill/mcp-multi-agent-server-delegation)*
+
+</details>
+
+<details>
+<summary><b>mcp-predictive-market</b> - 5 prediction markets aggregator</summary>
+
+Query prediction markets simultaneously with arbitrage detection and comparative analysis across Manifold, Polymarket, Metaculus, PredictIt, and Kalshi.
+
+```
+/plugin install mcp-predictive-market@agents-skills-plugins
+```
+
+| Tools | Features |
+|-------|----------|
+| Multi-platform search | Arbitrage detection |
+| Market discovery | Price comparison |
+| Odds tracking | Watchlist building |
+| 8 integrated tools | 134 passing tests |
+
+*From [EricGrill/mcp-predictive-market](https://github.com/EricGrill/mcp-predictive-market)*
+
+</details>
+
+<details>
+<summary><b>mcp-bitcoin-cli</b> - Bitcoin OP_RETURN operations</summary>
+
+Embed and read data on the Bitcoin blockchain through Claude with document storage, timestamping, and BRC-20 token support.
+
+```
+/plugin install mcp-bitcoin-cli@agents-skills-plugins
+```
+
+| Capabilities | Safety |
+|--------------|--------|
+| Document storage (up to 100KB) | Testnet default |
+| SHA-256/SHA3 timestamping | Dry-run mode |
+| BRC-20 deploy/mint/transfer | Fee warnings |
+| Custom BTCD envelope protocol | Data size validation |
+
+**Networks:** mainnet, testnet, signet, regtest
+
+*From [EricGrill/mcp-bitcoin-cli](https://github.com/EricGrill/mcp-bitcoin-cli)*
+
+</details>
+
+<details>
+<summary><b>mcp-civic-data</b> - 7 government APIs</summary>
+
+Access free government and open data APIs for weather, census, NASA, and economic indicators. Most features require no API keys.
+
+```
+/plugin install mcp-civic-data@agents-skills-plugins
+```
+
+| Data Source | Examples |
+|-------------|----------|
+| NOAA Weather | US forecasts and alerts |
+| US Census | Population, demographics |
+| NASA | Astronomy photos, Mars rover imagery |
+| World Bank | GDP, economic indicators |
+| Data.gov | 300,000+ US datasets |
+| EU Open Data | European datasets |
+
+**22 tools** with zero-config setup and graceful fallback.
+
+*From [EricGrill/mcp-civic-data](https://github.com/EricGrill/mcp-civic-data)*
+
+</details>
+
+<details>
+<summary><b>mcp-memvid-state-service</b> - AI memory with vector search</summary>
+
+Single-file AI memory layer with vector search, full-text search, and temporal queries stored in portable `.mv2` files.
+
+```
+/plugin install mcp-memvid-state-service@agents-skills-plugins
+```
+
+| Search Types | Embedding Options |
+|--------------|-------------------|
+| Semantic (HNSW vectors) | Local models (bge, nomic, gte) |
+| Full-text (BM25) | Ollama integration |
+| Temporal queries | OpenAI API |
+| Smart auto-select | |
+
+**10 MCP tools** - No Redis, Postgres, or external vector DB required.
+
+*From [EricGrill/mcp-memvid-state-service](https://github.com/EricGrill/mcp-memvid-state-service)*
+
+</details>
+
+---
+
 ### SEO & Marketing
 
 Optimize content for search and marketing.
@@ -860,10 +1040,11 @@ One-click transformation of LinkedIn/X posts into detailed research reports.
 
 | Metric | Count |
 |--------|-------|
-| Plugins | 41 |
+| Plugins | 49 |
 | Agents | 70+ |
 | Skills | 110+ |
 | Commands | 40+ |
+| MCP Tools | 100+ |
 | Contributors | 10+ |
 
 ---
@@ -878,7 +1059,7 @@ Plugins in this marketplace come from:
 - **[conorluddy/ios-simulator-skill](https://github.com/conorluddy/ios-simulator-skill)** - iOS testing automation
 - **[muratcankoylan](https://github.com/muratcankoylan)** - 10 plugins including multi-agent patterns, rosetta-prompt, readwren, actual-code, book-training, and more
 - **[SHADOWPR0/beautiful_prose](https://github.com/SHADOWPR0/beautiful_prose)** - Writing style skill
-- **Original** - nano-banana, plugin-finder
+- **[EricGrill](https://github.com/EricGrill)** - 9 plugins: nano-banana, mcp-proxmox-admin, mcp-multi-agent-ssh, mcp-kali-orchestration, mcp-multi-agent-server-delegation, mcp-predictive-market, mcp-bitcoin-cli, mcp-civic-data, mcp-memvid-state-service
 
 All plugins are MIT licensed.
 
