@@ -43,6 +43,46 @@
       "category": "security"
     },
     {
+      "name": "mcp-multi-agent-server-delegation",
+      "source": "./plugins/mcp-multi-agent-server-delegation",
+      "description": "Task delegation to isolated Proxmox VMs with automatic cleanup and callbacks",
+      "version": "1.0.0",
+      "author": { "name": "Eric Grill" },
+      "category": "devops"
+    },
+    {
+      "name": "mcp-predictive-market",
+      "source": "./plugins/mcp-predictive-market",
+      "description": "Query 5 prediction markets with arbitrage detection and comparative analysis",
+      "version": "1.0.0",
+      "author": { "name": "Eric Grill" },
+      "category": "ai"
+    },
+    {
+      "name": "mcp-bitcoin-cli",
+      "source": "./plugins/mcp-bitcoin-cli",
+      "description": "Bitcoin OP_RETURN operations for documents, timestamps, and BRC-20 tokens",
+      "version": "1.0.0",
+      "author": { "name": "Eric Grill" },
+      "category": "development"
+    },
+    {
+      "name": "mcp-civic-data",
+      "source": "./plugins/mcp-civic-data",
+      "description": "Access 7 government APIs for weather, census, NASA, and economic data",
+      "version": "1.0.0",
+      "author": { "name": "Eric Grill" },
+      "category": "productivity"
+    },
+    {
+      "name": "mcp-memvid-state-service",
+      "source": "./plugins/mcp-memvid-state-service",
+      "description": "AI memory layer with vector search, full-text search, and temporal queries",
+      "version": "1.0.0",
+      "author": { "name": "Eric Grill" },
+      "category": "ai"
+    },
+    {
       "name": "superpowers",
       "source": "./plugins/superpowers",
       "description": "Core skills library: TDD, debugging, collaboration patterns",

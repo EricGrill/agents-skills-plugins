@@ -1,0 +1,38 @@
+{
+  "name": "mcp-memvid",
+  "version": "1.0.0",
+  "description": "MCP server for memvid - AI memory layer with vector search, full-text search, and temporal queries",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "mcp-memvid": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "memvid",
+    "memory",
+    "vector-search",
+    "ai",
+    "claude",
+    "anthropic"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.1",
+    "@memvid/sdk": "^2.0.148"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
