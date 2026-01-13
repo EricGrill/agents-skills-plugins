@@ -531,6 +531,8 @@ Model Context Protocol servers that give Claude direct access to external system
 
 Manage Proxmox virtual machines, containers, and infrastructure through Claude with 16 tools across VM control, snapshots, and monitoring.
 
+> **Read the guide:** [Claude Code Rescued My Proxmox Cluster](https://ericgrill.com/blog/claude-code-proxmox-cluster-rescue)
+
 ```
 /plugin install mcp-proxmox-admin@agents-skills-plugins
 ```
@@ -570,6 +572,8 @@ Maintain persistent SSH connections with encrypted credential storage instead of
 <summary><b>mcp-kali-orchestration</b> - Kali Linux security tools (50+)</summary>
 
 Spin up Kali Linux instances and access professional security tools for authorized pentesting, CTFs, and security research.
+
+> **Read the guide:** [I Gave Claude Code 50+ Kali Linux Tools](https://ericgrill.com/blog/kali-orchestration-ai-hacker)
 
 ```
 /plugin install mcp-kali-orchestration@agents-skills-plugins
@@ -616,6 +620,8 @@ Delegate tasks to isolated Proxmox VMs for secure, sandboxed execution with auto
 
 Query prediction markets simultaneously with arbitrage detection and comparative analysis across Manifold, Polymarket, Metaculus, PredictIt, and Kalshi.
 
+> **Read the guide:** [Decentralized Predictive Market Bitcoin](https://ericgrill.com/blog/decentralized-predictive-market-bitcoin)
+
 ```
 /plugin install mcp-predictive-market@agents-skills-plugins
 ```
@@ -635,6 +641,8 @@ Query prediction markets simultaneously with arbitrage detection and comparative
 <summary><b>mcp-bitcoin-cli</b> - Bitcoin OP_RETURN operations</summary>
 
 Embed and read data on the Bitcoin blockchain through Claude with document storage, timestamping, and BRC-20 token support.
+
+> **Read the guide:** [From OP_RETURN to Lightning](https://ericgrill.com/blog/bitcoin-opreturn-to-lightning-journey)
 
 ```
 /plugin install mcp-bitcoin-cli@agents-skills-plugins
@@ -657,6 +665,8 @@ Embed and read data on the Bitcoin blockchain through Claude with document stora
 <summary><b>mcp-civic-data</b> - 7 government APIs</summary>
 
 Access free government and open data APIs for weather, census, NASA, and economic indicators. Most features require no API keys.
+
+> **Read the guide:** [I Got Tired of Hunting for API Code](https://ericgrill.com/blog/civic-data-api-wrapper)
 
 ```
 /plugin install mcp-civic-data@agents-skills-plugins
@@ -681,6 +691,8 @@ Access free government and open data APIs for weather, census, NASA, and economi
 <summary><b>mcp-memvid-state-service</b> - AI memory with vector search</summary>
 
 Single-file AI memory layer with vector search, full-text search, and temporal queries stored in portable `.mv2` files.
+
+> **Read the guide:** [One File to Rule Them All: Portable AI Memory](https://ericgrill.com/blog/memvid-portable-ai-memory)
 
 ```
 /plugin install mcp-memvid-state-service@agents-skills-plugins
