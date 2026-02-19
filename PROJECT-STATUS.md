@@ -24,11 +24,11 @@ Community marketplace/registry repo for Claude Code plugins, skills, and agents;
 - Environment variables: None required at repository level.
 
 ## Recent Changes
+- 2026-02-18: Added new skill `skills/picoclaw-fleet/` with `SKILL.md`, deploy/dispatch/status scripts, and README for orchestrating PicoClaw SSH worker fleets. Commit: `81975c8`.
 - 2026-01-13: Added blog guide links to MCP server entries.
 - 2026-01-12: Added 8 EricGrill MCP servers to README.
 - 2026-01-12: Added 5 more EricGrill MCP plugins.
 - 2026-01-11: Added `mcp-multi-agent-ssh` and `mcp-kali-orchestration` plugins.
-- 2026-01-11: Added `mcp-proxmox-admin` plugin.
 - 2026-01-11: Synced plugins from upstream sources and updated superpowers to v4.0.3.
 
 ## Open Tasks / TODO
