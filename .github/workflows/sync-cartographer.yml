@@ -1,0 +1,89 @@
+name: Sync Cartographer from kingbootoshi
+
+on:
+  schedule:
+    # Run weekly on Sundays at 3am UTC
+    - cron: '0 3 * * 0'
+  workflow_dispatch:
+    # Allow manual triggering
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Clone upstream cartographer
+        run: |
+          git clone --depth 1 https://github.com/kingbootoshi/cartographer.git /tmp/upstream-cartographer
+
+      - name: Get upstream version
+        id: upstream
+        run: |
+          VERSION=$(cat /tmp/upstream-cartographer/.claude-plugin/marketplace.json | jq -r '.plugins[0].version')
+          SHA=$(cd /tmp/upstream-cartographer && git rev-parse --short HEAD)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "sha=$SHA" >> $GITHUB_OUTPUT
+
+      - name: Get current version
+        id: current
+        run: |
+          if [ -f "plugins/cartographer/.claude-plugin/marketplace.json" ]; then
+            VERSION=$(cat plugins/cartographer/.claude-plugin/marketplace.json | jq -r '.plugins[0].version')
+          else
+            VERSION="0.0.0"
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Sync cartographer plugin
+        if: steps.upstream.outputs.version != steps.current.outputs.version
+        run: |
+          echo "Upstream version: ${{ steps.upstream.outputs.version }}"
+          echo "Current version: ${{ steps.current.outputs.version }}"
+
+          mkdir -p plugins/cartographer
+          rsync -av --delete /tmp/upstream-cartographer/plugins/cartographer/ plugins/cartographer/
+
+          # Copy marketplace.json
+          cp /tmp/upstream-cartographer/.claude-plugin/marketplace.json plugins/cartographer/.claude-plugin/marketplace.json
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Update cartographer to v${{ steps.upstream.outputs.version }}"
+          title: "Update cartographer to v${{ steps.upstream.outputs.version }}"
+          body: |
+            This PR updates the cartographer plugin from upstream.
+
+            **Upstream:** [kingbootoshi/cartographer](https://github.com/kingbootoshi/cartographer)
+            **Previous version:** ${{ steps.current.outputs.version }}
+            **New version:** ${{ steps.upstream.outputs.version }}
+
+            Cartographer maps and documents codebases of any size using parallel AI subagents.
+            Creates `docs/CODEBASE_MAP.md` with architecture, file purposes, and navigation guides.
+
+            Please review the changes before merging.
+          branch: sync-cartographer-v${{ steps.upstream.outputs.version }}
+          delete-branch: true
+          labels: |
+            automated
+            sync
+            cartographer

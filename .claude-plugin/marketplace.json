@@ -3,7 +3,7 @@
   "name": "agents-skills-plugins",
   "owner": {
     "name": "Eric Grill",
-    "email": "ericgrill@example.com"
+    "email": "hitsnorth@gmail.com"
   },
   "metadata": {
     "description": "A curated collection of Claude Code plugins, agents, and skills",
@@ -401,6 +401,86 @@
       "version": "1.0.0",
       "author": { "name": "muratcankoylan" },
       "category": "productivity"
+    },
+    {
+      "name": "cartographer",
+      "source": "./plugins/cartographer",
+      "description": "Maps and documents codebases of any size using parallel AI subagents — creates CODEBASE_MAP.md with architecture, file purposes, and navigation guides",
+      "version": "1.4.0",
+      "author": { "name": "kingbootoshi" },
+      "category": "development"
+    },
+    {
+      "name": "anthropic-code-review",
+      "source": "./plugins/anthropic-code-review",
+      "description": "Official Anthropic: automated code review for PRs using multiple specialized agents with confidence-based scoring",
+      "version": "1.0.0",
+      "author": { "name": "Anthropic" },
+      "category": "development"
+    },
+    {
+      "name": "anthropic-security-guidance",
+      "source": "./plugins/anthropic-security-guidance",
+      "description": "Official Anthropic: security best practices and vulnerability detection for codebases",
+      "version": "1.0.0",
+      "author": { "name": "Anthropic" },
+      "category": "security"
+    },
+    {
+      "name": "anthropic-feature-dev",
+      "source": "./plugins/anthropic-feature-dev",
+      "description": "Official Anthropic: structured feature development workflow from spec to implementation",
+      "version": "1.0.0",
+      "author": { "name": "Anthropic" },
+      "category": "development"
+    },
+    {
+      "name": "anthropic-hookify",
+      "source": "./plugins/anthropic-hookify",
+      "description": "Official Anthropic: Claude Code hooks framework for pre/post command automation",
+      "version": "1.0.0",
+      "author": { "name": "Anthropic" },
+      "category": "development"
+    },
+    {
+      "name": "anthropic-commit-commands",
+      "source": "./plugins/anthropic-commit-commands",
+      "description": "Official Anthropic: smart git commit workflows with conventional commits and changelogs",
+      "version": "1.0.0",
+      "author": { "name": "Anthropic" },
+      "category": "development"
+    },
+    {
+      "name": "anthropic-pr-review-toolkit",
+      "source": "./plugins/anthropic-pr-review-toolkit",
+      "description": "Official Anthropic: comprehensive PR review toolkit with multi-agent analysis",
+      "version": "1.0.0",
+      "author": { "name": "Anthropic" },
+      "category": "development"
+    },
+    {
+      "name": "anthropic-typescript-lsp",
+      "source": "./plugins/anthropic-typescript-lsp",
+      "description": "Official Anthropic: TypeScript language server integration for deep type-aware coding",
+      "version": "1.0.0",
+      "author": { "name": "Anthropic" },
+      "category": "development"
+    },
+    {
+      "name": "anthropic-rust-analyzer-lsp",
+      "source": "./plugins/anthropic-rust-analyzer-lsp",
+      "description": "Official Anthropic: Rust Analyzer language server for intelligent Rust development",
+      "version": "1.0.0",
+      "author": { "name": "Anthropic" },
+      "category": "development"
+    },
+    {
+      "name": "anthropic-pyright-lsp",
+      "source": "./plugins/anthropic-pyright-lsp",
+      "description": "Official Anthropic: Pyright language server for type-safe Python development",
+      "version": "1.0.0",
+      "author": { "name": "Anthropic" },
+      "category": "development"
     }
   ]
 }

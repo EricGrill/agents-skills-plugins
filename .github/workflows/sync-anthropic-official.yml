@@ -1,0 +1,120 @@
+name: Sync Plugins from anthropics/claude-plugins-official
+
+on:
+  schedule:
+    # Run weekly on Sundays at 2am UTC
+    - cron: '0 2 * * 0'
+  workflow_dispatch:
+    # Allow manual triggering
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Clone anthropics/claude-plugins-official
+        run: |
+          git clone --depth 1 https://github.com/anthropics/claude-plugins-official.git /tmp/upstream-anthropic
+
+      - name: Get upstream commit SHA
+        id: upstream
+        run: |
+          cd /tmp/upstream-anthropic
+          SHA=$(git rev-parse --short HEAD)
+          echo "sha=$SHA" >> $GITHUB_OUTPUT
+
+      - name: Sync plugins
+        run: |
+          # List of plugins to sync from anthropics/claude-plugins-official
+          PLUGINS=(
+            "agent-sdk-dev"
+            "claude-code-setup"
+            "claude-md-management"
+            "code-review"
+            "code-simplifier"
+            "commit-commands"
+            "explanatory-output-style"
+            "feature-dev"
+            "frontend-design"
+            "hookify"
+            "learning-output-style"
+            "plugin-dev"
+            "pr-review-toolkit"
+            "ralph-loop"
+            "security-guidance"
+            "skill-creator"
+            "clangd-lsp"
+            "gopls-lsp"
+            "pyright-lsp"
+            "rust-analyzer-lsp"
+            "typescript-lsp"
+          )
+
+          for PLUGIN in "${PLUGINS[@]}"; do
+            UPSTREAM_DIR="/tmp/upstream-anthropic/plugins/$PLUGIN"
+            LOCAL_DIR="plugins/anthropic-$PLUGIN"
+
+            if [ -d "$UPSTREAM_DIR" ]; then
+              echo "Syncing $PLUGIN..."
+              mkdir -p "$LOCAL_DIR"
+              rsync -av --delete "$UPSTREAM_DIR/" "$LOCAL_DIR/"
+            else
+              echo "Warning: $PLUGIN not found in upstream, skipping"
+            fi
+          done
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet && git diff --cached --quiet; then
+            # Also check untracked files in plugins/anthropic-*
+            UNTRACKED=$(git ls-files --others --exclude-standard plugins/anthropic-* 2>/dev/null | wc -l)
+            if [ "$UNTRACKED" -eq "0" ]; then
+              echo "has_changes=false" >> $GITHUB_OUTPUT
+            else
+              echo "has_changes=true" >> $GITHUB_OUTPUT
+              echo "changed_files=$UNTRACKED" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            CHANGED=$(git diff --name-only | wc -l)
+            echo "changed_files=$CHANGED" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Sync plugins from anthropics/claude-plugins-official (${{ steps.upstream.outputs.sha }})"
+          title: "Sync plugins from anthropics/claude-plugins-official"
+          body: |
+            This PR syncs official Anthropic plugins from the upstream repository.
+
+            **Upstream:** [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official)
+            **Upstream commit:** ${{ steps.upstream.outputs.sha }}
+            **Files changed:** ${{ steps.changes.outputs.changed_files }}
+
+            ## Plugins synced (prefixed with `anthropic-`):
+            - agent-sdk-dev, claude-code-setup, claude-md-management
+            - code-review, code-simplifier, commit-commands
+            - explanatory-output-style, feature-dev, frontend-design
+            - hookify, learning-output-style, plugin-dev
+            - pr-review-toolkit, ralph-loop, security-guidance, skill-creator
+            - clangd-lsp, gopls-lsp, pyright-lsp, rust-analyzer-lsp, typescript-lsp
+
+            Please review the changes before merging.
+          branch: sync-anthropic-official-${{ steps.upstream.outputs.sha }}
+          delete-branch: true
+          labels: |
+            automated
+            sync
+            anthropic-official
