@@ -1,3 +1,5 @@
+> Standalone repo: https://github.com/EricGrill/picoclaw-fleet
+
 <p align="center">
   <h1 align="center">🐦 picoclaw-fleet</h1>
   <p align="center"><strong>Deploy and orchestrate PicoClaw workers from OpenClaw over SSH.</strong></p>
