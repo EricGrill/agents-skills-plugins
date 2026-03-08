@@ -23,6 +23,7 @@ Comprehensive guide to using uv, an extremely fast Python package installer and 
 ## Core Concepts
 
 ### 1. What is uv?
+
 - **Ultra-fast package installer**: 10-100x faster than pip
 - **Written in Rust**: Leverages Rust's performance
 - **Drop-in pip replacement**: Compatible with pip workflows
@@ -32,6 +33,7 @@ Comprehensive guide to using uv, an extremely fast Python package installer and 
 - **Lockfile support**: Reproducible installations
 
 ### 2. Key Features
+
 - Blazing fast installation speeds
 - Disk space efficient with global cache
 - Compatible with pip, pip-tools, poetry
@@ -41,6 +43,7 @@ Comprehensive guide to using uv, an extremely fast Python package installer and 
 - Built-in virtual environment support
 
 ### 3. UV vs Traditional Tools
+
 - **vs pip**: 10-100x faster, better resolver
 - **vs pip-tools**: Faster, simpler, better UX
 - **vs poetry**: Faster, less opinionated, lighter
@@ -808,24 +811,3 @@ uv cache clean              # Clear cache
 uv cache dir                # Show cache location
 uv --version                # Show version
 ```
-
-## Resources
-
-- **Official documentation**: https://docs.astral.sh/uv/
-- **GitHub repository**: https://github.com/astral-sh/uv
-- **Astral blog**: https://astral.sh/blog
-- **Migration guides**: https://docs.astral.sh/uv/guides/
-- **Comparison with other tools**: https://docs.astral.sh/uv/pip/compatibility/
-
-## Best Practices Summary
-
-1. **Use uv for all new projects** - Start with `uv init`
-2. **Commit lockfiles** - Ensure reproducible builds
-3. **Pin Python versions** - Use .python-version
-4. **Use uv run** - Avoid manual venv activation
-5. **Leverage caching** - Let uv manage global cache
-6. **Use --frozen in CI** - Exact reproduction
-7. **Keep uv updated** - Fast-moving project
-8. **Use workspaces** - For monorepo projects
-9. **Export for compatibility** - Generate requirements.txt when needed
-10. **Read the docs** - uv is feature-rich and evolving

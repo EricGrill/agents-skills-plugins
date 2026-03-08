@@ -785,6 +785,7 @@ func _on_off_screen() -> void:
 ## Best Practices
 
 ### Do's
+
 - **Use signals for decoupling** - Avoid direct references
 - **Type everything** - Static typing catches errors
 - **Use resources for data** - Separate data from logic
@@ -792,14 +793,9 @@ func _on_off_screen() -> void:
 - **Use Autoloads sparingly** - Only for truly global systems
 
 ### Don'ts
+
 - **Don't use `get_node()` in loops** - Cache references
 - **Don't couple scenes tightly** - Use signals
 - **Don't put logic in resources** - Keep them data-only
 - **Don't ignore the Profiler** - Monitor performance
 - **Don't fight the scene tree** - Work with Godot's design
-
-## Resources
-
-- [Godot Documentation](https://docs.godotengine.org/en/stable/)
-- [GDQuest Tutorials](https://www.gdquest.com/)
-- [Godot Recipes](https://kidscancode.org/godot_recipes/)

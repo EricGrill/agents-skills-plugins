@@ -39,13 +39,13 @@ workspace/
 
 ### 2. Key Concepts
 
-| Concept | Description |
-|---------|-------------|
-| **Target** | Buildable unit (library, binary, test) |
-| **Package** | Directory with BUILD file |
-| **Label** | Target identifier `//path/to:target` |
-| **Rule** | Defines how to build a target |
-| **Aspect** | Cross-cutting build behavior |
+| Concept     | Description                            |
+| ----------- | -------------------------------------- |
+| **Target**  | Buildable unit (library, binary, test) |
+| **Package** | Directory with BUILD file              |
+| **Label**   | Target identifier `//path/to:target`   |
+| **Rule**    | Defines how to build a target          |
+| **Aspect**  | Cross-cutting build behavior           |
 
 ## Templates
 
@@ -366,6 +366,7 @@ bazel build //... --notrack_incremental_state
 ## Best Practices
 
 ### Do's
+
 - **Use fine-grained targets** - Better caching
 - **Pin dependencies** - Reproducible builds
 - **Enable remote caching** - Share build artifacts
@@ -373,13 +374,8 @@ bazel build //... --notrack_incremental_state
 - **Write BUILD files per directory** - Standard convention
 
 ### Don'ts
+
 - **Don't use glob for deps** - Explicit is better
-- **Don't commit bazel-* dirs** - Add to .gitignore
+- **Don't commit bazel-\* dirs** - Add to .gitignore
 - **Don't skip WORKSPACE setup** - Foundation of build
 - **Don't ignore build warnings** - Technical debt
-
-## Resources
-
-- [Bazel Documentation](https://bazel.build/docs)
-- [Bazel Remote Execution](https://bazel.build/docs/remote-execution)
-- [rules_js](https://github.com/aspect-build/rules_js)
