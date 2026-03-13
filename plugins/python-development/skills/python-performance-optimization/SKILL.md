@@ -22,18 +22,21 @@ Comprehensive guide to profiling, analyzing, and optimizing Python code for bett
 ## Core Concepts
 
 ### 1. Profiling Types
+
 - **CPU Profiling**: Identify time-consuming functions
 - **Memory Profiling**: Track memory allocation and leaks
 - **Line Profiling**: Profile at line-by-line granularity
 - **Call Graph**: Visualize function call relationships
 
 ### 2. Performance Metrics
+
 - **Execution Time**: How long operations take
 - **Memory Usage**: Peak and average memory consumption
 - **CPU Utilization**: Processor usage patterns
 - **I/O Wait**: Time spent on I/O operations
 
 ### 3. Optimization Strategies
+
 - **Algorithmic**: Better algorithms and data structures
 - **Implementation**: More efficient code patterns
 - **Parallelization**: Multi-threading/processing
@@ -113,6 +116,7 @@ if __name__ == "__main__":
 ```
 
 **Command-line profiling:**
+
 ```bash
 # Profile a script
 python -m cProfile -o output.prof script.py
@@ -144,6 +148,7 @@ def process_data(data):
 ```
 
 **Manual line profiling:**
+
 ```python
 from line_profiler import LineProfiler
 
@@ -483,7 +488,7 @@ print(f"With cache (1000 runs): {fast_time:.4f}s")
 print(f"Cache info: {fibonacci_fast.cache_info()}")
 ```
 
-### Pattern 13: Using __slots__ for Memory
+### Pattern 13: Using **slots** for Memory
 
 ```python
 import sys
@@ -844,26 +849,3 @@ def test_map_function(benchmark):
 - Ignoring algorithmic complexity
 - Over-optimizing rare code paths
 - Not considering memory usage
-
-## Resources
-
-- **cProfile**: Built-in CPU profiler
-- **memory_profiler**: Memory usage profiling
-- **line_profiler**: Line-by-line profiling
-- **py-spy**: Sampling profiler for production
-- **NumPy**: High-performance numerical computing
-- **Cython**: Compile Python to C
-- **PyPy**: Alternative Python interpreter with JIT
-
-## Performance Checklist
-
-- [ ] Profiled code to identify bottlenecks
-- [ ] Used appropriate data structures
-- [ ] Implemented caching where beneficial
-- [ ] Optimized database queries
-- [ ] Used generators for large datasets
-- [ ] Considered multiprocessing for CPU-bound tasks
-- [ ] Used async I/O for I/O-bound tasks
-- [ ] Minimized function call overhead in hot loops
-- [ ] Checked for memory leaks
-- [ ] Benchmarked before and after optimization
