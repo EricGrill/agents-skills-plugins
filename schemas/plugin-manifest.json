@@ -1,0 +1,191 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://agents-skills-plugins.dev/schemas/plugin-manifest.json",
+  "title": "Claude Code Plugin Manifest",
+  "description": "Schema for plugin.json manifest files in the agents-skills-plugins marketplace",
+  "type": "object",
+  "required": ["name", "version", "description", "author", "license"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Plugin identifier (lowercase-with-hyphens)",
+      "pattern": "^[a-z0-9-]+$",
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "version": {
+      "type": "string",
+      "description": "Semantic version",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of the plugin",
+      "maxLength": 200
+    },
+    "author": {
+      "type": "string",
+      "description": "Plugin author name and optional email"
+    },
+    "license": {
+      "type": "string",
+      "description": "SPDX license identifier",
+      "enum": ["MIT", "Apache-2.0", "BSD-3-Clause", "GPL-3.0", "AGPL-3.0", "Proprietary"]
+    },
+    "categories": {
+      "type": "array",
+      "description": "Plugin categories for discoverability",
+      "items": {
+        "type": "string",
+        "enum": [
+          "ai-ml",
+          "backend",
+          "blockchain",
+          "data",
+          "devops",
+          "frontend",
+          "mobile",
+          "security",
+          "testing",
+          "utilities",
+          "productivity",
+          "documentation"
+        ]
+      }
+    },
+    "tags": {
+      "type": "array",
+      "description": "Free-form tags for search",
+      "items": {
+        "type": "string",
+        "maxLength": 30
+      },
+      "maxItems": 20
+    },
+    "requires": {
+      "type": "object",
+      "description": "System requirements",
+      "properties": {
+        "claude-code": {
+          "type": "string",
+          "description": "Minimum Claude Code version"
+        },
+        "node": {
+          "type": "string",
+          "description": "Minimum Node.js version"
+        },
+        "platforms": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["macos", "linux", "windows"]
+          }
+        }
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "description": "Plugin dependencies",
+      "properties": {
+        "plugins": {
+          "type": "array",
+          "description": "Required plugins with optional version constraints",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+(@.+)?$"
+          }
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "commands": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "description": "Incompatible plugins",
+      "items": {
+        "type": "object",
+        "properties": {
+          "plugin": {
+            "type": "string",
+            "description": "Conflicting plugin name"
+          },
+          "reason": {
+            "type": "string",
+            "description": "Explanation of the conflict"
+          },
+          "alternative": {
+            "type": "string",
+            "description": "Suggested alternative plugin"
+          }
+        },
+        "required": ["plugin"]
+      }
+    },
+    "skills": {
+      "type": "array",
+      "description": "List of skills provided by this plugin",
+      "items": {
+        "type": "string"
+      }
+    },
+    "agents": {
+      "type": "array",
+      "description": "List of agents provided by this plugin",
+      "items": {
+        "type": "string"
+      }
+    },
+    "commands": {
+      "type": "array",
+      "description": "List of commands provided by this plugin",
+      "items": {
+        "type": "string",
+        "pattern": "^/[a-z0-9-]+$"
+      }
+    },
+    "repository": {
+      "type": "string",
+      "format": "uri",
+      "description": "Source code repository URL"
+    },
+    "homepage": {
+      "type": "string",
+      "format": "uri",
+      "description": "Documentation website URL"
+    },
+    "bugs": {
+      "type": "string",
+      "format": "uri",
+      "description": "Issue tracker URL"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Path to plugin icon (relative to plugin root)"
+    },
+    "screenshots": {
+      "type": "array",
+      "description": "Screenshots for plugin gallery",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "caption": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

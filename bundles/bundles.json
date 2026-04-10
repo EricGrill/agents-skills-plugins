@@ -1,0 +1,147 @@
+{
+  "bundles": {
+    "web-developer": {
+      "name": "Web Developer Essentials",
+      "description": "Complete toolkit for modern web development including frontend, backend, and DevOps skills",
+      "version": "1.0.0",
+      "plugins": [
+        "superpowers",
+        "javascript-typescript",
+        "frontend-mobile-development",
+        "git-pr-workflows",
+        "unit-testing",
+        "code-documentation"
+      ],
+      "skills": [
+        "test-driven-development",
+        "systematic-debugging",
+        "writing-plans"
+      ],
+      "installCommand": "/plugin bundle web-developer"
+    },
+    "data-scientist": {
+      "name": "Data Science Pro",
+      "description": "Tools for data analysis, visualization, and machine learning workflows",
+      "version": "1.0.0",
+      "plugins": [
+        "superpowers",
+        "python-development",
+        "business-analytics",
+        "ai-investigator",
+        "code-documentation"
+      ],
+      "skills": [
+        "executing-plans",
+        "subagent-driven-development"
+      ],
+      "installCommand": "/plugin bundle data-scientist"
+    },
+    "devops-engineer": {
+      "name": "DevOps Toolkit",
+      "description": "Infrastructure, CI/CD, cloud management, and automation tools",
+      "version": "1.0.0",
+      "plugins": [
+        "superpowers",
+        "git-pr-workflows",
+        "multi-agent-patterns",
+        "mcp-multi-agent-ssh",
+        "mcp-proxmox-admin"
+      ],
+      "skills": [
+        "dispatching-parallel-agents",
+        "verification-before-completion"
+      ],
+      "installCommand": "/plugin bundle devops-engineer"
+    },
+    "security-analyst": {
+      "name": "Security Analyst",
+      "description": "Security auditing, penetration testing, and vulnerability assessment tools",
+      "version": "1.0.0",
+      "plugins": [
+        "superpowers",
+        "mcp-kali-orchestration",
+        "frontend-mobile-security",
+        "ai-investigator"
+      ],
+      "skills": [
+        "systematic-debugging",
+        "verification-before-completion"
+      ],
+      "installCommand": "/plugin bundle security-analyst"
+    },
+    "mobile-developer": {
+      "name": "Mobile Developer",
+      "description": "iOS and Android development with React Native and native tools",
+      "version": "1.0.0",
+      "plugins": [
+        "superpowers",
+        "frontend-mobile-development",
+        "ios-simulator-skill",
+        "javascript-typescript",
+        "unit-testing"
+      ],
+      "skills": [
+        "test-driven-development",
+        "writing-plans"
+      ],
+      "installCommand": "/plugin bundle mobile-developer"
+    },
+    "blockchain-developer": {
+      "name": "Blockchain Developer",
+      "description": "Web3, smart contracts, and blockchain development tools",
+      "version": "1.0.0",
+      "plugins": [
+        "superpowers",
+        "blockchain-web3",
+        "mcp-bitcoin-cli",
+        "security-auditing"
+      ],
+      "skills": [
+        "verification-before-completion",
+        "requesting-code-review"
+      ],
+      "installCommand": "/plugin bundle blockchain-developer"
+    },
+    "content-creator": {
+      "name": "Content Creator",
+      "description": "SEO, content creation, and marketing automation tools",
+      "version": "1.0.0",
+      "plugins": [
+        "superpowers",
+        "seo-content-creation",
+        "seo-technical-optimization",
+        "seo-analysis-monitoring",
+        "readwren",
+        "ralph-wiggum-marketer"
+      ],
+      "skills": [
+        "brainstorming",
+        "writing-plans"
+      ],
+      "installCommand": "/plugin bundle content-creator"
+    },
+    "team-lead": {
+      "name": "Team Lead",
+      "description": "Code review, planning, and team collaboration tools",
+      "version": "1.0.0",
+      "plugins": [
+        "superpowers",
+        "team-collaboration",
+        "git-pr-workflows",
+        "code-documentation"
+      ],
+      "skills": [
+        "requesting-code-review",
+        "receiving-code-review",
+        "writing-plans",
+        "finishing-a-development-branch"
+      ],
+      "installCommand": "/plugin bundle team-lead"
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-04-10",
+    "description": "Curated plugin bundles for common development workflows"
+  }
+}

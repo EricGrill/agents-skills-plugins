@@ -1,0 +1,256 @@
+{
+  "index": {
+    "version": "1.0.0",
+    "generated": "2025-04-10T00:00:00Z",
+    "totalPlugins": 70,
+    "totalSkills": 110,
+    "totalAgents": 70
+  },
+  "categories": {
+    "ai-ml": {
+      "name": "AI & Machine Learning",
+      "description": "LLM tooling, model training, AI development",
+      "plugins": ["ai-investigator", "agent-orchestration", "llm-application-dev"],
+      "icon": "🤖"
+    },
+    "backend": {
+      "name": "Backend Development",
+      "description": "Server-side development, APIs, databases",
+      "plugins": ["python-development", "javascript-typescript", "unit-testing"],
+      "icon": "⚙️"
+    },
+    "blockchain": {
+      "name": "Blockchain & Web3",
+      "description": "Smart contracts, crypto tools, Web3 development",
+      "plugins": ["blockchain-web3", "mcp-bitcoin-cli"],
+      "icon": "⛓️"
+    },
+    "data": {
+      "name": "Data Science",
+      "description": "Data analysis, visualization, analytics",
+      "plugins": ["business-analytics"],
+      "icon": "📊"
+    },
+    "devops": {
+      "name": "DevOps & Infrastructure",
+      "description": "CI/CD, cloud management, automation",
+      "plugins": ["mcp-proxmox-admin", "mcp-multi-agent-ssh", "mcp-kali-orchestration"],
+      "icon": "🚀"
+    },
+    "frontend": {
+      "name": "Frontend Development",
+      "description": "UI/UX, React, Vue, CSS",
+      "plugins": ["frontend-mobile-development", "javascript-typescript"],
+      "icon": "🎨"
+    },
+    "mobile": {
+      "name": "Mobile Development",
+      "description": "iOS, Android, React Native",
+      "plugins": ["frontend-mobile-development", "ios-simulator-skill"],
+      "icon": "📱"
+    },
+    "security": {
+      "name": "Security",
+      "description": "Security auditing, penetration testing",
+      "plugins": ["frontend-mobile-security", "mcp-kali-orchestration"],
+      "icon": "🔒"
+    },
+    "testing": {
+      "name": "Testing & QA",
+      "description": "Unit tests, e2e, QA automation",
+      "plugins": ["unit-testing", "superpowers"],
+      "icon": "🧪"
+    },
+    "utilities": {
+      "name": "Utilities",
+      "description": "General productivity tools",
+      "plugins": ["beautiful-prose", "book-training"],
+      "icon": "🛠️"
+    }
+  },
+  "search": {
+    "fields": ["name", "description", "tags", "author", "skills", "commands"],
+    "filters": {
+      "category": "Filter by plugin category",
+      "quality": "Filter by quality badge (platinum/gold/silver/bronze)",
+      "author": "Filter by plugin author",
+      "hasSkills": "Only plugins with skills",
+      "hasAgents": "Only plugins with agents",
+      "hasCommands": "Only plugins with commands"
+    },
+    "sortOptions": {
+      "name": "Alphabetical",
+      "rating": "Quality score (highest first)",
+      "downloads": "Install count",
+      "updated": "Last updated",
+      "created": "Newest first"
+    }
+  },
+  "plugins": {
+    "superpowers": {
+      "name": "superpowers",
+      "title": "Superpowers",
+      "description": "Core skills library for Claude Code: TDD, debugging, collaboration",
+      "version": "4.0.3",
+      "author": "Jesse Vincent",
+      "license": "MIT",
+      "categories": ["testing", "utilities"],
+      "tags": ["tdd", "debugging", "code-review", "skills", "testing"],
+      "quality": "platinum",
+      "score": 95,
+      "stats": {
+        "skills": 14,
+        "agents": 1,
+        "commands": 3
+      },
+      "install": "/plugin install superpowers@agents-skills-plugins",
+      "source": "https://github.com/obra/superpowers"
+    },
+    "python-development": {
+      "name": "python-development",
+      "title": "Python Development",
+      "description": "Tools for Python development including linting, testing, and debugging",
+      "version": "1.0.0",
+      "author": "Community",
+      "license": "MIT",
+      "categories": ["backend"],
+      "tags": ["python", "pytest", "mypy", "black"],
+      "quality": "gold",
+      "score": 78,
+      "stats": {
+        "skills": 3,
+        "agents": 0,
+        "commands": 2
+      },
+      "install": "/plugin install python-development@agents-skills-plugins"
+    },
+    "javascript-typescript": {
+      "name": "javascript-typescript",
+      "title": "JavaScript & TypeScript",
+      "description": "Modern JS/TS development tools",
+      "version": "1.0.0",
+      "author": "Community",
+      "license": "MIT",
+      "categories": ["frontend", "backend"],
+      "tags": ["javascript", "typescript", "eslint", "prettier"],
+      "quality": "gold",
+      "score": 80,
+      "stats": {
+        "skills": 4,
+        "agents": 0,
+        "commands": 2
+      },
+      "install": "/plugin install javascript-typescript@agents-skills-plugins"
+    },
+    "frontend-mobile-development": {
+      "name": "frontend-mobile-development",
+      "title": "Frontend & Mobile Development",
+      "description": "React, React Native, and mobile development tools",
+      "version": "1.0.0",
+      "author": "Community",
+      "license": "MIT",
+      "categories": ["frontend", "mobile"],
+      "tags": ["react", "react-native", "mobile", "css"],
+      "quality": "silver",
+      "score": 68,
+      "stats": {
+        "skills": 3,
+        "agents": 0,
+        "commands": 1
+      },
+      "install": "/plugin install frontend-mobile-development@agents-skills-plugins"
+    },
+    "git-pr-workflows": {
+      "name": "git-pr-workflows",
+      "title": "Git & PR Workflows",
+      "description": "Streamlined git operations and pull request workflows",
+      "version": "1.0.0",
+      "author": "Community",
+      "license": "MIT",
+      "categories": ["utilities", "devops"],
+      "tags": ["git", "github", "pull-requests", "workflow"],
+      "quality": "gold",
+      "score": 82,
+      "stats": {
+        "skills": 2,
+        "agents": 1,
+        "commands": 3
+      },
+      "install": "/plugin install git-pr-workflows@agents-skills-plugins"
+    },
+    "unit-testing": {
+      "name": "unit-testing",
+      "title": "Unit Testing",
+      "description": "Comprehensive unit testing utilities",
+      "version": "1.0.0",
+      "author": "Community",
+      "license": "MIT",
+      "categories": ["testing"],
+      "tags": ["testing", "jest", "pytest", "tdd"],
+      "quality": "silver",
+      "score": 72,
+      "stats": {
+        "skills": 2,
+        "agents": 0,
+        "commands": 1
+      },
+      "install": "/plugin install unit-testing@agents-skills-plugins"
+    },
+    "mcp-multi-agent-ssh": {
+      "name": "mcp-multi-agent-ssh",
+      "title": "MCP Multi-Agent SSH",
+      "description": "SSH-based multi-agent orchestration via MCP",
+      "version": "1.0.0",
+      "author": "EricGrill",
+      "license": "MIT",
+      "categories": ["devops"],
+      "tags": ["mcp", "ssh", "agents", "orchestration"],
+      "quality": "gold",
+      "score": 85,
+      "stats": {
+        "skills": 1,
+        "agents": 1,
+        "commands": 2
+      },
+      "install": "/plugin install mcp-multi-agent-ssh@agents-skills-plugins"
+    }
+  },
+  "commands": {
+    "/plugin": {
+      "description": "Manage plugins",
+      "subcommands": ["install", "uninstall", "list", "search", "update", "bundle"]
+    },
+    "/skill": {
+      "description": "Execute a skill",
+      "example": "/skill test-driven-development"
+    },
+    "/agent": {
+      "description": "Delegate to an agent",
+      "example": "/agent code-reviewer"
+    },
+    "/brainstorm": {
+      "plugin": "superpowers",
+      "description": "Start a brainstorming session"
+    },
+    "/write-plan": {
+      "plugin": "superpowers",
+      "description": "Create an implementation plan"
+    },
+    "/execute-plan": {
+      "plugin": "superpowers",
+      "description": "Execute an existing plan"
+    }
+  },
+  "bundles": {
+    "refs": {
+      "web-developer": "Web development essentials",
+      "data-scientist": "Data science toolkit",
+      "devops-engineer": "DevOps and infrastructure",
+      "security-analyst": "Security and pentesting",
+      "mobile-developer": "Mobile app development",
+      "blockchain-developer": "Web3 and blockchain",
+      "content-creator": "SEO and content tools",
+      "team-lead": "Team collaboration tools"
+    }
+  }
+}
