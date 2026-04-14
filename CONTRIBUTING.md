@@ -296,7 +296,6 @@ By submitting a PR, you agree that:
 
 ## Getting Help
 
-- **Discord:** [Join our community](https://discord.gg/example)
 - **Issues:** [Open an issue](https://github.com/EricGrill/agents-skills-plugins/issues)
 - **Discussions:** [GitHub Discussions](https://github.com/EricGrill/agents-skills-plugins/discussions)
 
