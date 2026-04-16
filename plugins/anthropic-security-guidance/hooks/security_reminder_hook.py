@@ -10,17 +10,51 @@ import random
 import sys
 from datetime import datetime
 
-# Debug log file
-DEBUG_LOG_FILE = "/tmp/security-warnings-log.txt"
+import tempfile
+import os
+
+# Debug log configuration - opt-in only via env var
+DEBUG_LOG_ENABLED = os.environ.get("SECURITY_REMINDER_DEBUG_LOG")
+DEBUG_LOG_MAX_BYTES = 1024 * 1024  # 1 MB size limit
+
+
+def _get_debug_log_file():
+    """Get a secure debug log file path."""
+    if DEBUG_LOG_ENABLED == "1":
+        fd, path = tempfile.mkstemp(prefix="security-warnings-", suffix=".log")
+        os.close(fd)
+        os.chmod(path, 0o600)
+        return path
+    elif DEBUG_LOG_ENABLED and DEBUG_LOG_ENABLED not in ("0", "", "false", "False"):
+        path = DEBUG_LOG_ENABLED
+        # Ensure restrictive permissions on custom path
+        if os.path.exists(path):
+            os.chmod(path, 0o600)
+        else:
+            fd = os.open(path, os.O_CREAT | os.O_WRONLY, 0o600)
+            os.close(fd)
+        return path
+    return None
 
 
 def debug_log(message):
-    """Append debug message to log file with timestamp."""
+    """Append debug message to a secure log file with timestamp and size limiting."""
+    log_file = _get_debug_log_file()
+    if not log_file:
+        return
     try:
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
-        with open(DEBUG_LOG_FILE, "a") as f:
-            f.write(f"[{timestamp}] {message}\n")
-    except Exception as e:
+        entry = f"[{timestamp}] {message}\n"
+        # Size limiting: truncate to most recent half if over limit
+        if os.path.exists(log_file) and os.path.getsize(log_file) + len(entry) > DEBUG_LOG_MAX_BYTES:
+            with open(log_file, "r") as f:
+                lines = f.readlines()
+            half = len(lines) // 2
+            with open(log_file, "w") as f:
+                f.writelines(lines[half:])
+        with open(log_file, "a") as f:
+            f.write(entry)
+    except Exception:
         # Silently ignore logging errors to avoid disrupting the hook
         pass
 
