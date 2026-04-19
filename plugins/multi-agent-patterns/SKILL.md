@@ -230,6 +230,7 @@ This skill builds on context-fundamentals and context-degradation. It connects t
 - memory-systems - Shared state management across agents
 - tool-design - Tool specialization per agent
 - context-optimization - Context partitioning strategies
+- latent-briefing - KV-cache trajectory handoff between orchestrator and worker when models align
 
 ## References
 
