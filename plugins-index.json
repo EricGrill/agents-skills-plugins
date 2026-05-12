@@ -2,7 +2,7 @@
   "index": {
     "version": "1.0.0",
     "generated": "2025-04-10T00:00:00Z",
-    "totalPlugins": 70,
+    "totalPlugins": 71,
     "totalSkills": 110,
     "totalAgents": 70
   },
@@ -213,6 +213,25 @@
         "commands": 2
       },
       "install": "/plugin install mcp-multi-agent-ssh@agents-skills-plugins"
+    },
+    "videodb": {
+      "name": "videodb",
+      "title": "VideoDB",
+      "description": "Server-side video and audio perception for AI agents: upload, search, edit, transcribe, subtitle, transcode, capture, and stream via natural language",
+      "version": "1.1.0",
+      "author": "VideoDB",
+      "license": "MIT",
+      "categories": ["ai-ml"],
+      "tags": ["video", "audio", "perception", "streaming", "ai", "vision", "search", "rtsp", "hls", "multimodal"],
+      "quality": "gold",
+      "score": 80,
+      "stats": {
+        "skills": 1,
+        "agents": 0,
+        "commands": 1
+      },
+      "install": "npx skills add video-db/skills",
+      "source": "https://github.com/video-db/skills"
     }
   },
   "commands": {
