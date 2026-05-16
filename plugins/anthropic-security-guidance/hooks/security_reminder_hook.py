@@ -7,20 +7,79 @@ This hook checks for security patterns in file edits and warns about potential v
 import json
 import os
 import random
+import re
 import sys
 from datetime import datetime
 
-# Debug log file
-DEBUG_LOG_FILE = "/tmp/security-warnings-log.txt"
+# Debug logging — opt-in only via DEBUG_SECURITY_HOOK=1
+# Logs go to a private directory by default (not world-readable /tmp)
+DEBUG_SECURITY_HOOK = os.environ.get("DEBUG_SECURITY_HOOK", "0") == "1"
+SECURITY_LOG_DIR = os.environ.get(
+    "SECURITY_LOG_DIR",
+    os.path.expanduser("~/.claude/logs/security-hook")
+)
+MAX_LOG_SIZE = int(os.environ.get("SECURITY_LOG_MAX_BYTES", 1024 * 1024))  # 1 MB
+
+_debug_log_path = None
+
+
+def _get_debug_log_path():
+    """Resolve the debug log path, creating the directory if needed."""
+    global _debug_log_path
+    if _debug_log_path is not None:
+        return _debug_log_path
+    try:
+        os.makedirs(SECURITY_LOG_DIR, mode=0o700, exist_ok=True)
+    except OSError:
+        _debug_log_path = None
+        return None
+    _debug_log_path = os.path.join(SECURITY_LOG_DIR, "security-warnings-log.txt")
+    return _debug_log_path
+
+
+def _sanitize(message):
+    """Strip file paths and other potentially sensitive patterns."""
+    # Remove paths that look like filesystem references
+    message = re.sub(r"/[a-zA-Z0-9_/.\-]{3,}", "[redacted-path]", message)
+    return message
+
+
+def _rotate_if_needed(path):
+    """Truncate the log file if it exceeds MAX_LOG_SIZE."""
+    try:
+        if os.path.exists(path) and os.path.getsize(path) > MAX_LOG_SIZE:
+            # Keep last ~10% of the file
+            with open(path, "rb") as f:
+                f.seek(int(MAX_LOG_SIZE * 0.9))
+                f.readline()  # finish current line
+                tail = f.read()
+            with open(path, "wb") as f:
+                f.write(tail)
+    except OSError:
+        pass
 
 
 def debug_log(message):
-    """Append debug message to log file with timestamp."""
+    """Append debug message to log file with timestamp.
+    
+    Only logs when DEBUG_SECURITY_HOOK=1 is set.
+    Logs go to a private directory (~/.claude/logs/security-hook/ by default).
+    Messages are sanitized to strip potential file paths.
+    """
+    if not DEBUG_SECURITY_HOOK:
+        return
+
+    log_path = _get_debug_log_path()
+    if not log_path:
+        return
+
     try:
+        _rotate_if_needed(log_path)
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
-        with open(DEBUG_LOG_FILE, "a") as f:
-            f.write(f"[{timestamp}] {message}\n")
-    except Exception as e:
+        safe_message = _sanitize(message)
+        with open(log_path, "a") as f:
+            f.write(f"[{timestamp}] {safe_message}\n")
+    except Exception:
         # Silently ignore logging errors to avoid disrupting the hook
         pass
 
@@ -79,7 +138,6 @@ Instead of:
 Use:
   import { execFileNoThrow } from '../utils/execFileNoThrow.js'
   await execFileNoThrow('command', [userInput])
-
 The execFileNoThrow utility:
 - Uses execFile instead of exec (prevents shell injection)
 - Handles Windows compatibility automatically
