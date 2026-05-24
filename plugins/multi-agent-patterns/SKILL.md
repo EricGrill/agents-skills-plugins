@@ -1,6 +1,6 @@
 ---
 name: multi-agent-patterns
-description: This skill should be used when the user asks to "design multi-agent system", "implement supervisor pattern", "create swarm architecture", "coordinate multiple agents", or mentions multi-agent patterns, context isolation, agent handoffs, sub-agents, or parallel agent execution.
+description: This skill should be used when designing multi-agent systems that need context isolation, supervisor or swarm coordination, explicit handoffs, parallel execution, or a decision on whether multiple agents are justified.
 ---
 
 # Multi-Agent Architecture Patterns
@@ -16,6 +16,12 @@ Activate this skill when:
 - Building systems that must handle multiple domains simultaneously
 - Scaling agent capabilities beyond single-context limits
 - Designing production agent systems with multiple specialized components
+
+Do not activate this skill for adjacent work owned by other skills:
+- Deciding task-model fit, pipeline shape, or project-level cost before topology is known: `project-development`.
+- Designing hosted sandboxes, warm pools, remote sessions, or background runtime infrastructure: `hosted-agents`.
+- Sharing orchestrator state through KV-cache compaction in controlled runtimes: `latent-briefing`.
+- Designing the tools each agent exposes: `tool-design`.
 
 ## Core Concepts
 
@@ -39,15 +45,15 @@ Reach for multi-agent architectures when a single agent's context fills with acc
 Partition work across multiple context windows so each agent operates in a clean context focused on its subtask. Aggregate results at a coordination layer without any single context bearing the full burden.
 
 **The Token Economics Reality**
-Budget for substantially higher token costs. Production data shows multi-agent systems run at approximately 15x the token cost of a single-agent chat:
+Budget for substantially higher token costs. Production data shows multi-agent systems can cost far more tokens than single-agent chat (claim-multi-agent-token-multiplier):
 
 | Architecture | Token Multiplier | Use Case |
 |--------------|------------------|----------|
-| Single agent chat | 1x baseline | Simple queries |
-| Single agent with tools | ~4x baseline | Tool-using tasks |
-| Multi-agent system | ~15x baseline | Complex research/coordination |
+| Single agent chat | Baseline | Simple queries |
+| Single agent with tools | Higher than baseline | Tool-using tasks |
+| Multi-agent system | Much higher than baseline | Complex research/coordination |
 
-Research on the BrowseComp evaluation found that three factors explain 95% of performance variance: token usage (80% of variance), number of tool calls, and model choice. This validates distributing work across agents with separate context windows to add capacity for parallel reasoning.
+Browsing-agent evaluation research suggests token usage, tool calls, and model choice dominate performance variance (claim-evaluation-browsecomp-variance). This supports measuring multi-agent setups against single-agent baselines instead of assuming extra agents help.
 
 Prioritize model selection alongside architecture design — upgrading to better models often provides larger performance gains than doubling token budgets. BrowseComp data shows that model quality improvements frequently outperform raw token increases. Treat model selection and multi-agent architecture as complementary strategies.
 
@@ -225,12 +231,15 @@ def handle_customer_request(request):
 
 ## Integration
 
-This skill builds on context-fundamentals and context-degradation. It connects to:
+This skill owns agent topology and coordination protocols. Adjacent skills own project shape, hosted runtime, and latent-state transfer:
 
-- memory-systems - Shared state management across agents
-- tool-design - Tool specialization per agent
-- context-optimization - Context partitioning strategies
-- latent-briefing - KV-cache trajectory handoff between orchestrator and worker when models align
+- `project-development`: project-level single-vs-multi choice before topology details.
+- `hosted-agents`: remote sandbox, session, warm-pool, and multiplayer infrastructure.
+- `memory-systems`: shared persistent state across agents.
+- `tool-design`: tool specialization and spawn/status tool contracts.
+- `context-optimization`: partitioning as one token-efficiency tactic.
+- `latent-briefing`: KV-cache trajectory handoff between orchestrator and worker when models align.
+- `evaluation`: measuring whether multiple agents improve outcomes after coordination cost.
 
 ## References
 
@@ -253,6 +262,6 @@ External resources:
 ## Skill Metadata
 
 **Created**: 2025-12-20
-**Last Updated**: 2026-03-17
+**Last Updated**: 2026-05-15
 **Author**: Agent Skills for Context Engineering Contributors
-**Version**: 2.0.0
+**Version**: 2.1.0
