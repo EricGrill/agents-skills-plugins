@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin.json",
+  "name": "mindex",
+  "version": "1.0.0",
+  "description": "Auditable, version-controlled long-term memory workflows for Claude Code",
+  "author": {
+    "name": "li-jin-xuan",
+    "url": "https://github.com/li-jin-xuan"
+  },
+  "homepage": "https://github.com/li-jin-xuan/mindex",
+  "repository": "https://github.com/li-jin-xuan/mindex",
+  "license": "MIT",
+  "keywords": [
+    "memory",
+    "long-term-memory",
+    "knowledge-management",
+    "claude-code",
+    "markdown"
+  ]
+}
