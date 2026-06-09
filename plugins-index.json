@@ -312,7 +312,7 @@
       "title": "MIndex",
       "description": "Auditable, version-controlled, cross-project structured long-term memory for Claude Code",
       "version": "1.0.0",
-      "author": "li-jin-xuan",
+      "author": "RawSector",
       "license": "MIT",
       "categories": [
         "ai-ml"
