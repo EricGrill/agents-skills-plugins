@@ -1,75 +1,114 @@
 {
   "index": {
     "version": "1.0.0",
-    "generated": "2025-04-10T00:00:00Z",
-    "totalPlugins": 70,
-    "totalSkills": 110,
-    "totalAgents": 70
+    "generated": "2026-06-07T06:50:00Z",
+    "totalPlugins": 8,
+    "totalSkills": 33,
+    "totalAgents": 3
   },
   "categories": {
     "ai-ml": {
       "name": "AI & Machine Learning",
       "description": "LLM tooling, model training, AI development",
-      "plugins": ["ai-investigator", "agent-orchestration", "llm-application-dev"],
+      "plugins": [
+        "ai-investigator",
+        "agent-orchestration",
+        "llm-application-dev"
+      ],
       "icon": "🤖"
     },
     "backend": {
       "name": "Backend Development",
       "description": "Server-side development, APIs, databases",
-      "plugins": ["python-development", "javascript-typescript", "unit-testing"],
+      "plugins": [
+        "python-development",
+        "javascript-typescript",
+        "unit-testing"
+      ],
       "icon": "⚙️"
     },
     "blockchain": {
       "name": "Blockchain & Web3",
       "description": "Smart contracts, crypto tools, Web3 development",
-      "plugins": ["blockchain-web3", "mcp-bitcoin-cli"],
+      "plugins": [
+        "blockchain-web3",
+        "mcp-bitcoin-cli"
+      ],
       "icon": "⛓️"
     },
     "data": {
       "name": "Data Science",
       "description": "Data analysis, visualization, analytics",
-      "plugins": ["business-analytics"],
+      "plugins": [
+        "business-analytics"
+      ],
       "icon": "📊"
     },
     "devops": {
       "name": "DevOps & Infrastructure",
       "description": "CI/CD, cloud management, automation",
-      "plugins": ["mcp-proxmox-admin", "mcp-multi-agent-ssh", "mcp-kali-orchestration"],
+      "plugins": [
+        "mcp-proxmox-admin",
+        "mcp-multi-agent-ssh",
+        "mcp-kali-orchestration"
+      ],
       "icon": "🚀"
     },
     "frontend": {
       "name": "Frontend Development",
       "description": "UI/UX, React, Vue, CSS",
-      "plugins": ["frontend-mobile-development", "javascript-typescript"],
+      "plugins": [
+        "frontend-mobile-development",
+        "javascript-typescript"
+      ],
       "icon": "🎨"
     },
     "mobile": {
       "name": "Mobile Development",
       "description": "iOS, Android, React Native",
-      "plugins": ["frontend-mobile-development", "ios-simulator-skill"],
+      "plugins": [
+        "frontend-mobile-development",
+        "ios-simulator-skill"
+      ],
       "icon": "📱"
     },
     "security": {
       "name": "Security",
       "description": "Security auditing, penetration testing",
-      "plugins": ["frontend-mobile-security", "mcp-kali-orchestration"],
+      "plugins": [
+        "frontend-mobile-security",
+        "mcp-kali-orchestration"
+      ],
       "icon": "🔒"
     },
     "testing": {
       "name": "Testing & QA",
       "description": "Unit tests, e2e, QA automation",
-      "plugins": ["unit-testing", "superpowers"],
+      "plugins": [
+        "unit-testing",
+        "superpowers"
+      ],
       "icon": "🧪"
     },
     "utilities": {
       "name": "Utilities",
       "description": "General productivity tools",
-      "plugins": ["beautiful-prose", "book-training"],
+      "plugins": [
+        "beautiful-prose",
+        "book-training"
+      ],
       "icon": "🛠️"
     }
   },
   "search": {
-    "fields": ["name", "description", "tags", "author", "skills", "commands"],
+    "fields": [
+      "name",
+      "description",
+      "tags",
+      "author",
+      "skills",
+      "commands"
+    ],
     "filters": {
       "category": "Filter by plugin category",
       "quality": "Filter by quality badge (platinum/gold/silver/bronze)",
@@ -94,8 +133,17 @@
       "version": "4.0.3",
       "author": "Jesse Vincent",
       "license": "MIT",
-      "categories": ["testing", "utilities"],
-      "tags": ["tdd", "debugging", "code-review", "skills", "testing"],
+      "categories": [
+        "testing",
+        "utilities"
+      ],
+      "tags": [
+        "tdd",
+        "debugging",
+        "code-review",
+        "skills",
+        "testing"
+      ],
       "quality": "platinum",
       "score": 95,
       "stats": {
@@ -113,8 +161,15 @@
       "version": "1.0.0",
       "author": "Community",
       "license": "MIT",
-      "categories": ["backend"],
-      "tags": ["python", "pytest", "mypy", "black"],
+      "categories": [
+        "backend"
+      ],
+      "tags": [
+        "python",
+        "pytest",
+        "mypy",
+        "black"
+      ],
       "quality": "gold",
       "score": 78,
       "stats": {
@@ -131,8 +186,16 @@
       "version": "1.0.0",
       "author": "Community",
       "license": "MIT",
-      "categories": ["frontend", "backend"],
-      "tags": ["javascript", "typescript", "eslint", "prettier"],
+      "categories": [
+        "frontend",
+        "backend"
+      ],
+      "tags": [
+        "javascript",
+        "typescript",
+        "eslint",
+        "prettier"
+      ],
       "quality": "gold",
       "score": 80,
       "stats": {
@@ -149,8 +212,16 @@
       "version": "1.0.0",
       "author": "Community",
       "license": "MIT",
-      "categories": ["frontend", "mobile"],
-      "tags": ["react", "react-native", "mobile", "css"],
+      "categories": [
+        "frontend",
+        "mobile"
+      ],
+      "tags": [
+        "react",
+        "react-native",
+        "mobile",
+        "css"
+      ],
       "quality": "silver",
       "score": 68,
       "stats": {
@@ -167,8 +238,16 @@
       "version": "1.0.0",
       "author": "Community",
       "license": "MIT",
-      "categories": ["utilities", "devops"],
-      "tags": ["git", "github", "pull-requests", "workflow"],
+      "categories": [
+        "utilities",
+        "devops"
+      ],
+      "tags": [
+        "git",
+        "github",
+        "pull-requests",
+        "workflow"
+      ],
       "quality": "gold",
       "score": 82,
       "stats": {
@@ -185,8 +264,15 @@
       "version": "1.0.0",
       "author": "Community",
       "license": "MIT",
-      "categories": ["testing"],
-      "tags": ["testing", "jest", "pytest", "tdd"],
+      "categories": [
+        "testing"
+      ],
+      "tags": [
+        "testing",
+        "jest",
+        "pytest",
+        "tdd"
+      ],
       "quality": "silver",
       "score": 72,
       "stats": {
@@ -203,8 +289,15 @@
       "version": "1.0.0",
       "author": "EricGrill",
       "license": "MIT",
-      "categories": ["devops"],
-      "tags": ["mcp", "ssh", "agents", "orchestration"],
+      "categories": [
+        "devops"
+      ],
+      "tags": [
+        "mcp",
+        "ssh",
+        "agents",
+        "orchestration"
+      ],
       "quality": "gold",
       "score": 85,
       "stats": {
@@ -213,12 +306,47 @@
         "commands": 2
       },
       "install": "/plugin install mcp-multi-agent-ssh@agents-skills-plugins"
+    },
+    "mindex": {
+      "name": "mindex",
+      "title": "MIndex",
+      "description": "Auditable, version-controlled, cross-project structured long-term memory for Claude Code",
+      "version": "1.0.0",
+      "author": "RawSector",
+      "license": "MIT",
+      "categories": [
+        "ai-ml"
+      ],
+      "tags": [
+        "memory",
+        "long-term-memory",
+        "knowledge-management",
+        "claude-code",
+        "markdown",
+        "productivity"
+      ],
+      "quality": "bronze",
+      "score": 60,
+      "stats": {
+        "skills": 4,
+        "agents": 0,
+        "commands": 4
+      },
+      "install": "/plugin install mindex@agents-skills-plugins",
+      "source": "https://github.com/li-jin-xuan/mindex"
     }
   },
   "commands": {
     "/plugin": {
       "description": "Manage plugins",
-      "subcommands": ["install", "uninstall", "list", "search", "update", "bundle"]
+      "subcommands": [
+        "install",
+        "uninstall",
+        "list",
+        "search",
+        "update",
+        "bundle"
+      ]
     },
     "/skill": {
       "description": "Execute a skill",
