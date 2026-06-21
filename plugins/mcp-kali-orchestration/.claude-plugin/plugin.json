@@ -1,0 +1,10 @@
+{
+  "name": "mcp-kali-orchestration",
+  "description": "Kali Linux orchestration with 50+ security tools for authorized pentesting",
+  "version": "1.0.0",
+  "author": {
+    "name": "Eric Grill"
+  },
+  "license": "MIT",
+  "category": "security"
+}

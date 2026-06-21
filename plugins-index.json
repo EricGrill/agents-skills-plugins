@@ -1,10 +1,11 @@
 {
   "index": {
     "version": "1.0.0",
-    "generated": "2025-04-10T00:00:00Z",
-    "totalPlugins": 70,
-    "totalSkills": 110,
-    "totalAgents": 70
+    "generated": "2026-06-20T00:00:00Z",
+    "totalPlugins": 66,
+    "totalSkills": 954,
+    "totalAgents": 78,
+    "note": "The 'plugins' object below is a curated featured subset, not the full catalog; see .claude-plugin/marketplace.json for all 66 plugins."
   },
   "categories": {
     "ai-ml": {

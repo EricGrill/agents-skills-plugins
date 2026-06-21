@@ -1,8 +1,10 @@
 {
-  "name": "feature-dev",
+  "name": "anthropic-feature-dev",
   "description": "Comprehensive feature development workflow with specialized agents for codebase exploration, architecture design, and quality review",
   "author": {
     "name": "Anthropic",
     "email": "support@anthropic.com"
-  }
+  },
+  "version": "1.0.0",
+  "license": "MIT"
 }

@@ -1,0 +1,11 @@
+{
+  "name": "anthropic-clangd-lsp",
+  "description": "Official Anthropic: clangd language server integration for C/C++ type-aware coding",
+  "version": "1.0.0",
+  "author": {
+    "name": "Anthropic",
+    "email": "support@anthropic.com"
+  },
+  "license": "MIT",
+  "category": "backend"
+}

@@ -5,9 +5,9 @@
   </p>
   <p align="center">
     <a href="https://github.com/EricGrill/agents-skills-plugins/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
-    <img src="https://img.shields.io/badge/plugins-70-green.svg" alt="70 Plugins">
-    <img src="https://img.shields.io/badge/agents-70+-purple.svg" alt="70+ Agents">
-    <img src="https://img.shields.io/badge/skills-110+-orange.svg" alt="110+ Skills">
+    <img src="https://img.shields.io/badge/plugins-66-green.svg" alt="66 Plugins">
+    <img src="https://img.shields.io/badge/agents-78-purple.svg" alt="78 Agents">
+    <img src="https://img.shields.io/badge/skills-950+-orange.svg" alt="950+ Skills">
   </p>
   <p align="center">
     <a href="#-quick-start">Quick Start</a> |
@@ -957,51 +957,6 @@ Adapts prompts for different AI providers using multi-agent ReAct loops with Lan
 </details>
 
 <details>
-<summary><b>readwren</b> - Literary DNA extraction</summary>
-
-Multi-agent interview system that extracts your literary preferences and generates reading profiles.
-
-```
-/plugin install readwren@agents-skills-plugins
-```
-
-**Features:** 12-turn adaptive interview, taste anchors, style signature mapping, vocabulary analysis.
-
-*From [muratcankoylan/readwren](https://github.com/muratcankoylan/readwren)*
-
-</details>
-
-<details>
-<summary><b>food-tour-planner</b> - AI food tour planning</summary>
-
-Multi-agent food tour planner using LangChain DeepAgents and Google Maps API.
-
-```
-/plugin install food-tour-planner@agents-skills-plugins
-```
-
-**Agents:** Restaurant Finder, Neighborhood Researcher, Dashboard Creator.
-
-*From [muratcankoylan/Food-tour-planner-agent](https://github.com/muratcankoylan/Food-tour-planner-agent)*
-
-</details>
-
-<details>
-<summary><b>actual-code</b> - 7-agent code assessment generator</summary>
-
-Analyzes GitHub repos and generates personalized coding challenges using Google Gemini.
-
-```
-/plugin install actual-code@agents-skills-plugins
-```
-
-**Pipeline:** Scanner → Code/PR/Issue/Dependency Analyzers → Problem Creator → QA Validator
-
-*From [muratcankoylan/actual_code](https://github.com/muratcankoylan/actual_code)*
-
-</details>
-
-<details>
 <summary><b>book-training</b> - Author style transfer with LoRA</summary>
 
 Complete pipeline for training LLMs to write in specific author styles using SFT.
@@ -1013,21 +968,6 @@ Complete pipeline for training LLMs to write in specific author styles using SFT
 **Results:** 97% loss reduction, ~50-70% human score on AI detectors.
 
 *From [muratcankoylan/book-training](https://github.com/muratcankoylan/book-training)*
-
-</details>
-
-<details>
-<summary><b>linkedin-analyzer</b> - LinkedIn profile insights</summary>
-
-Analyze LinkedIn profiles using Cohere Command R+ for professional insights.
-
-```
-/plugin install linkedin-analyzer@agents-skills-plugins
-```
-
-**Features:** Post analysis, engagement metrics, professional growth recommendations.
-
-*From [muratcankoylan/linkedin-analyzer](https://github.com/muratcankoylan/linkedin-analyzer)*
 
 </details>
 
@@ -1069,7 +1009,7 @@ Plugins in this marketplace come from:
 - **[wshobson/agents](https://github.com/wshobson/agents)** - Specialized agents and skills
 - **[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)** - Document & productivity skills
 - **[conorluddy/ios-simulator-skill](https://github.com/conorluddy/ios-simulator-skill)** - iOS testing automation
-- **[muratcankoylan](https://github.com/muratcankoylan)** - 10 plugins including multi-agent patterns, rosetta-prompt, readwren, actual-code, book-training, and more
+- **[muratcankoylan](https://github.com/muratcankoylan)** - plugins including multi-agent patterns, rosetta-prompt, book-training, ai-investigator, and more
 - **[SHADOWPR0/beautiful_prose](https://github.com/SHADOWPR0/beautiful_prose)** - Writing style skill
 - **[EricGrill](https://github.com/EricGrill)** - 9 plugins: nano-banana, mcp-proxmox-admin, mcp-multi-agent-ssh, mcp-kali-orchestration, mcp-multi-agent-server-delegation, mcp-predictive-market, mcp-bitcoin-cli, mcp-civic-data, mcp-memvid-state-service
 

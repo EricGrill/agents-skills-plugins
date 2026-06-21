@@ -1,4 +1,6 @@
+import ast
 import logging
+import re
 from typing import List, Dict, Optional
 from src.processors.claude_processor import ClaudeProcessor
 from src.config import FIRECRAWL_API_KEY
@@ -110,8 +112,11 @@ URLs to analyze:
         print(response)
 
         try:
-            case_study_indices = eval(response)  # Safely evaluate the list
-            
+            # Safely parse the list of indices from the LLM response.
+            # Never use eval(): the response is derived from scraped web pages
+            # and could contain arbitrary code.
+            case_study_indices = self._parse_indices(response)
+
             # Get the identified case study URLs
             case_studies = []
             for i in case_study_indices:
@@ -125,6 +130,44 @@ URLs to analyze:
             
         except Exception as e:
             logger.error(f"Error processing Claude's response: {str(e)}")
+            return []
+
+    def _parse_indices(self, response: str) -> List[int]:
+        """Safely parse a list of integer indices from an LLM response.
+
+        The response is expected to be a JSON/Python list of integers, e.g.
+        "[0, 2, 5]". It may be wrapped in markdown code fences or surrounded by
+        extra prose. We use ast.literal_eval (never eval) and fall back to
+        extracting the first bracketed substring. Returns [] on failure.
+        """
+        if not response:
+            return []
+
+        text = response.strip()
+
+        # Strip surrounding markdown code fences if present.
+        if text.startswith("```"):
+            text = text.strip("`").strip()
+            # Drop a leading language hint like "json" or "python".
+            if "\n" in text:
+                first_line, rest = text.split("\n", 1)
+                if first_line.strip().isalpha():
+                    text = rest.strip()
+
+        try:
+            return ast.literal_eval(text)
+        except (ValueError, SyntaxError):
+            # Fall back to extracting the first [...] bracketed substring.
+            match = re.search(r"\[.*?\]", text, re.DOTALL)
+            if match:
+                try:
+                    return ast.literal_eval(match.group(0))
+                except (ValueError, SyntaxError):
+                    pass
+            logger.warning(
+                "Could not parse indices from response; defaulting to empty list. "
+                f"Response was: {response!r}"
+            )
             return []
 
     def _extract_title_from_url(self, url: str) -> str:

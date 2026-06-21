@@ -1,0 +1,10 @@
+{
+  "name": "mcp-multi-agent-server-delegation",
+  "description": "Task delegation to isolated Proxmox VMs with automatic cleanup and callbacks",
+  "version": "1.0.0",
+  "author": {
+    "name": "Eric Grill"
+  },
+  "license": "MIT",
+  "category": "devops"
+}

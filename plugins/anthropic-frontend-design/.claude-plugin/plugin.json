@@ -1,8 +1,10 @@
 {
-  "name": "frontend-design",
+  "name": "anthropic-frontend-design",
   "description": "Frontend design skill for UI/UX implementation",
   "author": {
     "name": "Anthropic",
     "email": "support@anthropic.com"
-  }
+  },
+  "version": "1.0.0",
+  "license": "MIT"
 }
