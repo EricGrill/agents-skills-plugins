@@ -537,6 +537,14 @@
       "version": "1.0.0",
       "author": { "name": "Anthropic" },
       "category": "development"
+    },
+    {
+      "name": "mindex",
+      "source": "./plugins/mindex",
+      "description": "Auditable, version-controlled long-term memory workflows for Claude Code",
+      "version": "1.0.0",
+      "author": { "name": "RawSector" },
+      "category": "productivity"
     }
   ]
 }

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin.json",
+  "name": "mindex",
+  "version": "1.0.0",
+  "description": "Auditable, version-controlled long-term memory workflows for Claude Code",
+  "author": {
+    "name": "RawSector",
+    "url": "https://github.com/RawSector"
+  },
+  "homepage": "https://github.com/RawSector/mindex",
+  "repository": "https://github.com/RawSector/mindex",
+  "license": "MIT",
+  "keywords": [
+    "memory",
+    "long-term-memory",
+    "knowledge-management",
+    "claude-code",
+    "markdown"
+  ]
+}

@@ -5,7 +5,7 @@
   </p>
   <p align="center">
     <a href="https://github.com/EricGrill/agents-skills-plugins/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
-    <img src="https://img.shields.io/badge/plugins-66-green.svg" alt="66 Plugins">
+    <img src="https://img.shields.io/badge/plugins-67-green.svg" alt="67 Plugins">
     <img src="https://img.shields.io/badge/agents-78-purple.svg" alt="78 Agents">
     <img src="https://img.shields.io/badge/skills-950+-orange.svg" alt="950+ Skills">
   </p>

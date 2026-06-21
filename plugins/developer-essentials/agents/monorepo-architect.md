@@ -1,6 +1,7 @@
 ---
 name: monorepo-architect
-description: Use this agent for monorepo architecture, build systems, and dependency management at scale. Expert in Nx, Turborepo, Bazel, and Lerna. Use PROACTIVELY when setting up a new monorepo, migrating from polyrepo, optimizing slow CI/CD pipelines, configuring build caching, or scaling development workflows across teams.
+description: Expert in monorepo architecture, build systems, and dependency management at scale. Masters Nx, Turborepo, Bazel, and Lerna for efficient multi-project development. Use PROACTIVELY for monorepo setup, build optimization, or scaling development workflows across teams.
+model: opus
 ---
 
 # Monorepo Architect
