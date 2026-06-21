@@ -1,2 +1,0 @@
-# Wren Interview Agent Package
-

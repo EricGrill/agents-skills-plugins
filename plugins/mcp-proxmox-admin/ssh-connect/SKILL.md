@@ -1,3 +1,8 @@
+---
+name: ssh-connect
+description: Use when you need to SSH into a remote machine to run commands or open an interactive shell using credentials loaded from a .env file (SSH_HOST, SSH_USER, and key or password), avoiding interactive password prompts.
+---
+
 # SSH Connect Skill
 
 SSH into remote machines using credentials from `.env` file - no password prompts.

@@ -1,9 +1,10 @@
 {
-  "name": "learning-output-style",
+  "name": "anthropic-learning-output-style",
   "version": "1.0.0",
   "description": "Interactive learning mode that requests meaningful code contributions at decision points (mimics the unshipped Learning output style)",
   "author": {
     "name": "Anthropic",
     "email": "support@anthropic.com"
-  }
+  },
+  "license": "MIT"
 }

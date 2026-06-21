@@ -37,7 +37,7 @@ Comprehensive contribution guidelines including:
 | `security-analyst` | Security & pentesting | superpowers, mcp-kali-orchestration, frontend-mobile-security |
 | `mobile-developer` | Mobile app development | superpowers, frontend-mobile-development, ios-simulator-skill |
 | `blockchain-developer` | Web3 & blockchain | superpowers, blockchain-web3, mcp-bitcoin-cli |
-| `content-creator` | SEO & content tools | superpowers, seo-content-creation, readwren, ralph-wiggum-marketer |
+| `content-creator` | SEO & content tools | superpowers, seo-content-creation, content-marketing, ralph-wiggum-marketer |
 | `team-lead` | Team collaboration | superpowers, team-collaboration, git-pr-workflows |
 
 **Install command:** `/plugin bundle <bundle-name>`

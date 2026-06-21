@@ -1,0 +1,10 @@
+{
+  "name": "mcp-civic-data",
+  "description": "Access 7 government APIs for weather, census, NASA, and economic data",
+  "version": "1.0.0",
+  "author": {
+    "name": "Eric Grill"
+  },
+  "license": "MIT",
+  "category": "data"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "mcp-multi-agent-ssh",
+  "description": "Persistent SSH connections with encrypted credential storage and SFTP support",
+  "version": "1.0.0",
+  "author": {
+    "name": "Eric Grill"
+  },
+  "license": "MIT",
+  "category": "devops"
+}

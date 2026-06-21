@@ -355,44 +355,12 @@
       "category": "ai"
     },
     {
-      "name": "readwren",
-      "source": "./plugins/readwren",
-      "description": "Multi-agent literary interview for extracting reading profiles",
-      "version": "1.0.0",
-      "author": { "name": "muratcankoylan" },
-      "category": "productivity"
-    },
-    {
-      "name": "food-tour-planner",
-      "source": "./plugins/food-tour-planner",
-      "description": "AI food tour planner with DeepAgents and Google Maps",
-      "version": "1.0.0",
-      "author": { "name": "muratcankoylan" },
-      "category": "productivity"
-    },
-    {
-      "name": "actual-code",
-      "source": "./plugins/actual-code",
-      "description": "7-agent code assessment generator from GitHub repos",
-      "version": "1.0.0",
-      "author": { "name": "muratcankoylan" },
-      "category": "development"
-    },
-    {
       "name": "book-training",
       "source": "./plugins/book-training",
       "description": "Style transfer pipeline for author-style LLM training with LoRA",
       "version": "1.0.0",
       "author": { "name": "muratcankoylan" },
       "category": "ai"
-    },
-    {
-      "name": "linkedin-analyzer",
-      "source": "./plugins/linkedin-analyzer",
-      "description": "LinkedIn profile analysis with Cohere Command R+",
-      "version": "1.0.0",
-      "author": { "name": "muratcankoylan" },
-      "category": "productivity"
     },
     {
       "name": "feed2context",
@@ -403,11 +371,99 @@
       "category": "productivity"
     },
     {
-      "name": "cartographer",
-      "source": "./plugins/cartographer",
-      "description": "Maps and documents codebases of any size using parallel AI subagents — creates CODEBASE_MAP.md with architecture, file purposes, and navigation guides",
-      "version": "1.4.0",
-      "author": { "name": "kingbootoshi" },
+      "name": "anthropic-agent-sdk-dev",
+      "source": "./plugins/anthropic-agent-sdk-dev",
+      "description": "Official Anthropic: build agents with the Claude Agent SDK — scaffolding, tools, and patterns",
+      "version": "1.0.0",
+      "author": { "name": "Anthropic" },
+      "category": "ai"
+    },
+    {
+      "name": "anthropic-claude-code-setup",
+      "source": "./plugins/anthropic-claude-code-setup",
+      "description": "Official Anthropic: guided setup and configuration for Claude Code",
+      "version": "1.0.0",
+      "author": { "name": "Anthropic" },
+      "category": "development"
+    },
+    {
+      "name": "anthropic-claude-md-management",
+      "source": "./plugins/anthropic-claude-md-management",
+      "description": "Official Anthropic: create and maintain CLAUDE.md project memory files",
+      "version": "1.0.0",
+      "author": { "name": "Anthropic" },
+      "category": "development"
+    },
+    {
+      "name": "anthropic-code-simplifier",
+      "source": "./plugins/anthropic-code-simplifier",
+      "description": "Official Anthropic: refactor and simplify code while preserving behavior",
+      "version": "1.0.0",
+      "author": { "name": "Anthropic" },
+      "category": "development"
+    },
+    {
+      "name": "anthropic-explanatory-output-style",
+      "source": "./plugins/anthropic-explanatory-output-style",
+      "description": "Official Anthropic: explanatory output style that narrates reasoning and decisions",
+      "version": "1.0.0",
+      "author": { "name": "Anthropic" },
+      "category": "development"
+    },
+    {
+      "name": "anthropic-frontend-design",
+      "source": "./plugins/anthropic-frontend-design",
+      "description": "Official Anthropic: distinctive, intentional frontend and UI design guidance",
+      "version": "1.0.0",
+      "author": { "name": "Anthropic" },
+      "category": "development"
+    },
+    {
+      "name": "anthropic-learning-output-style",
+      "source": "./plugins/anthropic-learning-output-style",
+      "description": "Official Anthropic: learning output style with educational, tutorial-oriented responses",
+      "version": "1.0.0",
+      "author": { "name": "Anthropic" },
+      "category": "development"
+    },
+    {
+      "name": "anthropic-plugin-dev",
+      "source": "./plugins/anthropic-plugin-dev",
+      "description": "Official Anthropic: develop and package Claude Code plugins, skills, and commands",
+      "version": "1.0.0",
+      "author": { "name": "Anthropic" },
+      "category": "development"
+    },
+    {
+      "name": "anthropic-ralph-loop",
+      "source": "./plugins/anthropic-ralph-loop",
+      "description": "Official Anthropic: autonomous Ralph loop that keeps the agent iterating until a task is done",
+      "version": "1.0.0",
+      "author": { "name": "Anthropic" },
+      "category": "development"
+    },
+    {
+      "name": "anthropic-skill-creator",
+      "source": "./plugins/anthropic-skill-creator",
+      "description": "Official Anthropic: create, edit, and evaluate Claude Code skills",
+      "version": "1.0.0",
+      "author": { "name": "Anthropic" },
+      "category": "development"
+    },
+    {
+      "name": "anthropic-clangd-lsp",
+      "source": "./plugins/anthropic-clangd-lsp",
+      "description": "Official Anthropic: clangd language server integration for C/C++ type-aware coding",
+      "version": "1.0.0",
+      "author": { "name": "Anthropic" },
+      "category": "development"
+    },
+    {
+      "name": "anthropic-gopls-lsp",
+      "source": "./plugins/anthropic-gopls-lsp",
+      "description": "Official Anthropic: gopls language server integration for Go type-aware coding",
+      "version": "1.0.0",
+      "author": { "name": "Anthropic" },
       "category": "development"
     },
     {
@@ -481,6 +537,14 @@
       "version": "1.0.0",
       "author": { "name": "Anthropic" },
       "category": "development"
+    },
+    {
+      "name": "mindex",
+      "source": "./plugins/mindex",
+      "description": "Auditable, version-controlled long-term memory workflows for Claude Code",
+      "version": "1.0.0",
+      "author": { "name": "RawSector" },
+      "category": "productivity"
     }
   ]
 }

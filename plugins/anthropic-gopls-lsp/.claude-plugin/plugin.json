@@ -1,0 +1,11 @@
+{
+  "name": "anthropic-gopls-lsp",
+  "description": "Official Anthropic: gopls language server integration for Go type-aware coding",
+  "version": "1.0.0",
+  "author": {
+    "name": "Anthropic",
+    "email": "support@anthropic.com"
+  },
+  "license": "MIT",
+  "category": "backend"
+}

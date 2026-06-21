@@ -1,0 +1,10 @@
+{
+  "name": "mcp-memvid-state-service",
+  "description": "AI memory layer with vector search, full-text search, and temporal queries",
+  "version": "1.0.0",
+  "author": {
+    "name": "Eric Grill"
+  },
+  "license": "MIT",
+  "category": "ai-ml"
+}

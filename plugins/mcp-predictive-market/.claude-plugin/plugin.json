@@ -1,0 +1,10 @@
+{
+  "name": "mcp-predictive-market",
+  "description": "Query 5 prediction markets with arbitrage detection and comparative analysis",
+  "version": "1.0.0",
+  "author": {
+    "name": "Eric Grill"
+  },
+  "license": "MIT",
+  "category": "ai-ml"
+}

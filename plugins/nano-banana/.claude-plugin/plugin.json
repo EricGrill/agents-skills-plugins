@@ -5,10 +5,16 @@
   "mcpServers": {
     "nano-banana": {
       "command": "node",
-      "args": ["${CLAUDE_PLUGIN_ROOT}/index.js"],
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/index.js"
+      ],
       "env": {
         "GEMINI_API_KEY": "${GEMINI_API_KEY}"
       }
     }
-  }
+  },
+  "author": {
+    "name": "Eric Grill"
+  },
+  "license": "MIT"
 }
