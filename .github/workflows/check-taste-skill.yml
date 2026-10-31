@@ -1,0 +1,27 @@
+name: Check taste-skill package
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'skills/taste-skill/**'
+      - 'tests/taste-skill/**'
+      - 'scripts/validate-taste-skill.mjs'
+      - '.github/workflows/check-taste-skill.yml'
+  pull_request:
+    paths:
+      - 'skills/taste-skill/**'
+      - 'tests/taste-skill/**'
+      - 'scripts/validate-taste-skill.mjs'
+      - '.github/workflows/check-taste-skill.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate complete native package and companion resources
+        run: node scripts/validate-taste-skill.mjs --browser
