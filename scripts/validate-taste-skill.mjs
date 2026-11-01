@@ -104,6 +104,47 @@ try {
   assert.ok(sheet.type && sheet.palette, 'draw did not use type and palette libraries');
   assert.equal(sheet.sections.length, 3, 'draw did not use the section library');
 
+  if (process.argv.includes('--native')) {
+    const prompt = 'Before answering, call the Skill tool with skill design-taste-frontend and args "Loading smoke only". After the Skill tool returns, reply with only the exact H1 heading from the loaded skill body. Do not read files or call any other tool.';
+    const nativeRun = (skillsDir, label) => {
+      const result = spawnSync('kimi', [
+        '--skills-dir', skillsDir, '--output-format', 'stream-json', '-p', prompt,
+      ], {
+        cwd: temporary,
+        encoding: 'utf8',
+        maxBuffer: 16 * 1024 * 1024,
+        timeout: 120000,
+      });
+      assert.equal(result.error, undefined, `${label}: ${result.error?.message}`);
+      assert.equal(result.status, 0, `${label} failed (${result.status})\n${result.stdout}\n${result.stderr}`);
+      const messages = result.stdout.split(/\r?\n/).filter((line) => line.trim()).map((line) => JSON.parse(line));
+      return {
+        messages,
+        toolResults: messages.filter((message) => message.role === 'tool').map((message) => String(message.content)),
+        answer: messages.filter((message) => message.role === 'assistant' && typeof message.content === 'string').at(-1)?.content.trim(),
+        output: `${result.stdout}\n${result.stderr}`,
+      };
+    };
+
+    const loaded = nativeRun(nativeSkills, 'native Kimi skill-loading smoke');
+    assert.ok(loaded.messages.some((message) => message.tool_calls?.some((call) =>
+      call.function?.name === 'Skill' && call.function?.arguments?.includes('design-taste-frontend'))),
+    `native smoke did not explicitly call the Skill tool\n${loaded.output}`);
+    assert.ok(loaded.toolResults.some((content) => content.includes('Skill "design-taste-frontend" loaded inline.')),
+      `native smoke did not load the skill inline\n${loaded.output}`);
+    assert.equal(loaded.answer, '# tasteskill v2', `native smoke did not recover the skill body heading\n${loaded.output}`);
+
+    const emptySkills = join(temporary, 'empty-skills');
+    mkdirSync(emptySkills);
+    const missing = nativeRun(emptySkills, 'empty-directory native smoke control');
+    assert.ok(missing.toolResults.some((content) => content.includes('Skill "design-taste-frontend" not found')),
+      `empty-directory control did not report the skill as absent\n${missing.output}`);
+    assert.ok(!missing.toolResults.some((content) => content.includes('loaded inline')),
+      `empty-directory control unexpectedly loaded a skill\n${missing.output}`);
+    assert.notEqual(missing.answer, '# tasteskill v2', `empty-directory control forged the skill body heading\n${missing.output}`);
+    console.log('ok - native Kimi Skill tool loaded the package; empty-directory control reported not found');
+  }
+
   if (process.argv.includes('--browser')) {
     const fixture = join(temporary, 'index.html');
     writeFileSync(fixture, '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Package smoke</title><style>body{margin:0;background:#111;color:#eee;font:18px/1.5 system-ui}main{padding:48px;max-width:1100px;margin:auto}h1{font-size:64px;line-height:1;margin:0 0 32px}section{padding:80px 0}p{max-width:60ch}</style></head><body><main><h1>Native package smoke</h1><p>A local fixture for exercising the real-browser inspector and its three viewport reports.</p><section><h2>Companion resources</h2><p>The inspector measures this page and saves screenshots without downloading any asset.</p></section></main></body></html>');
