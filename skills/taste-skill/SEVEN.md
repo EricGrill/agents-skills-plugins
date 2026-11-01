@@ -14,10 +14,12 @@ mkdir -p "$HOME/.agents/skills"
 ln -s "$REPO/skills/taste-skill" "$HOME/.agents/skills/design-taste-frontend"
 ```
 
-Do not overwrite an existing destination; move or remove it deliberately before creating the link. Copying the whole `taste-skill` directory to the same destination also works. Start a fresh Seven session, or run `/reload`, then load the skill explicitly with:
+Do not overwrite an existing destination; move or remove it deliberately before creating the link. Copying the whole `taste-skill` directory to the same destination also works. Start a fresh Seven session after installing so native discovery includes the package.
+
+Seven's Linear sessions run headlessly with `kimi -p`. `/reload` is interactive-only, and `/skill:design-taste-frontend` is not reliably expanded in headless mode. Instead, put an explicit tool instruction in the Linear ticket:
 
 ```text
-/skill:design-taste-frontend
+Before starting, call the Skill tool with skill design-taste-frontend. Then follow the loaded skill for this design ticket.
 ```
 
 For a one-off session without installing, use `--skills-dir`. This replaces automatic user and project skill discovery for that launch, so it is primarily useful for an isolated smoke test:
@@ -38,7 +40,7 @@ node "$SKILL_DIR/scripts/lint.mjs" path/to/source
 node "$SKILL_DIR/scripts/inspect.mjs" path/to/index.html --widths 1440,768,390
 ```
 
-The inspector requires Node 22+ and an installed Chrome, Edge, or Chromium. It launches the existing browser with a temporary profile, serves local files on loopback, and writes screenshots plus `report.json` under `.taste-skill/inspect/` by default. It installs nothing. Set `CHROME_PATH` only when the browser is in a nonstandard location. The draw, lint, and asset scripts otherwise have no npm dependencies; open-collection image searches require network access but no API keys.
+The inspector requires Node 22+ and an installed Chrome, Edge, or Chromium. It launches the existing browser with a temporary profile, serves local files on loopback, and writes screenshots plus `report.json` under `.taste-skill/inspect/` by default. It installs nothing. Set `CHROME_PATH` only when the browser is in a nonstandard location. The draw, lint, and asset scripts otherwise have no npm dependencies; open-collection image searches require network access but no API keys. The scripts can write generated artifacts under `.taste-skill/` in the target project; do not include those artifacts in ticket PRs.
 
 Read `references/critique.md` and inspect every screenshot before completing a public-facing design ticket. Reference-image metadata is in `library/photos.json` and `library/sites.json`; imagery licensing and credits are covered by `references/imagery.md` and the upstream [README](README.md).
 
@@ -49,14 +51,9 @@ From this repository's root:
 ```bash
 node scripts/validate-taste-skill.mjs
 node scripts/validate-taste-skill.mjs --browser
+node scripts/validate-taste-skill.mjs --native
 ```
 
 The first command checks native directory layout, required companion resources, JSON and JavaScript integrity, upstream unit tests, and a seeded art-direction draw using isolated temporary state. The second also runs the real-browser inspector at 1440, 768, and 390 against a local fixture and verifies all screenshots. Browser design findings on the fixture are not treated as packaging failures; failure to produce a complete three-width report is.
 
-To prove native Kimi discovery and loading with the installed CLI:
-
-```bash
-kimi --skills-dir "$REPO/skills" --output-format stream-json -p '/skill:design-taste-frontend Loading smoke only. Reply exactly TASTE_SKILL_LOADED and take no other action.'
-```
-
-The response proves that Kimi parsed the frontmatter and loaded the skill body from the complete native package; the validation command proves that its companion resources are usable.
+The third command requires an authenticated `kimi` on `PATH`. It prompts Kimi to call the `Skill` tool explicitly against a symlinked installation in an isolated skills directory. The test fails unless the transcript contains a `Skill "design-taste-frontend" loaded inline.` tool result and the model recovers `# tasteskill v2` from the loaded body. It then repeats the prompt against an empty skills directory and requires a `not found` tool result, so a cooperative text response cannot make the smoke test pass.
