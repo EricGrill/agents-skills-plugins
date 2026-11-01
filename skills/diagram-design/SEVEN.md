@@ -14,7 +14,7 @@ mkdir -p "$HOME/.agents/skills"
 ln -s "$REPO/skills/diagram-design" "$HOME/.agents/skills/diagram-design"
 ```
 
-Do not overwrite an existing destination; move or remove it deliberately before creating the link. Copying the whole `diagram-design` directory to the same destination also works. Start a fresh Seven session, or run `/reload`, then load the skill explicitly with:
+Do not overwrite an existing destination; move or remove it deliberately before creating the link. Copying the whole `diagram-design` directory to the same destination also works. Treat a symlinked install as shared, read-only resources: it points into Eric's checkout, so Seven must never write to its installed `references/style-guide.md` or customize it through markerless onboarding or `load`/`switch`. Start a fresh Seven session, or run `/reload`, then load the skill explicitly with:
 
 ```text
 /skill:diagram-design
@@ -30,7 +30,17 @@ Kimi Code's directory-form discovery and companion-file behavior are documented 
 
 ## Use from a Linear ticket
 
-Ask Seven for a diagram in natural language, such as an architecture delta, sequence, flowchart, dependency graph, or service blueprint. The skill selects one of its 45 visual types, loads that type's reference and the style guide, and produces a self-contained HTML file with inline SVG. It asks about brand customization before the first diagram in a project; selection and brand onboarding remain explicit choices.
+Ask Seven for a diagram in natural language, such as an architecture delta, sequence, flowchart, dependency graph, or service blueprint. The skill selects one of its 45 visual types, loads that type's reference and the style guide, and produces a self-contained HTML file with inline SVG.
+
+Select the skin with a `.diagram-design` marker at the target project's root, containing exactly one line:
+
+```text
+profile: <slug>
+```
+
+Use the saved profile slug named by the ticket, or `profile: default` for the shipped skin. Marker-first resolution reads the selected profile directly and leaves the installed `references/style-guide.md` byte-for-byte unchanged. Never write to that installed file during a Linear session, including through custom onboarding or a markerless `load`/`switch`.
+
+If an unattended run has no valid marker and the first-diagram branding gate fires, do not pause for the interactive branding question or modify the shared install. Use the marker when the ticket names a skin; otherwise stop and reply `STATUS: NEEDS_YOU Choose a saved diagram-design profile or explicitly approve the default skin.`
 
 Run packaged helpers from the target project's root. Replace `$SKILL_DIR` with the installed path above:
 
