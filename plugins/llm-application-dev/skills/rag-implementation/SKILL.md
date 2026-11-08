@@ -27,7 +27,7 @@ Master Retrieval-Augmented Generation (RAG) to build LLM applications that provi
 
 - **Pinecone**: Managed, scalable, serverless
 - **Weaviate**: Open-source, hybrid search, GraphQL
-- **Milvus**: High performance, on-premise
+- **Milvus**: Local persistence with Lite, or self-hosted server deployments
 - **Chroma**: Lightweight, easy to use, local development
 - **Qdrant**: Fast, filtered search, Rust-based
 - **pgvector**: PostgreSQL extension, SQL integration
@@ -85,7 +85,7 @@ class RAGState(TypedDict):
     answer: str
 
 # Initialize components
-llm = ChatAnthropic(model="claude-sonnet-4-6")
+llm = ChatAnthropic(model="claude-sonnet-5")
 embeddings = VoyageAIEmbeddings(model="voyage-3-large")
 vectorstore = PineconeVectorStore(index_name="docs", embedding=embeddings)
 retriever = vectorstore.as_retriever(search_kwargs={"k": 4})
