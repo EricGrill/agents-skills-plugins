@@ -1,0 +1,12 @@
+deepagents
+langchain
+langchain-core
+langgraph
+googlemaps
+tavily-python
+flask
+flask-cors
+python-dotenv
+anthropic
+openai
+
