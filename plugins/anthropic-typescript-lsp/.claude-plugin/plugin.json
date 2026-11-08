@@ -1,11 +1,27 @@
 {
-  "name": "anthropic-typescript-lsp",
-  "description": "Official Anthropic: TypeScript language server integration for deep type-aware coding",
+  "name": "typescript-lsp",
+  "description": "TypeScript/JavaScript language server for enhanced code intelligence",
   "version": "1.0.0",
   "author": {
     "name": "Anthropic",
     "email": "support@anthropic.com"
   },
-  "license": "MIT",
-  "category": "backend"
+  "lspServers": {
+    "typescript": {
+      "command": "typescript-language-server",
+      "args": [
+        "--stdio"
+      ],
+      "extensionToLanguage": {
+        ".ts": "typescript",
+        ".tsx": "typescriptreact",
+        ".js": "javascript",
+        ".jsx": "javascriptreact",
+        ".mts": "typescript",
+        ".cts": "typescript",
+        ".mjs": "javascript",
+        ".cjs": "javascript"
+      }
+    }
+  }
 }

@@ -27,7 +27,29 @@ from pathlib import Path
 # → ~/.claude/security. See _base.state_dir for resolution precedence. Re-aliased
 # here to match the existing local name (state_dir was already a local var in
 # main() and _maybe_emit_user_notice).
-from _base import state_dir as _resolve_state_dir
+from _base import (
+    interp_reparse_metric, launcher_direct_metric, launcher_probe_metrics, portable_output,
+    state_dir as _resolve_state_dir,
+    write_hook_output,
+)
+from _base import llm_reviews_switched_off, make_state_dir
+
+
+def _spawn_cwd() -> str:
+    """Working directory for every Python this file starts.
+
+    `python -c` and `python -m` put the working directory first on the import
+    path, and hooks run in the user's repository, so a repository file named
+    `claude_agent_sdk.py`, `venv.py` or `pip.py` would be imported in place
+    of the real module. The state dir is the plugin's own (the venv is built
+    there, so the interpreter can reach it); the plugin folder is the
+    fallback when it can't be created.
+    """
+    d = _resolve_state_dir()
+    try:
+        return make_state_dir(d)
+    except OSError:
+        return str(Path(__file__).resolve().parent.parent)
 
 # Outcome codes for the sdk_bootstrap metric. Values are stable for telemetry.
 NOOP_SYSTEM = 0      # claude_agent_sdk already importable in system python
@@ -55,11 +77,24 @@ SKIP_COOLDOWN = 9    # a recent build was signal-killed (memory pressure) — no
                      # repro confirmed the dominant Linux BUILD_FAILED is a
                      # SIGKILL/SIGSEGV of the memory-heavy venv+pip subprocess
                      # (rc<0, empty streams). See #2154 follow-up.
+                     # Also, for a shorter time, after a pip install ran out
+                     # of time (sdk_timeout_cooldown says which). See #6979.
+SKIP_REVIEWS_OFF = 10  # the environment turns off every review that would
+                       # load the SDK (kill switch included), so nothing is
+                       # installed. See #5331.
 
 # How long to skip rebuilds after a signal kill. Retries at most once per
 # window so a machine whose memory frees up still recovers (just not every
 # session). Keyed by marker mtime.
 SIGNAL_KILL_COOLDOWN_SEC = 24 * 3600
+
+# How long to skip rebuilds after a pip install ran out of time. On a
+# connection too slow to fetch the SDK wheel inside the limit, every attempt
+# downloads most of the wheel and throws it away, and attempts come at every
+# SessionStart and every 5 minutes from the tool hooks. Shorter than the
+# signal-kill window because a slow or stalled connection is often temporary.
+# See #6979.
+PIP_TIMEOUT_COOLDOWN_SEC = 3600
 
 
 # Phase + err-kind integer encoding for sdk_bootstrap_phase / sdk_bootstrap_err.
@@ -216,23 +251,37 @@ def _is_signal_kill(returncode) -> bool:
     return returncode < 0 or returncode in (134, 137, 139)
 
 
-def _cooldown_remaining(state_dir) -> float:
-    """Seconds left in the signal-kill cooldown (0 if none/expired). Reads the
-    marker's mtime; a missing/unreadable marker means not in cooldown."""
-    marker = Path(state_dir) / "agent-sdk-venv.cooldown"
+_SIGNAL_KILL_MARKER = "agent-sdk-venv.cooldown"
+_PIP_TIMEOUT_MARKER = "agent-sdk-venv.timeout"
+
+
+def _marker_remaining(state_dir, name, window) -> float:
+    """Seconds left of the `window` that started at the marker's mtime; a
+    missing/unreadable marker means not in cooldown."""
     try:
-        age = time.time() - marker.stat().st_mtime
+        age = time.time() - (Path(state_dir) / name).stat().st_mtime
     except OSError:
         return 0.0
-    return max(0.0, SIGNAL_KILL_COOLDOWN_SEC - age)
+    # A marker stamped in the future (clock set back since) counts as fresh.
+    return min(float(window), max(0.0, window - age))
 
 
-def _write_cooldown(state_dir) -> None:
-    """Start/refresh the signal-kill cooldown so we stop re-attempting a build
-    that keeps getting killed every session. Best-effort."""
+def _cooldown_remaining(state_dir) -> float:
+    """Seconds left in the signal-kill cooldown (0 if none/expired)."""
+    return _marker_remaining(state_dir, _SIGNAL_KILL_MARKER, SIGNAL_KILL_COOLDOWN_SEC)
+
+
+def _timeout_cooldown_remaining(state_dir) -> float:
+    """Seconds left in the pip-timeout cooldown (0 if none/expired)."""
+    return _marker_remaining(state_dir, _PIP_TIMEOUT_MARKER, PIP_TIMEOUT_COOLDOWN_SEC)
+
+
+def _write_cooldown(state_dir, name=_SIGNAL_KILL_MARKER) -> None:
+    """Start/refresh a cooldown (the signal-kill one unless named) so we stop
+    re-attempting a build that keeps failing the same way. Best-effort."""
     try:
-        Path(state_dir).mkdir(parents=True, exist_ok=True)
-        (Path(state_dir) / "agent-sdk-venv.cooldown").write_text(
+        make_state_dir(str(state_dir))
+        (Path(state_dir) / name).write_text(
             time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()))
     except OSError:
         pass
@@ -311,11 +360,51 @@ def _probe_has_pip() -> bool:
     try:
         r = subprocess.run(
             [sys.executable, "-m", "pip", "--version"],
-            capture_output=True, timeout=10,
+            capture_output=True, timeout=10, cwd=_spawn_cwd(),
         )
         return r.returncode == 0
     except Exception:
         return False
+
+
+def _probe_alt_python() -> int:
+    """When the hook interpreter is <3.10 (HOOK_PY_INCOMPATIBLE), look for a
+    3.10+ interpreter at well-known install locations that aren't necessarily
+    on the hook's PATH — Homebrew (/opt/homebrew, /usr/local), python.org
+    framework builds, and the `py`/distro layouts. Returns the HIGHEST version
+    found encoded as major*100+minor (e.g. 312), or 0 if none.
+
+    Purpose (telemetry only, for now): size how many of the macOS Python-3.9
+    cohort actually HAVE a newer interpreter that sg-python.sh's PATH probe
+    missed — i.e. how many are RECOVERABLE by an explicit-path search vs.
+    genuinely 3.9-only. Emitted as sdk_alt_py. Existence-checks the versioned
+    binaries (cheap); a later explicit-path search would version-verify before
+    exec'ing. Probed only on the incompatible path, so healthy sessions never
+    pay for it."""
+    candidates = []
+    for minor in (14, 13, 12, 11, 10):
+        candidates += [
+            f"/opt/homebrew/bin/python3.{minor}",        # Apple-Silicon Homebrew
+            f"/usr/local/bin/python3.{minor}",           # Intel Homebrew / python.org shim
+            f"/Library/Frameworks/Python.framework/Versions/3.{minor}/bin/python3",  # python.org
+            f"/usr/bin/python3.{minor}",                 # distro-managed (Linux)
+        ]
+    best = 0
+    for path in candidates:
+        try:
+            if os.access(path, os.X_OK):
+                # path name encodes the minor; parse it back to a code
+                base = os.path.basename(path)
+                minor = None
+                if base.startswith("python3."):
+                    minor = int(base.split(".")[1])
+                elif "/Versions/3." in path:
+                    minor = int(path.split("/Versions/3.")[1].split("/")[0])
+                if minor is not None:
+                    best = max(best, 300 + minor)
+        except (OSError, ValueError, IndexError):
+            continue
+    return best
 
 
 def _pip_err_from_stderr(stderr_b):
@@ -352,6 +441,22 @@ def _pip_err_from_stderr(stderr_b):
     return f"other:{tail}" if tail else "other"
 
 
+# A package directory that has lost its files still imports, as a namespace
+# package, so a bare `import claude_agent_sdk` calls an emptied install
+# healthy and it is never rebuilt. A real install has a __file__; the probe
+# exits with _PROBE_EMPTIED when there is none. See #6612.
+_PROBE_EMPTIED = 3
+_SDK_IMPORT_PROBE = (
+    "import sys, claude_agent_sdk; "
+    f"sys.exit(0 if getattr(claude_agent_sdk, '__file__', None) else {_PROBE_EMPTIED})"
+)
+
+# Set by main() when the venv's probe exited with _PROBE_EMPTIED.
+_venv_was_emptied = False
+# Set by main() when it skipped the build for the pip-timeout cooldown.
+_skipped_for_pip_timeout = False
+
+
 def _target_dir(state_dir) -> Path:
     return Path(state_dir) / "agent-sdk-libs"
 
@@ -367,13 +472,70 @@ def _target_sdk_importable(state_dir) -> bool:
     try:
         r = subprocess.run(
             [sys.executable, "-c",
-             "import sys; sys.path.insert(0, sys.argv[1]); import claude_agent_sdk",
+             "import sys; sys.path.insert(0, sys.argv[1]); " + _SDK_IMPORT_PROBE,
              str(target)],
-            capture_output=True, timeout=10,
+            capture_output=True, timeout=10, cwd=_spawn_cwd(),
         )
         return r.returncode == 0
     except Exception:
         return False
+
+
+# pip keeps every wheel it downloads in a `pip-unpack-*` folder under the temp
+# dir and removes it only when it exits normally. An install killed at the
+# timeout (or by the OOM killer) left those folders in the system temp dir,
+# one attempt after another. See #6979. So pip gets a temp folder of its own
+# under the state dir: removed when the attempt ends, however it ends, and
+# swept on a later run when the bootstrap itself was killed first.
+_PIP_TIMEOUT_SEC = 120
+# Older than any install can be: the folder of a bootstrap that was killed.
+_PIP_TEMP_STALE_SEC = 15 * 60
+
+
+def _pip_temp_root(state_dir) -> Path:
+    return Path(state_dir) / "pip-tmp"
+
+
+def _sweep_pip_temp(state_dir) -> None:
+    """Remove pip temp folders left by a bootstrap that was killed before it
+    could remove its own. Best-effort; a folder still in use is too young."""
+    try:
+        entries = list(_pip_temp_root(state_dir).iterdir())
+    except OSError:
+        return  # the usual case: nothing was ever left
+    import shutil
+    now = time.time()
+    for entry in entries:
+        try:
+            if now - entry.stat().st_mtime > _PIP_TEMP_STALE_SEC:
+                shutil.rmtree(entry, ignore_errors=True)
+        except OSError:
+            pass
+
+
+def _run_pip_install(cmd, state_dir):
+    """Run a `pip install` command under the timeout, with its temp files in
+    a folder of ours. Raises what subprocess.run(check=True) raises. Falls
+    back to the inherited temp dir when the folder can't be made."""
+    import shutil
+    import tempfile
+    tmp = env = None
+    try:
+        root = _pip_temp_root(state_dir)
+        root.mkdir(parents=True, exist_ok=True)
+        tmp = tempfile.mkdtemp(dir=root)
+        # tempfile reads TMPDIR, TEMP, TMP in that order on every platform.
+        env = {**os.environ, "TMPDIR": tmp, "TEMP": tmp, "TMP": tmp}
+    except OSError:
+        pass
+    try:
+        return subprocess.run(
+            cmd, capture_output=True, timeout=_PIP_TIMEOUT_SEC, check=True,
+            cwd=_spawn_cwd(), env=env,
+        )
+    finally:
+        if tmp is not None:
+            shutil.rmtree(tmp, ignore_errors=True)
 
 
 def _build_via_target(state_dir) -> tuple[int, str, str]:
@@ -389,12 +551,12 @@ def _build_via_target(state_dir) -> tuple[int, str, str]:
     preference (ARM64 Windows cryptography)."""
     target = _target_dir(state_dir)
     try:
-        subprocess.run(
+        _run_pip_install(
             [sys.executable, "-m", "pip", "install",
              "--target", str(target), "--upgrade",
              "--disable-pip-version-check", "--prefer-binary", "--no-cache-dir",
              "claude-agent-sdk"],
-            capture_output=True, timeout=120, check=True,
+            state_dir,
         )
         return BUILT_TARGET, "", ""
     except subprocess.CalledProcessError as e:
@@ -405,12 +567,92 @@ def _build_via_target(state_dir) -> tuple[int, str, str]:
             return BUILD_FAILED, "pip_target", f"signal_killed:{e.returncode}"
         return BUILD_FAILED, "pip_target", _pip_err_from_stderr(e.stderr)
     except subprocess.TimeoutExpired:
+        _write_cooldown(state_dir, _PIP_TIMEOUT_MARKER)
         return BUILD_FAILED, "pip_target", "subprocess_timeout"
     except Exception as e:
         errno = getattr(e, "errno", None)
         if isinstance(errno, int):
             return BUILD_FAILED, "pip_target", f"exc:{type(e).__name__}:{errno}"
         return BUILD_FAILED, "pip_target", f"exc:{type(e).__name__}"
+
+
+def _near_git_repo() -> bool:
+    """Whether the session's directory is in a git work tree (a `.git` entry
+    here or above) or directly holds one (a workspace of repositories). The
+    reviews the SDK serves only run on a repository."""
+    try:
+        top = d = os.path.abspath(os.environ.get("CLAUDE_PROJECT_DIR") or os.getcwd())
+        while True:
+            if os.path.exists(os.path.join(d, ".git")):
+                return True
+            parent = os.path.dirname(d)
+            if parent == d:
+                break
+            d = parent
+        with os.scandir(top) as entries:
+            for i, entry in enumerate(entries):
+                if i >= 500:
+                    return True  # too large to say; not counted
+                if entry.is_dir() and os.path.exists(os.path.join(entry.path, ".git")):
+                    return True
+        return False
+    except OSError:
+        return True
+
+
+def _venv_python_version(venv) -> int:
+    """The Python the venv was built with, as major*100+minor (312), read
+    from its pyvenv.cfg; 0 if unknown."""
+    try:
+        for line in (Path(venv) / "pyvenv.cfg").read_text(errors="replace").splitlines():
+            key, _, value = line.partition("=")
+            if key.strip() in ("version", "version_info"):
+                major, minor = value.strip().split(".")[:2]
+                return int(major) * 100 + int(minor)
+    except (OSError, ValueError):
+        pass
+    return 0
+
+
+def _install_context_metrics(outcome, state_dir) -> dict:
+    """Counts that size open questions about the private SDK install; no
+    behaviour depends on them. Only when set, and the first three only on
+    rows where the install exists.
+
+    sdk_no_creds / sdk_no_git: the session holds the install while the
+    reviews it serves cannot run, for lack of model credentials or of a git
+    repository. Should the build wait for those? See #5331.
+
+    sdk_venv_py: the venv was built by another Python version than the one
+    running the hooks, which is the one that loads it; its compiled
+    dependencies do not load there. See #5706.
+
+    sdk_venv_emptied: the venv's SDK package directory had lost its files
+    and this run went on to rebuild it, whatever the outcome. See #6612.
+
+    sdk_timeout_cooldown: this run skipped the build (SKIP_COOLDOWN) because
+    a pip install ran out of time, not because one was signal-killed. See
+    #6979."""
+    out = {}
+    if _venv_was_emptied:
+        out["sdk_venv_emptied"] = 1
+    if _skipped_for_pip_timeout:
+        out["sdk_timeout_cooldown"] = 1
+    if outcome not in (NOOP_VENV, BUILT, BUILT_TARGET, NOOP_TARGET):
+        return out
+    try:
+        import llm
+        if not llm.HAS_API_CREDENTIALS:
+            out["sdk_no_creds"] = 1
+    except Exception:
+        pass
+    if not _near_git_repo():
+        out["sdk_no_git"] = 1
+    if outcome == NOOP_VENV:
+        built_by = _venv_python_version(Path(state_dir) / "agent-sdk-venv")
+        if built_by and built_by != sys.version_info[0] * 100 + sys.version_info[1]:
+            out["sdk_venv_py"] = built_by
+    return out
 
 
 def _sdk_on_syspath() -> bool:
@@ -441,6 +683,18 @@ def main() -> tuple[int, str, str]:
     err_phase / err_kind are non-empty only on BUILD_FAILED — they let
     telemetry split bootstrap failures by root cause.
     """
+    global _venv_was_emptied, _skipped_for_pip_timeout
+    _venv_was_emptied = False
+    _skipped_for_pip_timeout = False
+    # Before any early return: nothing else ever clears the state dir.
+    _sweep_pip_temp(_resolve_state_dir())
+    # The SDK only serves the LLM reviews. With those switched off, or the
+    # whole plugin (SECURITY_GUIDANCE_DISABLE=1), a venv of a few hundred MB
+    # would be built for code that never runs, and the notice below would
+    # advertise a reviewer the user turned off. See #5331.
+    if llm_reviews_switched_off():
+        return SKIP_REVIEWS_OFF, "", ""
+
     # Honesty check (fixes the misleading NOOP_VENV in #2071): the SDK
     # requires Python >=3.10 and uses 3.10+ syntax (match statements,
     # PEP 604 unions). On a 3.9 hook interpreter we CANNOT import it no
@@ -493,11 +747,12 @@ def main() -> tuple[int, str, str]:
     if venv_py.exists():
         try:
             r = subprocess.run(
-                [str(venv_py), "-c", "import claude_agent_sdk"],
-                capture_output=True, timeout=10,
+                [str(venv_py), "-c", _SDK_IMPORT_PROBE],
+                capture_output=True, timeout=10, cwd=_spawn_cwd(),
             )
             if r.returncode == 0:
                 return NOOP_VENV, "", ""
+            _venv_was_emptied = r.returncode == _PROBE_EMPTIED
         except Exception:
             pass  # broken venv; rebuild below
 
@@ -514,12 +769,16 @@ def main() -> tuple[int, str, str]:
     # system/venv/target still short-circuits above.
     if _cooldown_remaining(state_dir) > 0:
         return SKIP_COOLDOWN, "", ""
+    # Likewise after a pip install that ran out of time, for a shorter while.
+    if _timeout_cooldown_remaining(state_dir) > 0:
+        _skipped_for_pip_timeout = True
+        return SKIP_COOLDOWN, "", ""
 
     err_phase = ""
     err_kind = ""
     we_own_sentinel = False
     try:
-        state_dir.mkdir(parents=True, exist_ok=True)
+        make_state_dir(str(state_dir))
         # O_EXCL makes the sentinel an atomic lock — if two SessionStarts
         # race past the exists() check above, only one creates it.
         try:
@@ -530,7 +789,7 @@ def main() -> tuple[int, str, str]:
         err_phase = "venv"
         subprocess.run(
             [sys.executable, "-m", "venv", "--clear", str(venv)],
-            capture_output=True, timeout=60, check=True,
+            capture_output=True, timeout=60, check=True, cwd=_spawn_cwd(),
         )
         # Some machines route pip through a private registry; we
         # don't pass --index-url here so we inherit that default. Outside
@@ -550,11 +809,11 @@ def main() -> tuple[int, str, str]:
         # --no-cache-dir trims pip's peak memory (no cache read/write/unpack
         # buffering) — helps marginal low-memory machines get under the OOM
         # threshold that kills the dominant Linux builds (CCR repro).
-        subprocess.run(
+        _run_pip_install(
             [str(venv_py), "-m", "pip", "install", "--quiet",
              "--disable-pip-version-check", "--prefer-binary", "--no-cache-dir",
              "claude-agent-sdk"],
-            capture_output=True, timeout=120, check=True,
+            state_dir,
         )
         return BUILT, "", ""
     except subprocess.CalledProcessError as e:
@@ -652,6 +911,10 @@ def main() -> tuple[int, str, str]:
             return _build_via_target(state_dir)
         return BUILD_FAILED, err_phase, err_kind
     except subprocess.TimeoutExpired:
+        # Only the download is known to repeat; a slow `python -m venv` is
+        # more likely a busy machine, and the next attempt may be quicker.
+        if err_phase == "pip":
+            _write_cooldown(state_dir, _PIP_TIMEOUT_MARKER)
         return BUILD_FAILED, err_phase, "subprocess_timeout"
     except Exception as e:
         # Embed errno for OSError-family exceptions ("exc:OSError:28") so
@@ -685,8 +948,9 @@ def _maybe_emit_user_notice(outcome: int, pv: int) -> str | None:
 
     Currently only HOOK_PY_INCOMPATIBLE qualifies. BUILD_FAILED is
     intentionally excluded — it covers transient causes (network failure,
-    pip registry hiccup, in-flight rebuild) where the next session may
-    succeed and a permanent notice would mislead.
+    pip registry hiccup, in-flight rebuild, a download that ran out of
+    time) where a later session may succeed and a permanent notice would
+    mislead.
     """
     if outcome != HOOK_PY_INCOMPATIBLE:
         return None
@@ -695,7 +959,7 @@ def _maybe_emit_user_notice(outcome: int, pv: int) -> str | None:
         marker = state_dir / f".agentic_unavailable_notice_v{pv or 0}"
         if marker.exists():
             return None
-        state_dir.mkdir(parents=True, exist_ok=True)
+        make_state_dir(str(state_dir))
         # Write timestamp + Python version so the marker is self-documenting
         # if a user goes looking. O_EXCL would be racier with no real win
         # (two concurrent SessionStarts both showing the notice once is fine).
@@ -725,7 +989,11 @@ if __name__ == "__main__":
     # SessionStart runs before the user's first prompt; doing this in the
     # background means the first commit-review of the session usually finds
     # the venv ready.
-    print(json.dumps({"async": True, "asyncTimeout": 180000}), flush=True)
+    #
+    # Not printed in portable mode: a host that reads stdout as one JSON
+    # document rejects a second line, and runs this hook to completion anyway.
+    if not portable_output():
+        print(json.dumps({"async": True, "asyncTimeout": 180000}), flush=True)
     t0 = time.perf_counter()
     try:
         outcome, err_phase, err_kind = main()
@@ -788,15 +1056,33 @@ if __name__ == "__main__":
         # per healthy session.
         if _encode_err_kind(err_kind) == 11:
             metrics["sdk_has_pip"] = _probe_has_pip()
+    # When the hook interpreter is <3.10 (HOOK_PY_INCOMPATIBLE), probe for a
+    # 3.10+ interpreter at known non-PATH locations. Non-zero sdk_alt_py =
+    # this user is RECOVERABLE by an explicit-path search in sg-python.sh; 0 =
+    # genuinely 3.9-only (needs a user install). Sizes the macOS Py-3.9 cohort
+    # (~13.6% of macOS sessions) before we build the search. Incompatible path
+    # only — healthy sessions never run it.
+    if outcome == HOOK_PY_INCOMPATIBLE:
+        metrics["sdk_alt_py"] = _probe_alt_python()
     # Interpreter version (major*100 + minor, e.g. 309 / 312), emitted on
     # every bootstrap. Disambiguates the macOS cohort (Apple 3.9 vs a 3.10+
     # with broken ensurepip) for both venv_ensurepip_fail AND
     # HOOK_PY_INCOMPATIBLE (whose "py_3.9" err_kind otherwise collapses to
     # err=99, losing the version). Cheap — no subprocess, just sys.version_info.
     metrics["sdk_hook_py"] = sys.version_info[0] * 100 + sys.version_info[1]
+    metrics.update(_install_context_metrics(outcome, _resolve_state_dir()))
     pv = _plugin_version_int()
     if pv:
         metrics["pv"] = pv
+    # See sg-python.sh pass 4: started by real path, the PATH names could
+    # not read the plugin files.
+    if os.environ.get("SG_LAUNCHER_FALLBACK") == "1":
+        metrics["launcher_fallback"] = 1
+    metrics.update(launcher_probe_metrics())
+    metrics.update(launcher_direct_metric())
+    # Last, so it is the first key a row over Claude Code's key cap (20, 10
+    # in older versions) loses.
+    metrics.update(interp_reparse_metric())
     response: dict[str, object] = {"metrics": metrics}
     # One-time user-visible notice when the agentic reviewer is dead on
     # arrival. Uses hookSpecificOutput.additionalContext (SessionStart's
@@ -811,4 +1097,4 @@ if __name__ == "__main__":
             "additionalContext": notice,
         }
         response["systemMessage"] = notice
-    print(json.dumps(response), flush=True)
+    write_hook_output(response)
