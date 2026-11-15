@@ -1,0 +1,65 @@
+{
+  "taste_anchors": {
+    "loves": [
+      "The Remains of the Day by Kazuo Ishiguro",
+      "Beloved by Toni Morrison",
+      "The Metamorphosis by Franz Kafka"
+    ],
+    "hates": [
+      "Finnegans Wake by James Joyce"
+    ],
+    "inferred_genres": [
+      "Modernist fiction",
+      "Trauma narratives",
+      "Existential literature",
+      "Philosophical fiction",
+      "Linguistic experimentation"
+    ]
+  },
+  "style_signature": {
+    "prose_density": 70,
+    "pacing": 60,
+    "tone": 10,
+    "worldbuilding": 20,
+    "character_focus": 90
+  },
+  "narrative_desires": {
+    "wish": "A story that renders the moment when inherited language fails to contain private catastrophe, where a character fractures syntax until new emotional grammar emerges, tracking linguistic birth through deliberate degradation that remains raw and provisional.",
+    "preferred_ending": "transcendent",
+    "themes": [
+      "Language and its limits",
+      "Trauma and rupture",
+      "Alienation and interiority",
+      "Consciousness fragmenting",
+      "Inherited versus invented expression",
+      "The ethics of formal difficulty"
+    ]
+  },
+  "consumption": {
+    "daily_time_minutes": 75,
+    "delivery_frequency": "every_few_days",
+    "pages_per_delivery": 30
+  },
+  "implicit": {
+    "vocabulary_richness": 0.95,
+    "response_brevity_score": 0.3,
+    "engagement_index": 0.95
+  },
+  "explanations": {
+    "prose_density": "You appreciate prose that carries weight and complexity, but only when every linguistic choice serves to reveal rather than obscure emotion. You reject density for its own sake\u2014when cleverness becomes the point rather than the path, you walk away.",
+    "pacing": "You read forward with steady momentum, letting harmonic layers accumulate through resonance rather than repetition. You prefer sustained immersion that allows the text's temporal rhythm to replace clock time, building cumulative weight through continuous pressure rather than racing ahead.",
+    "tone": "You gravitate toward the dark and serious\u2014works that explore alienation, trauma, and catastrophe with devastating restraint. Lightness or humor would betray the gravity of the subjects that matter to you.",
+    "worldbuilding": "You're less interested in elaborate fictional worlds than in interior landscapes. You prefer when surreal or minimal external elements serve as direct externalizations of psychological states rather than as constructed universes.",
+    "character_focus": "You're drawn to psychological depth and interiority above all else. Plot matters only insofar as it reveals consciousness fracturing, language failing, or characters dwelling inside their own ruptures.",
+    "vocabulary_richness": "Your language reveals a highly literate, philosophically inclined mind comfortable with critical terminology and abstract concepts, yet you deploy this vocabulary always in service of emotional precision rather than display.",
+    "engagement_level": "You engaged deeply and philosophically, offering nuanced distinctions about the ethics of literary difficulty and the function of formal rupture. Your responses were thoughtful, precise, and revealed a highly developed reading consciousness.",
+    "reading_philosophy": "You read as an act of emotional archaeology, seeking texts that fracture their own forms to admit the unsayable. You practice a forward-only palimpsest protocol: sustained immersion builds harmonic layers that must never be revisited, while silence between texts lets the strata harden into permanent geology. For you, a text's value lies in its refusal to heal its own wounds\u2014any movement toward wholeness betrays the truth of rupture.",
+    "anti_patterns": "Avoid texts where linguistic difficulty becomes the subject rather than the method\u2014works that perform cleverness, encyclopedic obstruction for its own sake, or any narrative that seals its own fractures. You reject restoration narratives and any movement toward wholeness that would domesticate catastrophe."
+  },
+  "reader_archetype": "Fracture Dweller",
+  "_metadata": {
+    "interview_turns": 8,
+    "completion_status": "early_exit",
+    "early_termination": true
+  }
+}

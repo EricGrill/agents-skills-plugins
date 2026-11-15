@@ -1,0 +1,25 @@
+steps:
+  # Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/true-ability-473715-b4/actualcode-agent-system', '.']
+  
+  # Push the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/true-ability-473715-b4/actualcode-agent-system']
+  
+  # Deploy to Cloud Run
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'actualcode-agent-system'
+      - '--image=gcr.io/true-ability-473715-b4/actualcode-agent-system'
+      - '--region=us-central1'
+      - '--platform=managed'
+      - '--allow-unauthenticated'
+      - '--memory=2Gi'
+      - '--cpu=2'
+      - '--timeout=600'
+
+images:
+  - 'gcr.io/true-ability-473715-b4/actualcode-agent-system'

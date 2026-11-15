@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeepAgent Food Tour Scanner</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    .header {
+      background: #fff;
+      border-bottom: 2px solid #e0e0e0;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .header h1 {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .header p {
+      color: #666;
+      margin-top: 5px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      height: calc(100vh - 100px);
+      gap: 0;
+    }
+
+    .sidebar {
+      background: #fff;
+      border-right: 2px solid #e0e0e0;
+      overflow-y: auto;
+      padding: 20px;
+    }
+
+    .map-container {
+      position: relative;
+    }
+
+    #map {
+      width: 100%;
+      height: 100%;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section h2 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #4285f4;
+    }
+
+    .button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .button-primary {
+      background: #4285f4;
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: #3367d6;
+    }
+
+    .button-secondary {
+      background: #f0f0f0;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    .button-secondary:hover {
+      background: #e0e0e0;
+    }
+
+    .button-danger {
+      background: #dc3545;
+      color: white;
+      padding: 6px 12px;
+      font-size: 12px;
+      width: auto;
+    }
+
+    .button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .search-points {
+      list-style: none;
+      max-height: 200px;
+      overflow-y: auto;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #fafafa;
+    }
+
+    .search-point {
+      padding: 10px;
+      border-bottom: 1px solid #e0e0e0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .search-point:last-child {
+      border-bottom: none;
+    }
+
+    .point-info {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .point-coords {
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      color: #999;
+    }
+
+    .tasks {
+      list-style: none;
+    }
+
+    .task {
+      background: #fafafa;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 15px;
+      margin-bottom: 10px;
+    }
+
+    .task-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .task-name {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .task-status {
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .status-pending {
+      background: #ffc107;
+      color: #000;
+    }
+
+    .status-ai-planning {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    .status-preview-ready {
+      background: #ff9800;
+      color: white;
+    }
+
+    .status-exporting {
+      background: #673ab7;
+      color: white;
+    }
+
+    .status-scanning {
+      background: #2196f3;
+      color: white;
+    }
+
+    .status-completed {
+      background: #4caf50;
+      color: white;
+    }
+
+    .status-error {
+      background: #f44336;
+      color: white;
+    }
+
+    .task-info {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 5px;
+    }
+
+    .progress-bar {
+      background: #e0e0e0;
+      height: 6px;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .progress-fill {
+      background: #4285f4;
+      height: 100%;
+      transition: width 0.3s;
+    }
+
+    .task-actions {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .info-box {
+      background: #e3f2fd;
+      border-left: 4px solid #2196f3;
+      padding: 12px;
+      border-radius: 4px;
+      font-size: 13px;
+      color: #1565c0;
+      margin-bottom: 20px;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: #999;
+    }
+
+    .empty-state-icon {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal.show {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 600px;
+      max-height: 90vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-header {
+      padding: 20px;
+      border-bottom: 1px solid #e0e0e0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-header h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .modal-body {
+      padding: 20px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .modal-footer {
+      padding: 15px 20px;
+      border-top: 1px solid #e0e0e0;
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .close-modal {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #666;
+    }
+
+    .preview-list {
+      max-height: 400px;
+      overflow-y: auto;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #fafafa;
+      margin-top: 10px;
+    }
+
+    .preview-item {
+      padding: 10px;
+      border-bottom: 1px solid #e0e0e0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .preview-item:hover {
+      background: #f5f5f5;
+    }
+
+    .preview-item input[type="checkbox"] {
+      width: auto;
+    }
+
+    .preview-item-info {
+      flex: 1;
+    }
+
+    .preview-item-name {
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .preview-item-details {
+      font-size: 11px;
+      color: #666;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🗺️ DeepAgent Food Tour Scanner</h1>
+    <p>Click on map to add search points, then create scanning tasks</p>
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <!-- Add Search Points Section -->
+      <div class="section">
+        <h2>📍 Add Search Points</h2>
+        
+        <div class="info-box">
+          Click on the map to add search points. Each point will search in a circular radius.
+        </div>
+
+        <div class="form-group">
+          <label>Task Name</label>
+          <input type="text" id="taskName" placeholder="e.g., Kensington Market Scan">
+        </div>
+
+        <div class="form-group">
+          <label>AI Prompt (Optional) 🤖</label>
+          <textarea 
+            id="aiPrompt" 
+            placeholder="e.g., I want to have a fun evening exploring local food. Help me discover hidden gems and popular spots!" 
+            rows="3"
+            style="resize: vertical;"
+          ></textarea>
+          <div style="font-size: 11px; color: #999; margin-top: 5px;">
+            💡 Leave blank for basic scan, or add a prompt to use AI planning (DeepAgent)
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Radius (meters)</label>
+          <input type="number" id="radius" value="200" min="50" max="500">
+        </div>
+
+        <div class="form-group">
+          <label>Categories to Search</label>
+          <select id="categoryPreset">
+            <option value="food">All Food & Drink</option>
+            <option value="restaurants">Restaurants Only</option>
+            <option value="bars">Bars & Nightlife</option>
+            <option value="cafes">Cafes & Bakeries</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Search Points (<span id="pointCount">0</span>)</label>
+          <ul class="search-points" id="searchPoints">
+            <div class="empty-state">
+              <div class="empty-state-icon">📍</div>
+              <div>Click on map to add points</div>
+            </div>
+          </ul>
+        </div>
+
+        <button class="button button-primary" id="createTask" disabled>
+          Create Scan Task
+        </button>
+
+        <button class="button button-secondary" id="clearPoints">
+          Clear All Points
+        </button>
+      </div>
+
+      <!-- Active Tasks Section -->
+      <div class="section">
+        <h2>📋 Scan Tasks</h2>
+        <ul class="tasks" id="tasks">
+          <div class="empty-state">
+            <div class="empty-state-icon">📋</div>
+            <div>No tasks yet</div>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+    <div class="map-container">
+      <div id="map"></div>
+    </div>
+  </div>
+
+  <!-- Preview Modal -->
+  <div id="previewModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Preview Results - <span id="modalTaskName"></span></h3>
+        <button class="close-modal" onclick="closePreviewModal()">×</button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 15px; padding: 10px; background: #f5f5f5; border-radius: 4px;">
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 14px;">
+            <input type="checkbox" onchange="toggleSelectAll(this.checked)">
+            <strong>Select All (<span id="totalCount">0</span> establishments)</strong>
+          </label>
+        </div>
+        <div id="previewList" class="preview-list"></div>
+      </div>
+      <div class="modal-footer">
+        <button class="button button-secondary" onclick="closePreviewModal()">Cancel</button>
+        <button class="button button-primary" id="exportButton" onclick="exportSelected()">
+          Export Selected (<span id="selectedCount">0</span>)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let map;
+    let markers = [];
+    let circles = [];
+    let searchPoints = [];
+    let API_KEY = '';
+    let currentRadius = 200;
+    let selectedTypes = ['restaurant', 'cafe', 'bar', 'bakery', 'meal_takeaway'];
+    let currentTaskId = null;
+    let selectedEstablishments = new Set();
+
+    // Preset combinations
+    const PRESETS = {
+      food: ['restaurant', 'cafe', 'bar', 'bakery', 'meal_takeaway'],
+      restaurants: ['restaurant'],
+      bars: ['bar', 'night_club'],
+      cafes: ['cafe', 'coffee_shop', 'bakery'],
+    };
+
+    // Initialize
+    async function init() {
+      const config = await fetch('/api/config').then(r => r.json());
+      API_KEY = config.googleMapsApiKey;
+
+      const script = document.createElement('script');
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=initMap`;
+      document.head.appendChild(script);
+
+      // Setup preset handler
+      document.getElementById('categoryPreset').addEventListener('change', (e) => {
+        const preset = e.target.value;
+        selectedTypes = [...(PRESETS[preset] || PRESETS.food)];
+      });
+
+      loadTasks();
+      setInterval(loadTasks, 3000);
+    }
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 43.6532, lng: -79.4000 },
+        zoom: 15,
+      });
+
+      map.addListener('click', (event) => {
+        addSearchPoint(event.latLng);
+      });
+    }
+
+    function addSearchPoint(latLng) {
+      const point = {
+        lat: latLng.lat(),
+        lng: latLng.lng(),
+      };
+
+      searchPoints.push(point);
+
+      const marker = new google.maps.Marker({
+        position: latLng,
+        map: map,
+        label: String(searchPoints.length),
+      });
+
+      markers.push(marker);
+
+      const circle = new google.maps.Circle({
+        map: map,
+        center: latLng,
+        radius: currentRadius,
+        strokeColor: '#4285f4',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#4285f4',
+        fillOpacity: 0.15,
+      });
+
+      circles.push(circle);
+      updatePointsList();
+    }
+
+    function updatePointsList() {
+      const container = document.getElementById('searchPoints');
+      const countEl = document.getElementById('pointCount');
+      const createBtn = document.getElementById('createTask');
+
+      countEl.textContent = searchPoints.length;
+      createBtn.disabled = searchPoints.length === 0;
+
+      if (searchPoints.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-state-icon">📍</div>
+            <div>Click on map to add points</div>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = searchPoints.map((point, idx) => `
+        <li class="search-point">
+          <div>
+            <div class="point-info">Point ${idx + 1}</div>
+            <div class="point-coords">${point.lat.toFixed(6)}, ${point.lng.toFixed(6)}</div>
+          </div>
+          <button class="button button-danger" onclick="removePoint(${idx})">Remove</button>
+        </li>
+      `).join('');
+    }
+
+    function removePoint(index) {
+      searchPoints.splice(index, 1);
+      markers[index].setMap(null);
+      circles[index].setMap(null);
+      markers.splice(index, 1);
+      circles.splice(index, 1);
+
+      markers.forEach((marker, idx) => {
+        marker.setLabel(String(idx + 1));
+      });
+
+      updatePointsList();
+    }
+
+    function clearPoints() {
+      searchPoints = [];
+      markers.forEach(m => m.setMap(null));
+      circles.forEach(c => c.setMap(null));
+      markers = [];
+      circles = [];
+      updatePointsList();
+    }
+
+    async function createTask() {
+      const name = document.getElementById('taskName').value || 'Unnamed Scan';
+      const radius = parseInt(document.getElementById('radius').value);
+      const aiPrompt = document.getElementById('aiPrompt').value.trim();
+
+      const response = await fetch('/api/tasks', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          searchPoints,
+          radius,
+          types: selectedTypes,
+          aiPrompt: aiPrompt || null,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        const message = aiPrompt 
+          ? `AI Task created: ${data.task.name}`
+          : `Task created: ${data.task.name}`;
+        alert(message);
+        clearPoints();
+        document.getElementById('aiPrompt').value = '';
+        loadTasks();
+      }
+    }
+
+    async function loadTasks() {
+      const response = await fetch('/api/tasks');
+      const tasks = await response.json();
+
+      const container = document.getElementById('tasks');
+
+      if (tasks.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-state-icon">📋</div>
+            <div>No tasks yet</div>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = tasks.map(task => `
+        <li class="task">
+          <div class="task-header">
+            <div class="task-name">${task.aiPrompt ? '🤖 ' : ''}${task.name}</div>
+            <div class="task-status status-${task.status}">${task.status}</div>
+          </div>
+          ${task.aiPrompt ? `<div class="task-info">💬 AI Prompt: "${task.aiPrompt}"</div>` : ''}
+          <div class="task-info">📍 ${task.searchPoints.length} search points · ${task.radius}m radius</div>
+          <div class="task-info">🏪 ${task.progress.establishments} establishments found</div>
+          ${task.status === 'ai-planning' ? `
+            <div class="task-info" style="color: #667eea; font-weight: 600; margin-top: 10px;">
+              🧠 AI is planning your food tour... This may take 1-2 minutes.
+            </div>
+          ` : ''}
+          ${task.status === 'completed' && task.dashboardUrl ? `
+            <div class="task-actions">
+              <a href="${task.dashboardUrl}" target="_blank" class="button button-primary">
+                View AI Dashboard 🎨
+              </a>
+            </div>
+          ` : ''}
+          ${task.status === 'preview-ready' ? `
+            <div class="task-actions">
+              <button class="button button-primary" onclick="viewPreview(${task.id})">View Results & Export</button>
+            </div>
+          ` : ''}
+          ${task.status === 'scanning' || task.status === 'exporting' ? `
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: ${(task.progress.current / task.progress.total) * 100}%"></div>
+            </div>
+          ` : ''}
+          ${task.status === 'completed' && task.outputFile ? `
+            <div class="task-info" style="margin-top: 10px;">✅ Saved to: ${task.outputFile}</div>
+          ` : ''}
+          ${task.status === 'error' ? `
+            <div class="task-info" style="color: #f44336; margin-top: 10px;">❌ ${task.error}</div>
+          ` : ''}
+          <div class="task-actions">
+            <button class="button button-danger" onclick="deleteTask(${task.id})">Delete</button>
+          </div>
+        </li>
+      `).join('');
+    }
+
+    async function deleteTask(taskId) {
+      if (!confirm('Delete this task?')) return;
+      await fetch(`/api/tasks/${taskId}`, { method: 'DELETE' });
+      loadTasks();
+    }
+
+    async function viewPreview(taskId) {
+      const response = await fetch(`/api/tasks/${taskId}`);
+      const task = await response.json();
+
+      if (!task.preview) {
+        alert('Preview not ready yet');
+        return;
+      }
+
+      currentTaskId = taskId;
+      selectedEstablishments.clear();
+
+      const modal = document.getElementById('previewModal');
+      const list = document.getElementById('previewList');
+      
+      list.innerHTML = task.preview.establishments.map(est => `
+        <div class="preview-item">
+          <input type="checkbox" value="${est.placeId}" onchange="toggleEstablishment('${est.placeId}')">
+          <div class="preview-item-info">
+            <div class="preview-item-name">${est.name}</div>
+            <div class="preview-item-details">
+              ${est.rating ? `⭐ ${est.rating}` : 'No rating'} · 
+              ${est.totalReviews || 0} reviews · 
+              ${est.priceLevel || 'No price info'}
+            </div>
+            <div class="preview-item-details" style="color: #999;">${est.address}</div>
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('selectedCount').textContent = '0';
+      document.getElementById('totalCount').textContent = task.preview.establishments.length;
+
+      modal.classList.add('show');
+    }
+
+    function closePreviewModal() {
+      document.getElementById('previewModal').classList.remove('show');
+      selectedEstablishments.clear();
+      currentTaskId = null;
+    }
+
+    function toggleEstablishment(placeId) {
+      if (selectedEstablishments.has(placeId)) {
+        selectedEstablishments.delete(placeId);
+      } else {
+        selectedEstablishments.add(placeId);
+      }
+      document.getElementById('selectedCount').textContent = selectedEstablishments.size;
+    }
+
+    function toggleSelectAll(checked) {
+      const checkboxes = document.querySelectorAll('#previewList input[type="checkbox"]');
+      selectedEstablishments.clear();
+      
+      checkboxes.forEach(cb => {
+        cb.checked = checked;
+        if (checked) {
+          selectedEstablishments.add(cb.value);
+        }
+      });
+      
+      document.getElementById('selectedCount').textContent = selectedEstablishments.size;
+    }
+
+    async function exportSelected() {
+      if (selectedEstablishments.size === 0) {
+        alert('Please select at least one establishment to export');
+        return;
+      }
+
+      if (!confirm(`Export detailed data for ${selectedEstablishments.size} selected establishments?`)) {
+        return;
+      }
+
+      const response = await fetch(`/api/tasks/${currentTaskId}/export`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          selectedIds: Array.from(selectedEstablishments)
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert(`Export started for ${selectedEstablishments.size} establishments`);
+        closePreviewModal();
+        loadTasks();
+      } else {
+        alert('Export failed: ' + result.message);
+      }
+    }
+
+    // Event listeners
+    document.getElementById('createTask').addEventListener('click', createTask);
+    document.getElementById('clearPoints').addEventListener('click', clearPoints);
+    document.getElementById('radius').addEventListener('change', (e) => {
+      currentRadius = parseInt(e.target.value);
+      circles.forEach(circle => circle.setRadius(currentRadius));
+    });
+
+    // Start
+    init();
+  </script>
+</body>
+</html>
+

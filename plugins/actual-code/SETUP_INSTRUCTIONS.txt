@@ -1,0 +1,54 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║                  ACTUALCODE - QUICK SETUP INSTRUCTIONS                    ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+You encountered an error because the GitHub token is not set yet.
+
+QUICK FIX (2 minutes):
+═══════════════════════
+
+1. GET GITHUB TOKEN:
+   Go to: https://github.com/settings/tokens
+   Click: "Generate new token (classic)"
+   Select: "public_repo" scope
+   Copy the token (starts with ghp_)
+
+2. SET TOKEN IN TERMINAL:
+   
+   export GITHUB_TOKEN='ghp_your_token_here'
+   
+   (Replace ghp_your_token_here with your actual token!)
+
+3. VERIFY IT WORKS:
+   
+   cd /Users/muratcankoylan/ActualCode/hackathon_code
+   source venv/bin/activate
+   python test_github_connection.py
+
+4. RUN THE CLI:
+   
+   python cli_runner.py
+
+═══════════════════════════════════════════════════════════════════════════
+
+EXAMPLE:
+
+$ export GITHUB_TOKEN='ghp_1234567890abcdefghijklmnopqrstuvwxyz'
+$ cd /Users/muratcankoylan/ActualCode/hackathon_code
+$ source venv/bin/activate
+$ python test_github_connection.py
+
+Expected:
+✅ GitHub connection test PASSED!
+
+Then run:
+$ python cli_runner.py
+
+═══════════════════════════════════════════════════════════════════════════
+
+NEED HELP?
+Read the full guide: cat SETUP_GITHUB.md
+
+═══════════════════════════════════════════════════════════════════════════
