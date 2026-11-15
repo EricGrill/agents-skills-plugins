@@ -25,23 +25,26 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
 
 contract MyNFT is ERC721URIStorage, ERC721Enumerable, Ownable {
-    uint256 private _nextTokenId;
+    using Counters for Counters.Counter;
+    Counters.Counter private _tokenIds;
 
     uint256 public constant MAX_SUPPLY = 10000;
     uint256 public constant MINT_PRICE = 0.08 ether;
     uint256 public constant MAX_PER_MINT = 20;
 
-    constructor() ERC721("MyNFT", "MNFT") Ownable(msg.sender) {}
+    constructor() ERC721("MyNFT", "MNFT") {}
 
     function mint(uint256 quantity) external payable {
         require(quantity > 0 && quantity <= MAX_PER_MINT, "Invalid quantity");
-        require(_nextTokenId + quantity <= MAX_SUPPLY, "Exceeds max supply");
+        require(_tokenIds.current() + quantity <= MAX_SUPPLY, "Exceeds max supply");
         require(msg.value >= MINT_PRICE * quantity, "Insufficient payment");
 
         for (uint256 i = 0; i < quantity; i++) {
-            uint256 newTokenId = _nextTokenId++;
+            _tokenIds.increment();
+            uint256 newTokenId = _tokenIds.current();
             _safeMint(msg.sender, newTokenId);
             _setTokenURI(newTokenId, generateTokenURI(newTokenId));
         }
@@ -52,20 +55,18 @@ contract MyNFT is ERC721URIStorage, ERC721Enumerable, Ownable {
         return string(abi.encodePacked("ipfs://QmHash/", Strings.toString(tokenId), ".json"));
     }
 
-    // Required overrides (OpenZeppelin v5)
-    function _update(address to, uint256 tokenId, address auth)
-        internal
-        override(ERC721, ERC721Enumerable)
-        returns (address)
-    {
-        return super._update(to, tokenId, auth);
+    // Required overrides
+    function _beforeTokenTransfer(
+        address from,
+        address to,
+        uint256 tokenId,
+        uint256 batchSize
+    ) internal override(ERC721, ERC721Enumerable) {
+        super._beforeTokenTransfer(from, to, tokenId, batchSize);
     }
 
-    function _increaseBalance(address account, uint128 value)
-        internal
-        override(ERC721, ERC721Enumerable)
-    {
-        super._increaseBalance(account, value);
+    function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
+        super._burn(tokenId);
     }
 
     function tokenURI(uint256 tokenId) public view override(ERC721, ERC721URIStorage) returns (string memory) {
@@ -75,7 +76,7 @@ contract MyNFT is ERC721URIStorage, ERC721Enumerable, Ownable {
     function supportsInterface(bytes4 interfaceId)
         public
         view
-        override(ERC721URIStorage, ERC721Enumerable)
+        override(ERC721, ERC721Enumerable)
         returns (bool)
     {
         return super.supportsInterface(interfaceId);
@@ -104,7 +105,7 @@ contract GameItems is ERC1155, Ownable {
     mapping(uint256 => uint256) public tokenSupply;
     mapping(uint256 => uint256) public maxSupply;
 
-    constructor() ERC1155("ipfs://QmBaseHash/{id}.json") Ownable(msg.sender) {
+    constructor() ERC1155("ipfs://QmBaseHash/{id}.json") {
         maxSupply[SWORD] = 1000;
         maxSupply[SHIELD] = 500;
         maxSupply[POTION] = 10000;
@@ -221,11 +222,11 @@ contract OnChainNFT is ERC721 {
 ```solidity
 import "@openzeppelin/contracts/interfaces/IERC2981.sol";
 
-contract NFTWithRoyalties is ERC721, IERC2981, Ownable {
+contract NFTWithRoyalties is ERC721, IERC2981 {
     address public royaltyRecipient;
     uint96 public royaltyFee = 500; // 5%
 
-    constructor() ERC721("Royalty NFT", "RNFT") Ownable(msg.sender) {
+    constructor() ERC721("Royalty NFT", "RNFT") {
         royaltyRecipient = msg.sender;
     }
 
@@ -256,103 +257,7 @@ contract NFTWithRoyalties is ERC721, IERC2981, Ownable {
 }
 ```
 
-## Soulbound Tokens (Non-Transferable)
+## Additional patterns and templates
 
-```solidity
-contract SoulboundToken is ERC721 {
-    constructor() ERC721("Soulbound", "SBT") {}
+More detailed templates and worked examples live in `references/details.md`. Read that file for the full pattern library.
 
-    // OpenZeppelin v5: enforce non-transferability in _update.
-    // Minting (auth == address(0) path with previous owner 0) and burning
-    // (to == address(0)) are still allowed.
-    function _update(address to, uint256 tokenId, address auth)
-        internal
-        virtual
-        override
-        returns (address)
-    {
-        address from = _ownerOf(tokenId);
-        require(from == address(0) || to == address(0), "Token is soulbound");
-        return super._update(to, tokenId, auth);
-    }
-
-    function mint(address to) external {
-        uint256 tokenId = totalSupply() + 1;
-        _safeMint(to, tokenId);
-    }
-
-    // Burn is allowed (user can destroy their SBT)
-    function burn(uint256 tokenId) external {
-        require(ownerOf(tokenId) == msg.sender, "Not token owner");
-        _burn(tokenId);
-    }
-}
-```
-
-## Dynamic NFTs
-
-```solidity
-contract DynamicNFT is ERC721 {
-    struct TokenState {
-        uint256 level;
-        uint256 experience;
-        uint256 lastUpdated;
-    }
-
-    mapping(uint256 => TokenState) public tokenStates;
-
-    function gainExperience(uint256 tokenId, uint256 exp) external {
-        require(ownerOf(tokenId) == msg.sender, "Not token owner");
-
-        TokenState storage state = tokenStates[tokenId];
-        state.experience += exp;
-
-        // Level up logic
-        if (state.experience >= state.level * 100) {
-            state.level++;
-        }
-
-        state.lastUpdated = block.timestamp;
-    }
-
-    function tokenURI(uint256 tokenId) public view override returns (string memory) {
-        TokenState memory state = tokenStates[tokenId];
-
-        // Generate metadata based on current state
-        return generateMetadata(tokenId, state);
-    }
-
-    function generateMetadata(uint256 tokenId, TokenState memory state)
-        internal
-        pure
-        returns (string memory)
-    {
-        // Dynamic metadata generation
-        return "";
-    }
-}
-```
-
-## Gas-Optimized Minting (ERC721A)
-
-```solidity
-import "erc721a/contracts/ERC721A.sol";
-
-contract OptimizedNFT is ERC721A {
-    uint256 public constant MAX_SUPPLY = 10000;
-    uint256 public constant MINT_PRICE = 0.05 ether;
-
-    constructor() ERC721A("Optimized NFT", "ONFT") {}
-
-    function mint(uint256 quantity) external payable {
-        require(_totalMinted() + quantity <= MAX_SUPPLY, "Exceeds max supply");
-        require(msg.value >= MINT_PRICE * quantity, "Insufficient payment");
-
-        _mint(msg.sender, quantity);
-    }
-
-    function _baseURI() internal pure override returns (string memory) {
-        return "ipfs://QmBaseHash/";
-    }
-}
-```
