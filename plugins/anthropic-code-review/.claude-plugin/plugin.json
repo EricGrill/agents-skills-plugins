@@ -1,10 +1,10 @@
 {
-  "name": "anthropic-code-review",
+  "name": "code-review",
   "description": "Automated code review for pull requests using multiple specialized agents with confidence-based scoring",
+  "version": "1.0.1",
   "author": {
     "name": "Anthropic",
     "email": "support@anthropic.com"
-  },
-  "version": "1.0.0",
-  "license": "MIT"
+  }
 }
+
