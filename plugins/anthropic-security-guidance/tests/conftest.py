@@ -1,0 +1,345 @@
+import http.server
+import io
+import json
+import os
+import struct
+import subprocess
+import sys
+import sysconfig
+import threading
+import time
+import zipfile
+from pathlib import Path
+
+import pytest
+
+HOOKS_DIR = Path(__file__).resolve().parent.parent / "hooks"
+HOOK_SCRIPT = HOOKS_DIR / "security_reminder_hook.py"
+
+sys.path.insert(0, str(HOOKS_DIR))
+
+GIT_ENV = {
+    "GIT_AUTHOR_NAME": "t", "GIT_AUTHOR_EMAIL": "t@example.com",
+    "GIT_COMMITTER_NAME": "t", "GIT_COMMITTER_EMAIL": "t@example.com",
+    "GIT_CONFIG_GLOBAL": os.devnull, "GIT_CONFIG_SYSTEM": os.devnull,
+}
+
+
+def git(cwd, *args):
+    r = subprocess.run(
+        ["git", *args], cwd=cwd, capture_output=True, text=True,
+        env={**os.environ, **GIT_ENV},
+    )
+    assert r.returncode == 0, r.stderr
+    return r.stdout
+
+
+def make_repo(path, files=None):
+    path.mkdir(parents=True, exist_ok=True)
+    git(path, "init", "-q", "-b", "main")
+    git(path, "config", "commit.gpgsign", "false")
+    for name, content in (files or {"README.md": "init\n"}).items():
+        p = path / name
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_text(content)
+    git(path, "add", "-A")
+    git(path, "commit", "-q", "-m", "init")
+    return path
+
+
+def commit_file(repo, name, content, msg="change"):
+    p = repo / name
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(content)
+    git(repo, "add", "-A")
+    out = subprocess.run(
+        ["git", "commit", "-m", msg], cwd=repo, capture_output=True, text=True,
+        env={**os.environ, **GIT_ENV},
+    )
+    assert out.returncode == 0, out.stderr
+    sha = git(repo, "rev-parse", "HEAD").strip()
+    return sha, out.stdout + out.stderr
+
+
+VULN_PY = (
+    "import subprocess\n"
+    "def run(user):\n"
+    "    subprocess.call('ls ' + user, shell=True)\n"
+)
+
+
+@pytest.fixture(autouse=True)
+def _no_net_err_from_an_earlier_test():
+    """A hook is one process per event; tests that call it in-process share
+    the module's record of the last failed call."""
+    import _base
+    _base._USAGE["net_err"] = 0
+    yield
+
+
+@pytest.fixture
+def workspace(tmp_path):
+    ws = tmp_path / "ws"
+    ws.mkdir()
+    repo = make_repo(ws / "sub", {"app.py": "print('hi')\n"})
+    (ws / "node_modules" / "junk").mkdir(parents=True)
+    return ws, repo
+
+
+class _Stub(http.server.BaseHTTPRequestHandler):
+    def do_POST(self):
+        n = int(self.headers.get("Content-Length") or 0)
+        body = self.rfile.read(n).decode("utf-8", "replace") if n else ""
+        # Only the stub_api fixture keeps the request bodies.
+        if hasattr(self.server, "bodies"):
+            self.server.bodies.append(body)
+        self.server.calls.append(self.path)
+        if self.server.delay:
+            time.sleep(self.server.delay)
+        if self.server.status == 200:
+            vulns = list(self.server.vulns)
+            body = json.dumps({
+                "id": "msg_stub", "type": "message", "role": "assistant",
+                "model": "stub", "stop_reason": "end_turn",
+                "content": [{"type": "text", "text": json.dumps(
+                    {"hasVulnerabilities": bool(vulns), "vulnerabilities": vulns})}],
+                "usage": {"input_tokens": 1, "output_tokens": 1},
+            }).encode()
+        else:
+            body = b'{"type":"error","error":{"type":"invalid_request_error","message":"stub"}}'
+        self.send_response(self.server.status)
+        self.send_header("Content-Type", "application/json")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
+    do_HEAD = do_GET = do_POST
+
+    def log_message(self, *a):
+        pass
+
+
+@pytest.fixture
+def stub_api():
+    srv = http.server.HTTPServer(("127.0.0.1", 0), _Stub)
+    srv.calls = []
+    srv.bodies = []
+    srv.status = 200
+    srv.delay = 0
+    srv.vulns = []
+    t = threading.Thread(target=srv.serve_forever, daemon=True)
+    t.start()
+    try:
+        yield srv
+    finally:
+        srv.shutdown()
+
+
+@pytest.fixture
+def hook_env(tmp_path, stub_api):
+    state = tmp_path / "state"
+    state.mkdir()
+    env = {k: v for k, v in os.environ.items()
+           if k not in ("ANTHROPIC_AUTH_TOKEN", "CLAUDE_CODE_REMOTE",
+                        "CLAUDE_PROJECT_DIR", "HTTP_PROXY", "HTTPS_PROXY",
+                        "http_proxy", "https_proxy", "ALL_PROXY", "all_proxy",
+                        "CLAUDE_CODE_USE_BEDROCK", "CLAUDE_CODE_USE_VERTEX",
+                        "CLAUDE_CODE_USE_FOUNDRY",
+                        "PLUGIN_ROOT", "SECURITY_GUIDANCE_PORTABLE_OUTPUT")}
+    env.update(GIT_ENV)
+    env.update({
+        "SECURITY_WARNINGS_STATE_DIR": str(state),
+        "ANTHROPIC_API_KEY": "test-key",
+        "ANTHROPIC_BASE_URL": f"http://127.0.0.1:{stub_api.server_port}",
+        "NO_PROXY": "*", "no_proxy": "*",
+        "SG_AGENTIC_COMMIT_REVIEW": "0",
+        # Points the plugin at a claude that does not exist, so no hook test
+        # runs this machine's own claude.
+        "SG_AGENTIC_CLI_PATH": str(tmp_path / "no-claude"),
+        "SECURITY_GUIDANCE_COMMIT_REVIEW": "on",
+        "SG_PUSH_SWEEP": "on",
+        "PYTHONDONTWRITEBYTECODE": "1",
+    })
+    return env
+
+
+def run_hook(payload, env, python=sys.executable):
+    r = subprocess.run(
+        [python, str(HOOK_SCRIPT)], input=json.dumps(payload),
+        capture_output=True, text=True, env=env, timeout=120,
+    )
+    return r.returncode, r.stdout, r.stderr
+
+
+STUB_VULN = {
+    "filePath": "app.py", "category": "command_injection", "severity": "high",
+    "vulnerableCode": "subprocess.call('ls ' + user, shell=True)",
+    "description": "user input reaches a shell", "recommendation": "pass an argv list",
+}
+
+
+def metrics_of(stdout):
+    for line in stdout.splitlines():
+        line = line.strip()
+        if line.startswith("{"):
+            try:
+                m = json.loads(line).get("metrics")
+            except json.JSONDecodeError:
+                continue
+            if m is not None:
+                return m
+    return None
+
+
+def bash_payload(cwd, command, stdout="", stderr="", session_id="s1", tool_use_id=None):
+    p = {
+        "session_id": session_id,
+        "hook_event_name": "PostToolUse",
+        "tool_name": "Bash",
+        "tool_input": {"command": command},
+        "tool_response": {"stdout": stdout, "stderr": stderr, "interrupted": False},
+        "cwd": str(cwd),
+    }
+    if tool_use_id:
+        p["tool_use_id"] = tool_use_id
+    return p
+
+
+def edit_payload(cwd, file_path, new_string="x", session_id="s1"):
+    return {
+        "session_id": session_id,
+        "hook_event_name": "PostToolUse",
+        "tool_name": "Edit",
+        "tool_input": {"file_path": str(file_path), "old_string": "", "new_string": new_string},
+        "tool_response": {},
+        "cwd": str(cwd),
+    }
+
+
+def stop_payload(cwd, event="Stop", session_id="s1"):
+    return {
+        "session_id": session_id,
+        "hook_event_name": event,
+        "stop_hook_active": False,
+        "cwd": str(cwd),
+    }
+
+
+def ups_payload(cwd, session_id="s1"):
+    return {
+        "session_id": session_id,
+        "hook_event_name": "UserPromptSubmit",
+        "prompt": "hi",
+        "cwd": str(cwd),
+    }
+
+
+# ── a local Anthropic-compatible endpoint the hook can be pointed at ──────
+
+class _Gateway(http.server.BaseHTTPRequestHandler):
+    """An Anthropic-compatible endpoint. With `required` set it answers 401
+    unless that header arrives, like a LiteLLM proxy keyed on a custom header."""
+
+    def _handle(self):
+        n = int(self.headers.get("Content-Length") or 0)
+        if n:
+            self.rfile.read(n)
+        srv = self.server
+        srv.requests.append((self.command, self.path, {k.lower(): v for k, v in self.headers.items()}))
+        name, value = srv.required or (None, None)
+        if name and self.headers.get(name) != value:
+            return self._send(401, {"type": "error", "error": {
+                "type": "authentication_error", "message": "Invalid proxy server token"}})
+        if srv.status != 200:
+            return self._send(srv.status, {"type": "error", "error": {"type": "api_error"}})
+        if self.command == "GET":
+            return self._send(200, {"data": [{"id": "claude-opus-5-5"}], "has_more": False})
+        text = (srv.reply if srv.reply is not None else json.dumps(
+            {"hasVulnerabilities": bool(srv.vulns), "vulnerabilities": srv.vulns}))
+        self._send(200, {
+            "id": "msg_stub", "type": "message", "role": "assistant",
+            "model": "stub", "stop_reason": "end_turn",
+            "content": [{"type": "text", "text": text}],
+            "usage": {"input_tokens": 1, "output_tokens": 1},
+        })
+
+    do_GET = do_POST = do_HEAD = _handle
+
+    def _send(self, status, payload):
+        body = json.dumps(payload).encode()
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
+    def log_message(self, *a):
+        pass
+
+
+@pytest.fixture
+def gateway():
+    srv = http.server.HTTPServer(("127.0.0.1", 0), _Gateway)
+    srv.requests, srv.required, srv.status, srv.reply, srv.vulns = [], None, 200, None, []
+    threading.Thread(target=srv.serve_forever, daemon=True).start()
+    try:
+        yield srv
+    finally:
+        srv.shutdown()
+
+
+@pytest.fixture
+def env(hook_env, gateway):
+    e = dict(hook_env)
+    e["ANTHROPIC_BASE_URL"] = f"http://127.0.0.1:{gateway.server_port}"
+    e.pop("SECURITY_REVIEW_MODEL", None)
+    return e
+
+
+def _windows_exe(script):
+    """`script` as the bytes of a Windows .exe: Windows starts neither a
+    `#!` file nor, without a shell, a .cmd with multi-line arguments. Built
+    the way pip builds a console script: its launcher stub, then the
+    interpreter to run, then a zip holding the script as __main__.py."""
+    distlib = pytest.importorskip("pip._vendor.distlib")
+    stub = "t%s%s.exe" % ("64" if struct.calcsize("P") == 8 else "32",
+                          "-arm" if sysconfig.get_platform() == "win-arm64" else "")
+    stub = os.path.join(os.path.dirname(distlib.__file__), stub)
+    if not os.path.isfile(stub):
+        pytest.skip(f"pip has no script launcher {os.path.basename(stub)}")
+    with open(stub, "rb") as f:
+        launcher = f.read()
+    python = f'"{sys.executable}"' if " " in sys.executable else sys.executable
+    archive = io.BytesIO()
+    with zipfile.ZipFile(archive, "w") as zf:
+        zf.writestr("__main__.py", script)
+    return launcher + f"#!{python}\n".encode("utf-8") + archive.getvalue()
+
+
+def write_cli(tmp_path, name, script):
+    """A stand-in for `claude` in `tmp_path` that runs the Python `script`;
+    returns its path."""
+    if os.name == "nt":
+        cli = tmp_path / f"{name}.exe"
+        cli.write_bytes(_windows_exe(script))
+    else:
+        cli = tmp_path / name
+        cli.write_text(f"#!{sys.executable}\n{script}")
+        cli.chmod(0o755)
+    return cli
+
+
+@pytest.fixture
+def failing_inner_cli(tmp_path):
+    """An inner CLI that prints a warning on stderr and exits 1; the review
+    then falls back to a single-shot call."""
+    return str(write_cli(tmp_path, "claude", (
+        "import sys\n"
+        "sys.stderr.write('claude.ai connectors are disabled\\n')\n"
+        "sys.exit(1)\n")))
+
+
+@pytest.fixture
+def agentic_env(env, failing_inner_cli):
+    pytest.importorskip("claude_agent_sdk")
+    return {**env, "SG_AGENTIC_COMMIT_REVIEW": "1", "SG_AGENTIC_CLI_PATH": failing_inner_cli}
