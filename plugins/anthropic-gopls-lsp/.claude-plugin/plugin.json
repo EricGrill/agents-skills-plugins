@@ -1,11 +1,17 @@
 {
-  "name": "anthropic-gopls-lsp",
-  "description": "Official Anthropic: gopls language server integration for Go type-aware coding",
+  "name": "gopls-lsp",
+  "description": "Go language server for code intelligence and refactoring",
   "version": "1.0.0",
   "author": {
     "name": "Anthropic",
     "email": "support@anthropic.com"
   },
-  "license": "MIT",
-  "category": "backend"
+  "lspServers": {
+    "gopls": {
+      "command": "gopls",
+      "extensionToLanguage": {
+        ".go": "go"
+      }
+    }
+  }
 }
