@@ -146,7 +146,8 @@ import pytest
 
 def is_valid_email(email: str) -> bool:
     """Check if email is valid."""
-    return "@" in email and "." in email.split("@")[1]
+    local, sep, domain = email.partition("@")
+    return bool(local) and bool(sep) and "." in domain and "@" not in domain
 
 
 @pytest.mark.parametrize("email,expected", [
@@ -300,7 +301,7 @@ def test_exception_info():
     assert "invalid literal" in str(exc_info.value)
 ```
 
-For advanced patterns including async testing, monkeypatching, temporary files, conftest setup, property-based testing, database testing, CI/CD integration, and configuration files, see [references/advanced-patterns.md](references/advanced-patterns.md)
+For advanced patterns including async testing, monkeypatching, temporary files, conftest setup, property-based testing, database testing, CI/CD integration, and configuration files, see [references/advanced-patterns.md](./advanced-patterns.md)
 
 ## Test Design Principles
 
